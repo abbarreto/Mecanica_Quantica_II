@@ -13995,12 +13995,18 @@ onde $H_{0}$ representa a parte "mais intensa" da interação e cujos autovalore
 \begin{equation}
 H_{0}|\psi_{n}^{(0)}\rangle = E_{n}^{(0)}|\psi_{n}^{(0)}\rangle,
 \end{equation}
-e $H_{1}$ é a perturbação, uma interação de "intensidade pequena" em relação a $H_{0}$. Na sequência obteremos equações que nos possibilitarão, a princípio, calcular correções parturbativas de várias ordens para as autoenergias e autofunções. Começaremos trocando $H = H_{0} + H_{1}$ por
+e $H_{1}$ é a perturbação, uma interação de "intensidade pequena" em relação a $H_{0}$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Na sequência obteremos equações que nos possibilitarão, a princípio, calcular correções parturbativas de várias ordens para as autoenergias e autofunções. Começaremos trocando $H = H_{0} + H_{1}$ por
 \begin{equation}
 H = H_{0} + \xi H_{1}.
 \end{equation}
 O parâmetro contínuo $\xi$ é usado para controlar a intensidade com que a perturbação é incluída. Para $\xi=0$ temos o caso não perturbado e para $\xi=1$ a perturbação é incluída em toda sua intensidade.</p>
-<p>Seguindo, escrevemos a solução geral em termos da não perturbada como
+<p>Seguindo, escrevemos a solução geral para os autovetores em termos da não perturbada como
 \begin{equation}
 |\psi_{n}\rangle = N_{n}(|\psi_{n}^{(0)}\rangle + |\chi_{n}\rangle) = \frac{|\psi_{n}^{(0)}\rangle+|\chi_{n}\rangle}{\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}}, \hspace{2cm} (\star)
 \end{equation}
@@ -14013,7 +14019,7 @@ com $|\chi_{n}\rangle$ não sendo necessariamente normalizado e satisfazendo
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Substituindo o Hamiltoniano e autovetores como escritos acima, teremos
+<p>Substituindo o Hamiltoniano e autovetores, como escritos acima, na equação característica, teremos que
 \begin{align}
 &amp; H|\psi_{n}\rangle = (H_{0}+\xi H_{1})N_{n}(|\psi_{n}^{(0)}\rangle + |\chi_{n}\rangle ) \\
 &amp; = N_{n}\left(H_{0}|\psi_{n}^{(0)}\rangle + H_{0}|\chi_{n}\rangle + \xi H_{1}|\psi_{n}^{(0)}\rangle + \xi H_{1}|\chi_{n}\rangle\right) \\ 
@@ -14035,7 +14041,7 @@ obteremos
 \begin{equation}
 E_{n} = E_{n}^{(0)} + \xi\langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \xi\langle\psi_{n}^{(0)}|H_{1}|\chi_{n}\rangle.  \hspace{2cm} (**)
 \end{equation}
-Essa eq. já seria suficiente para algumas aplicações importantes, como veremos em uma outra oportunidade.</p>
+Essa equação já seria suficiente para algumas aplicações importantes, como veremos em uma outra oportunidade.</p>
 
 </div>
 </div>
@@ -14083,7 +14089,7 @@ Notemos que ainda nos resta o $E_{n}$ no denominador das expressões acima. Lide
 \begin{equation}
 E_{n} = \sum_{j=0}^{\infty} E_{n}^{(j)}\xi^{j}.
 \end{equation}
-Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremos que ($x=\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}/(E_{n}^{(0)}-E_{m}^{(0)})$):
+Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremos que ($x=-\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}/(E_{n}^{(0)}-E_{m}^{(0)})$):
 \begin{align}
 \frac{1}{E_{n}-E_{m}^{(0)}} &amp; = \frac{1}{E_{n}^{(0)}+\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}-E_{m}^{(0)}} \\
 &amp; = \frac{1}{(E_{n}^{(0)}-E_{m}^{(0)})}\frac{1}{(1+\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}/(E_{n}^{(0)}-E_{m}^{(0)}))} \\
@@ -14097,11 +14103,11 @@ Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
-<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span> <span class="n">igual</span> <span class="n">à</span> <span class="n">exata</span> <span class="n">no</span> <span class="n">limite</span> <span class="n">de</span> <span class="n">perturbações</span> <span class="n">pequen</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14117,13 +14123,13 @@ Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 1 - x + x^{2} - x^{3} + x^{4} + O\left(x^{5}\right)$
+$\displaystyle 1 + x + x^{2} + x^{3} + x^{4} + O\left(x^{5}\right)$
 </div>
 
 </div>
@@ -14172,16 +14178,27 @@ E_{n}\approx E_{n}^{(0)}+E_{n}^{(1)}+E_{n}^{(2)}+E_{n}^{(3)}+\cdots.
 \begin{equation}
 |\psi_{n}\rangle \approx N_{n}\left(|\psi_{n}^{(0)}\rangle+|\psi_{n}^{(1)}\rangle+|\psi_{n}^{(2)}\rangle+\cdots+|\psi_{n}^{(M)}\rangle\right),
 \end{equation}
-com $N_{n}=1/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}=1/\sqrt{1+\sum_{j,k=1}^{M}\langle\psi_{n}^{(j)}|\psi_{n}^{(k)}\rangle}$.</p>
+com 
+\begin{equation}
+N_{n}=1/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}=1/\sqrt{1+\sum_{j,k=1}^{M}\langle\psi_{n}^{(j)}|\psi_{n}^{(k)}\rangle}.
+\end{equation}</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exemplo">Exemplo<a class="anchor-link" href="#Exemplo">&#182;</a></h3><p>Consideremos o Hamiltoniano $H=H_{0}+H_{1}$ com $H_{0}=-\omega\sigma_{y}$ e Hamiltoniano perturbativo $H_{1}=-\epsilon\sigma_{x}$, i.e., $\omega\gg\epsilon$ (ou seja, consideramos um campo magnético constante "forte" na direção $y$ e outro campo desse tipo, "fraco", na direção $x$). Calculemos as correções perturbativas de primeira e de segunda ordem para as auto-energias desse sistema e as correções de primeira ordem para os autovetores de $H$.</p>
+<h3 id="Exemplo">Exemplo<a class="anchor-link" href="#Exemplo">&#182;</a></h3><p>Consideremos o Hamiltoniano $H=H_{0}+H_{1}$ com 
+\begin{equation}
+H_{0}=-\omega\sigma_{y} = -\omega\begin{bmatrix}0&amp;-i\\i&amp;0\end{bmatrix}
+\end{equation}
+e Hamiltoniano perturbativo 
+\begin{equation}
+H_{1}=-\epsilon\sigma_{x}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},
+\end{equation}
+i.e., $\omega\gg\epsilon$ (ou seja, consideramos um campo magnético constante "forte" na direção $y$ e outro campo desse tipo, "fraco", na direção $x$). Calculemos as correções perturbativas de primeira e de segunda ordem para as auto-energias desse sistema e as correções de primeira ordem para os autovetores de $H$.</p>
 <p>Temos $H_{0}=-\omega|y_{+}\rangle\langle y_{+}|+\omega|y_{-}\rangle\langle y_{-}|$. Assim 
 \begin{equation}
-E_{1}^{(0)}=-\omega\text{, }E_{2}^{(0)}=\omega\text{, }|\psi_{1}^{(0)}\rangle = |y_{+}\rangle\text{ e }|\psi_{2}^{(0)}\rangle = |y_{-}\rangle.
+E_{1}^{(0)}=-\omega\text{, }E_{2}^{(0)}=\omega\text{, }|\psi_{1}^{(0)}\rangle = |y_{+}\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\i\end{bmatrix}  \text{ e } |\psi_{2}^{(0)}\rangle = |y_{-}\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\-i\end{bmatrix} .
 \end{equation}
 Utilizaremos a relação
 \begin{align}
@@ -14356,7 +14373,7 @@ $$1 + \frac{x^{2}}{2} + \mathcal{O}\left(x^{3}\right)$$
 <h1 id="Exerc%C3%ADcios">Exerc&#237;cios<a class="anchor-link" href="#Exerc%C3%ADcios">&#182;</a></h1><ol>
 <li><p>Verifique que a constante de normalização na eq. $(\star)$, considerada $\in\mathbb{R}$, é dada por $N_{n} = 1/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}$, i.e., verifique que $|\psi_{n}\rangle=(|\psi_{n}^{(0)}\rangle+|\chi_{n}\rangle)/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}$.</p>
 </li>
-<li><p>Considere o Hamiltoniano $H=H_{0}+H_{1}$ com $H_{0}=\omega\sigma_{z}$ e Hamiltoniano perturbativo $H_{1}=\epsilon\sigma_{x}$, i.e., $\omega\gg\epsilon$. Calcule as correções perturbativas de primeira e de segunda ordens para as auto-energias desse sistema. Calcule os autovetores de $H$ com correção perturbativa de primeira ordem.</p>
+<li><p>Considere o Hamiltoniano $H=H_{0}+H_{1}$ com $H_{0}=\omega\sigma_{z}=\omega\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}$ e Hamiltoniano perturbativo $H_{1}=\epsilon\sigma_{x}$, i.e., $\omega\gg\epsilon$. Calcule as correções perturbativas de primeira e de segunda ordens para as auto-energias desse sistema. Calcule os autovetores de $H$ com correção perturbativa de primeira ordem.</p>
 </li>
 <li><p>Para espectros discretos não degenerados, obtenha as expressões que devemos usar para calcular as correções perturbativas de 4ª ordem para as autoenergias, $E_{n}^{(4)}$, e de 3ª ordem para as autofunções, $|\psi_{n}^{(3)}\rangle$.</p>
 </li>
