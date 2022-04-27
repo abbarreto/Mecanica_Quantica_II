@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>01_perturbacao</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>02_estrutura_fina</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -13971,135 +13971,38 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3>Notas de aula de Mecânica Quântica II <br> Autor: Jonas Maziero</h3>
+<h3>Notas de aula de Mecânica Quântica <br> Autor: Jonas Maziero</h3>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Teoria-de-perturba%C3%A7%C3%A3o">Teoria de perturba&#231;&#227;o<a class="anchor-link" href="#Teoria-de-perturba%C3%A7%C3%A3o">&#182;</a></h1><p>São poucos os exemplos conhecidos de sistemas físicos quânticos para os quais dispomos de soluções analíticas conhecidas. O objetivo da teoria de perturbação é construir soluções aproximadas (estáticas ou dinâmicas) a partir das soluções analíticas obtidas em casos particulares, que geralmente estão relacionados com intensidades de interação maiores em relação às correções que queremos incluir.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Teoria-de-perturba%C3%A7%C3%A3o-independente-do-tempo:-Espectros-discretos-n%C3%A3o-degenerados">Teoria de perturba&#231;&#227;o independente do tempo: Espectros discretos n&#227;o degenerados<a class="anchor-link" href="#Teoria-de-perturba%C3%A7%C3%A3o-independente-do-tempo:-Espectros-discretos-n%C3%A3o-degenerados">&#182;</a></h1><p>Para Hamiltonianos com espectro discreto não degenerado, começamos considerando que nosso objetivo é obter a solução da equação de autovalores e autovetores
+<h1 id="Estrutura-fina-do-%C3%A1tomo-de-hidrog%C3%AAnio">Estrutura fina do &#225;tomo de hidrog&#234;nio<a class="anchor-link" href="#Estrutura-fina-do-%C3%A1tomo-de-hidrog%C3%AAnio">&#182;</a></h1><h2 id="%C3%81tomo-de-hidrog%C3%AAnio-(caso-n%C3%A3o-%22perturbado%22)">&#193;tomo de hidrog&#234;nio (caso n&#227;o "perturbado")<a class="anchor-link" href="#%C3%81tomo-de-hidrog%C3%AAnio-(caso-n%C3%A3o-%22perturbado%22)">&#182;</a></h2><p>Aqui usaremos correções perturbativas de 1ª ordem para obter a estrutura fina dos níveis de energia do átomo de hidrogênio. O mesmo procedimento se aplica a átomos hidrogenóides, e os resultados se aplicam qualitativamente a qualquer sistema atômico.</p>
+<p>Lembrando, com o referencial no centro de massa, quando consideramos somente a interação Coulombiana, o Hamiltoniano do átomo de Hidrogênio tem a forma
 \begin{equation}
-H|\psi_{n}\rangle = E_{n}|\psi_{n}\rangle
+H_{0} = \frac{P^{2}}{2m}+U = -\frac{\hbar^{2}}{2m}\nabla^{2} - \frac{ke^{2}}{r},
 \end{equation}
-quando o Hamiltoniano pode ser escrito como 
+onde a massa reduzida é
 \begin{equation}
-H = H_{0} + H_{1},
+m=\frac{m_{e}m_{p}}{m_{e}+m_{p}},
 \end{equation}
-onde $H_{0}$ representa a parte "mais intensa" da interação e cujos autovalores e autovetores são conhecidos, i.e., conhecemos a solução de 
+com $m_{e}\ (m_{p})$ sendo a massa do elétron (próton). 
+Da solução exata para a equação de Schrödinger nesse caso (<a href="https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/16_hidrogenio.ipynb">https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/16_hidrogenio.ipynb</a>), temos as energias
+\begin{align}
+E_{n}^{(0)} &amp;= -\frac{m k^{2}e^{4}}{2\hbar^{2}}\frac{1}{n^{2}} = -\left(\frac{ke^{2}}{\hbar c}\right)^{2}\frac{mc^{2}}{2n^{2}} = -\frac{\alpha^{2}mc^{2}}{2n^{2}},
+\end{align}
+com $n=1,2,3,\cdots$ e a constante de estrutura fina sendo
 \begin{equation}
-H_{0}|\psi_{n}^{(0)}\rangle = E_{n}^{(0)}|\psi_{n}^{(0)}\rangle,
+\alpha := \frac{ke^{2}}{\hbar c} \approx \frac{1}{137,04}.
 \end{equation}
-e $H_{1}$ é a perturbação, uma interação de "intensidade pequena" em relação a $H_{0}$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Na sequência obteremos equações que nos possibilitarão, a princípio, calcular correções parturbativas de várias ordens para as autoenergias e autofunções. Começaremos trocando $H = H_{0} + H_{1}$ por
+Na sequência, também utilizaremos o raio de Bohr:
 \begin{equation}
-H = H_{0} + \xi H_{1}.
-\end{equation}
-O parâmetro contínuo $\xi$ é usado para controlar a intensidade com que a perturbação é incluída. Para $\xi=0$ temos o caso não perturbado e para $\xi=1$ a perturbação é incluída em toda sua intensidade.</p>
-<p>Seguindo, escrevemos a solução geral para os autovetores em termos da não perturbada como
-\begin{equation}
-|\psi_{n}\rangle = N_{n}(|\psi_{n}^{(0)}\rangle + |\chi_{n}\rangle) = \frac{|\psi_{n}^{(0)}\rangle+|\chi_{n}\rangle}{\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}}, \hspace{2cm} (\star)
-\end{equation}
-com $|\chi_{n}\rangle$ não sendo necessariamente normalizado e satisfazendo
-\begin{equation}
-\langle\chi_{n}|\psi_{n}^{(0)}\rangle:=0.
+a := \frac{\hbar^{2}}{kme^{2}} \approx 0,53\text{ }\mathring{A}.
 \end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Substituindo o Hamiltoniano e autovetores, como escritos acima, na equação característica, teremos que
-\begin{align}
-&amp; H|\psi_{n}\rangle = (H_{0}+\xi H_{1})N_{n}(|\psi_{n}^{(0)}\rangle + |\chi_{n}\rangle ) \\
-&amp; = N_{n}\left(H_{0}|\psi_{n}^{(0)}\rangle + H_{0}|\chi_{n}\rangle + \xi H_{1}|\psi_{n}^{(0)}\rangle + \xi H_{1}|\chi_{n}\rangle\right) \\ 
-&amp; = N_{n}\left(E_{n}^{(0)}|\psi_{n}^{(0)}\rangle + H_{0}|\chi_{n}\rangle + \xi H_{1}|\psi_{n}^{(0)}\rangle + \xi H_{1}|\chi_{n}\rangle\right) \\
-&amp; = E_{n}|\psi_{n}\rangle = E_{n}N_{n}(|\psi_{n}^{(0)}\rangle + |\chi_{n}\rangle).
-\end{align}
-Das duas últimas linhas desta equação, prontamente identificamos a relação:
+<h3 id="Ordem-de-grandeza-das-autoenergias-n%C3%A3o-perturbadas-de-H">Ordem de grandeza das autoenergias n&#227;o perturbadas de H<a class="anchor-link" href="#Ordem-de-grandeza-das-autoenergias-n%C3%A3o-perturbadas-de-H">&#182;</a></h3><p>Vale notar que a ordem de grandeza dessas energias é ditada principalmente por
 \begin{equation}
-(E_{n}-E_{n}^{(0)})|\psi_{n}^{(0)}\rangle = \xi H_{1}|\psi_{n}^{(0)}\rangle + (H_{0}+ \xi H_{1} - E_{n})|\chi_{n}\rangle. \hspace{2cm}\text{(*)}
-\end{equation}
-Se tomarmos o produto interno de $|\psi_{n}^{(0)}\rangle$ com ($*$):
-\begin{align}
-&amp; (E_{n}-E_{n}^{(0)})\langle\psi_{n}^{(0)}|\psi_{n}^{(0)}\rangle = E_{n}-E_{n}^{(0)} \\
-&amp; = \xi \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \langle\psi_{n}^{(0)}|H_{0}|\chi_{n}\rangle + \xi \langle\psi_{n}^{(0)}|H_{1}|\chi_{n}\rangle - E_{n}\langle\psi_{n}^{(0)}|\chi_{n}\rangle \\
-&amp; = \xi \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + E_{n}^{(0)}\langle\psi_{n}^{(0)}|\chi_{n}\rangle + \xi \langle\psi_{n}^{(0)}|H_{1}|\chi_{n}\rangle - 0 \\
-&amp; = \xi\left(\langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \langle\psi_{n}^{(0)}|H_{1}|\chi_{n}\rangle\right).
-\end{align}
-obteremos
-\begin{equation}
-E_{n} = E_{n}^{(0)} + \xi\langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \xi\langle\psi_{n}^{(0)}|H_{1}|\chi_{n}\rangle.  \hspace{2cm} (**)
-\end{equation}
-Essa equação já seria suficiente para algumas aplicações importantes, como veremos em uma outra oportunidade.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Note que na Eq. $(**)$ somente o último termo está escrito em termos de $|\chi_{n}\rangle$, que não conhecemos. Vamos então decompor este vetor na base ortonormal $\{|\psi_{n}^{(0)}\rangle\}$:
-\begin{equation}
-|\chi_{n}\rangle = \sum_{m}\langle\psi_{m}^{(0)}|\chi_{n}\rangle|\psi_{m}^{(0)}\rangle \equiv \sum_{m\ne n}\langle\psi_{m}^{(0)}|\chi_{n}\rangle|\psi_{m}^{(0)}\rangle.
-\end{equation}
-Para obter os coeficientes $\langle\psi_{m}^{(0)}|\chi_{n}\rangle$ tomamos o produto interno de $|\psi_{m}^{(0)}\rangle$ com a Eq. ($*$), com $m\ne n$:
-\begin{align}
-&amp; (E_{n}-E_{n}^{(0)})\langle\psi_{m}^{(0)}|\psi_{n}^{(0)}\rangle = 0 \\
-&amp; = \xi \langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \langle\psi_{m}^{(0)}|H_{0}|\chi_{n}\rangle + \xi \langle\psi_{m}^{(0)}|H_{1}|\chi_{n}\rangle - E_{n}\langle\psi_{m}^{(0)}|\chi_{n}\rangle \\
-&amp; = \xi \langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + E_{m}^{(0)}\langle\psi_{m}^{(0)}|\chi_{n}\rangle + \xi \langle\psi_{m}^{(0)}|H_{1}|\chi_{n}\rangle - E_{n}\langle\psi_{m}^{(0)}|\chi_{n}\rangle.
-\end{align}
-Assim, como $E_{n}\ne E_{m}^{(0)}$ (supomos que a interação perturbativa não cria degenerescências),
-\begin{equation}
-\langle\psi_{m}^{(0)}|\chi_{n}\rangle = \xi\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}} + \xi\frac{\langle\psi_{m}^{(0)}|H_{1}|\chi_{n}\rangle}{E_{n}-E_{m}^{(0)}}.
+\alpha^{2}mc^{2}\approx 27,2\text{ eV}.
 \end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Usando esses coeficientes na decomposição de $|\chi_{n}\rangle$ e o substituindo <em>iterativamente</em> vem que
-\begin{align}
-|\chi_{n}\rangle &amp; = \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle + \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\chi_{n}\rangle}{E_{n}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle \\
-&amp; = \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle \\
-&amp; + \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}\left(\xi\sum_{m'\ne n}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m'}^{(0)}}|\psi_{m'}^{(0)}\rangle + \xi\sum_{m'\ne n}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\chi_{n}\rangle}{E_{n}-E_{m'}^{(0)}}|\psi_{m'}^{(0)}\rangle \right)}{E_{n}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle \\
-&amp; = \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle + \xi^{2}\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m'}^{(0)}}|\psi_{m}^{(0)}\rangle \\ 
-&amp; \hspace{0.4cm} + \xi^{2}\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\chi_{n}\rangle}{E_{n}-E_{m'}^{(0)}}|\psi_{m}^{(0)}\rangle. \hspace{5cm} (\square)
-\end{align}
-OBS. Poderíamos continuar com esse processo indefinidamente.</p>
-<p>Substituindo essa última equação na Eq. $(**)$ obteremos
-\begin{align}
-E_{n} &amp; = \xi^{0}E_{n}^{(0)} + \xi^{1}\langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \xi^{2}\sum_{m\ne n}\frac{\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}-E_{m}^{(0)}} \\
-&amp; \hspace{0.5cm} + \xi^{3}\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{(E_{n}-E_{m}^{(0)})(E_{n}-E_{m'}^{(0)})} \\
-&amp; \hspace{0.5cm} + \xi^{3}\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle\langle\psi_{m'}^{(0)}|H_{1}|\chi_{n}\rangle}{(E_{n}-E_{m}^{(0)})(E_{n}-E_{m'}^{(0)})}. \hspace{1cm} (\square\square)
-\end{align}
-Notemos que ainda nos resta o $E_{n}$ no denominador das expressões acima. Lideramos com esta questão a seguir.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vamos considerar a expansão de cada autovalor na base de potências de $\xi$, a chamada <strong>expansão de Rayleigh-Schrödinger</strong>:
-\begin{equation}
-E_{n} = \sum_{j=0}^{\infty} E_{n}^{(j)}\xi^{j}.
-\end{equation}
-Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremos que ($x=-\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}/(E_{n}^{(0)}-E_{m}^{(0)})$):
-\begin{align}
-\frac{1}{E_{n}-E_{m}^{(0)}} &amp; = \frac{1}{E_{n}^{(0)}+\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}-E_{m}^{(0)}} \\
-&amp; = \frac{1}{(E_{n}^{(0)}-E_{m}^{(0)})}\frac{1}{(1+\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}/(E_{n}^{(0)}-E_{m}^{(0)}))} \\
-&amp; = \frac{1}{(E_{n}^{(0)}-E_{m}^{(0)})}\left(1 - \frac{\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}}{E_{n}^{(0)}-E_{m}^{(0)}} + \frac{(\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j})^{2}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}} - \frac{(\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j})^{3}}{(E_{n}^{(0)}-E_{m}^{(0)})^{3}} + \cdots\right) \\
-&amp; = \frac{1}{E_{n}^{(0)}-E_{m}^{(0)}} - \frac{\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}} + \frac{(\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j})^{2}}{(E_{n}^{(0)}-E_{m}^{(0)})^{3}} - \frac{(\sum_{j=1}^{\infty} E_{n}^{(j)}\xi^{j})^{3}}{(E_{n}^{(0)}-E_{m}^{(0)})^{4}} + \cdots \\
-&amp; = \xi^{0}\frac{1}{E_{n}^{(0)} - E_{m}^{(0)}} - \xi^{1}\frac{E_{n}^{(1)}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}} + \xi^{2}\left( \frac{E_{n}^{(2)}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}} + \frac{(E_{n}^{(1)})^{2}}{(E_{n}^{(0)}-E_{m}^{(0)})^{3}}\right) \\ 
-&amp; \hspace{0.5cm} - \cdots. \hspace{13cm} (\triangle)
-\end{align}</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14109,7 +14012,7 @@ Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremo
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
-<span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">(</span><span class="nb">pow</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">me</span><span class="o">*</span><span class="n">mp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">me</span><span class="o">+</span><span class="n">mp</span><span class="p">);</span> <span class="n">a0</span> <span class="o">=</span> <span class="n">hb</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">);</span> <span class="n">m</span><span class="p">,</span> <span class="n">al</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span><span class="p">,</span> <span class="n">a0</span>
 </pre></div>
 
      </div>
@@ -14131,7 +14034,7 @@ Usando a série $(1-x)^{-1} = \sum_{j=0}^{\infty}x^{j}$, para $|x|&lt;1$, teremo
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 1 + x + x^{2} + x^{3} + x^{4} + O\left(x^{5}\right)$
+$\displaystyle \left( 9.1044235768052 \cdot 10^{-31}, \  27.1965781785896, \  5.29465334135241 \cdot 10^{-11}\right)$
 </div>
 
 </div>
@@ -14140,110 +14043,15 @@ $\displaystyle 1 + x + x^{2} + x^{3} + x^{4} + O\left(x^{5}\right)$
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Se substituirmos esta expressão naquela para $E_{n}$ acima obteremos as várias <em>ordens de correção para a energia</em>:
-\begin{align}
-E_{n} &amp; = \xi^{0}E_{n}^{(0)} + \xi E_{n}^{(1)} + \xi^{2}E_{n}^{(2)} + \xi^{3}E_{n}^{(3)} + \cdots \\
-&amp; = \xi^{0}E_{n}^{(0)} + \xi^{1}\langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle + \xi^{2}\sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}} \\
-&amp; + \xi^{3}\left(\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{(E_{n}^{(0)}-E_{m}^{(0)})(E_{n}^{(0)}-E_{m'}^{(0)})} - E_{n}^{(1)}\sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}} \right) \\
-&amp; + \cdots.
-\end{align}
-As correções de 1ª, 2ª e 3ª ordem para a energia são, explicitamente, dadas por:
-\begin{align}
-E_{n}^{(1)} &amp;= \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle, \\
-E_{n}^{(2)} &amp;= \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}, \\
-E_{n}^{(3)} &amp;= \sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{(E_{n}^{(0)}-E_{m}^{(0)})(E_{n}^{(0)}-E_{m'}^{(0)})} - E_{n}^{(1)}\sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}}.
-\end{align}</p>
-<p>Aproximação para as autoenergias (faz $\xi=1$):
-\begin{equation}
-E_{n}\approx E_{n}^{(0)}+E_{n}^{(1)}+E_{n}^{(2)}+E_{n}^{(3)}+\cdots.
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Fazendo o análogo para $|\chi_{n}\rangle$ obteremos
-\begin{align}
-|\chi_{n}\rangle &amp; = \xi\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle \\ 
-&amp; \hspace{0.4cm} + \xi^{2}\left(\sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m'}^{(0)}}|\psi_{m}^{(0)}\rangle - E_{n}^{(1)}\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}}|\psi_{m}^{(0)}\rangle \right) + \cdots \\
-&amp; = \xi^{1}|\psi_{n}^{(1)}\rangle+\xi^{2}|\psi_{n}^{(2)}\rangle+\cdots.
-\end{align}</p>
-<p>As correções de 1ª e 2ª ordem para as autofunções são obtidas, explicitamente, usando:
-\begin{align}
-|\psi_{n}^{(1)}\rangle &amp;= \sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle, \\
-|\psi_{n}^{(2)}\rangle &amp;= \sum_{m\ne n}\sum_{m'\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{m'}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}\frac{\langle\psi_{m'}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m'}^{(0)}}|\psi_{m}^{(0)}\rangle - E_{n}^{(1)}\sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{(E_{n}^{(0)}-E_{m}^{(0)})^{2}}|\psi_{m}^{(0)}\rangle.
-\end{align}</p>
-<p>Aproximação para as autofunções (faz $\xi=1$):
-\begin{equation}
-|\psi_{n}\rangle \approx N_{n}\left(|\psi_{n}^{(0)}\rangle+|\psi_{n}^{(1)}\rangle+|\psi_{n}^{(2)}\rangle+\cdots+|\psi_{n}^{(M)}\rangle\right),
-\end{equation}
-com 
-\begin{equation}
-N_{n}=1/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}=1/\sqrt{1+\sum_{j,k=1}^{M}\langle\psi_{n}^{(j)}|\psi_{n}^{(k)}\rangle}.
-\end{equation}</p>
-<p>OBS. Uma correção perturbativa de ordem $Q$ corresponde a uma correção de ordem $Q-1$, o que pode ser inferido da eq. $(**)$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Exemplo">Exemplo<a class="anchor-link" href="#Exemplo">&#182;</a></h3><p>Consideremos o Hamiltoniano $H=H_{0}+H_{1}$ com 
-\begin{equation}
-H_{0}=-\omega\sigma_{y} = -\omega\begin{bmatrix}0&amp;-i\\i&amp;0\end{bmatrix}
-\end{equation}
-e Hamiltoniano perturbativo 
-\begin{equation}
-H_{1}=-\epsilon\sigma_{x}\begin{bmatrix}0&amp;1\\1&amp;0\end{bmatrix},
-\end{equation}
-i.e., $\omega\gg\epsilon$ (ou seja, consideramos um campo magnético constante "forte" na direção $y$ e outro campo desse tipo, "fraco", na direção $x$). Calculemos as correções perturbativas de primeira e de segunda ordem para as auto-energias desse sistema e as correções de primeira ordem para os autovetores de $H$.</p>
-<p>Temos $H_{0}=-\omega|y_{+}\rangle\langle y_{+}|+\omega|y_{-}\rangle\langle y_{-}|$. Assim 
-\begin{equation}
-E_{1}^{(0)}=-\omega\text{, }E_{2}^{(0)}=\omega\text{, }|\psi_{1}^{(0)}\rangle = |y_{+}\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\i\end{bmatrix}  \text{ e } |\psi_{2}^{(0)}\rangle = |y_{-}\rangle=\frac{1}{\sqrt{2}}\begin{bmatrix}1\\-i\end{bmatrix} .
-\end{equation}
-Utilizaremos a relação
-\begin{align}
-\sigma_{x}|y_{\pm}\rangle &amp;= \sigma_{x}(|z_{+}\rangle \pm i|z_{-}\rangle)/\sqrt{2} = (\sigma_{x}|z_{+}\rangle \pm i\sigma_{x}|z_{-}\rangle)/\sqrt{2} = (|z_{-}\rangle \pm i|z_{+}\rangle)/\sqrt{2} \\
-&amp;= \pm i|y_{\mp}\rangle.
-\end{align}
-Correções de primeira ordem para a energia $\left(E_{n}^{(1)} = \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle\right)$:
-\begin{align}
-E_{1}^{(1)} &amp; = \langle\psi_{1}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle = -\epsilon\langle y_{+}|\sigma_{x}|y_{+}\rangle = -i\epsilon\langle y_{+}|y_{-}\rangle \\
-&amp;= 0, \\
-E_{2}^{(1)} &amp; = \langle\psi_{2}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle = -\epsilon\langle y_{-}|\sigma_{x}|y_{-}\rangle = i\epsilon\langle y_{-}|y_{+}\rangle \\
-&amp;= 0.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Correções de segunda ordem para a energia $\left(E_{n}^{(2)} = \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}\right)$:
-\begin{align}
-E_{1}^{(2)} &amp; = \sum_{m\ne 1}\frac{|\langle\psi_{1}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{1}^{(0)}-E_{m}^{(0)}} = \frac{|\langle\psi_{1}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle|^{2}}{E_{1}^{(0)}-E_{2}^{(0)}} = \frac{\epsilon^{2}|\langle y_{+}|\sigma_{x}|y_{-}\rangle|^{2}}{-\omega-\omega} \\
-&amp;= \frac{-\epsilon^{2}}{2\omega}, \\
-E_{2}^{(2)} &amp; =  \sum_{m\ne 2}\frac{|\langle\psi_{2}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{2}^{(0)}-E_{m}^{(0)}} = \frac{|\langle\psi_{2}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle|^{2}}{E_{2}^{(0)}-E_{1}^{(0)}} = \frac{\epsilon^{2}|\langle y_{-}|\sigma_{x}|y_{+}\rangle|^{2}}{\omega-(-\omega)} \\
-&amp;= \frac{\epsilon^{2}}{2\omega}.
-\end{align}</p>
-<p>Assim, as aproximações perturbativas para as energias são
-\begin{align}
-E_{1} &amp;\approx E_{1}^{(0)}+E_{1}^{(1)}+E_{1}^{(2)} = -\omega+0-\frac{\epsilon^{2}}{2\omega} \\
-&amp;= -\omega\left(1+\frac{\epsilon^{2}}{2\omega^{2}}\right), \\
-E_{2} &amp;\approx E_{2}^{(0)}+E_{2}^{(1)}+E_{2}^{(2)} = +\omega+0+\frac{\epsilon^{2}}{2\omega} \\
-&amp;= \omega\left(1+\frac{\epsilon^{2}}{2\omega^{2}}\right).
-\end{align}</p>
-<p>OBS. Vemos neste exemplo que a inclusão de correções de mais altas ordens não necessariamente melhoram a aproximação de forma gradativa. Nesse caso, em 1ª ordem não temos nenhuma correção, que só é obtida quando consideramos as correções de 2ª ordem.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bohrH</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">):</span> <span class="c1"># em eV</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">al</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">e</span>
+<span class="n">bohrH</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14251,25 +14059,57 @@ E_{2} &amp;\approx E_{2}^{(0)}+E_{2}^{(1)}+E_{2}^{(2)} = +\omega+0+\frac{\epsilo
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle -13.5982890892948$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">});</span> 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$-\omega$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\omega$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.05</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.25</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$-\omega(1+\epsilon^</span><span class="si">{2}</span><span class="s1">/2\omega^</span><span class="si">{2}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.95</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$\omega(1+\epsilon^</span><span class="si">{2}</span><span class="s1">/2\omega^</span><span class="si">{2}</span><span class="s1">)$&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">):</span> <span class="c1"># em eV</span>
+    <span class="k">return</span> <span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">mu</span><span class="o">*</span><span class="n">Z</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">e</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">hb</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span>
+<span class="k">def</span> <span class="nf">bohr_ed</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;1&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%3.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">1</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;2&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%3.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">2</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;3&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%3.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">3</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="s1">&#39;4&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%3.2f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">4</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$\vdots$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;$n=\infty$&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">);</span> 
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="sa">r</span><span class="s1">&#39;0 (eV)&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">Z</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span> <span class="n">mu</span> <span class="o">=</span> <span class="n">me</span><span class="p">;</span> <span class="n">bohr_ed</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14291,7 +14131,7 @@ E_{2} &amp;\approx E_{2}^{(0)}+E_{2}^{(1)}+E_{2}^{(2)} = +\omega+0+\frac{\epsilo
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -14305,33 +14145,128 @@ E_{2} &amp;\approx E_{2}^{(0)}+E_{2}^{(1)}+E_{2}^{(2)} = +\omega+0+\frac{\epsilo
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Correções de primeira ordem para o estado $\left(|\psi_{n}^{(1)}\rangle = \sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle\right)$:
+<h2 id="Corre%C3%A7%C3%A3o-relativ%C3%ADstica">Corre&#231;&#227;o relativ&#237;stica<a class="anchor-link" href="#Corre%C3%A7%C3%A3o-relativ%C3%ADstica">&#182;</a></h2><p>A energia cinética relativística é dada pela doferença entre a energia total e a energia de repouso:
 \begin{align}
-|\psi_{1}^{(1)}\rangle &amp; = \sum_{m\ne 1}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle}{E_{1}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle = \frac{\langle\psi_{2}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle}{E_{1}^{(0)}-E_{2}^{(0)}}|\psi_{2}^{(0)}\rangle = \frac{-\epsilon\langle y_{-}|\sigma_{x}|y_{+}\rangle}{-\omega-\omega}|y_{-}\rangle \\
-&amp;= \frac{i\epsilon}{2\omega}|y_{-}\rangle, \\
-|\psi_{2}^{(1)}\rangle &amp; = \sum_{m\ne 2}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle}{E_{2}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle = \frac{\langle\psi_{1}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle}{E_{2}^{(0)}-E_{1}^{(0)}}|\psi_{1}^{(0)}\rangle = \frac{-\epsilon\langle y_{+}|\sigma_{x}|y_{-}\rangle}{\omega+\omega}|y_{+}\rangle \\
-&amp;= \frac{i\epsilon}{2\omega}|y_{+}\rangle.
+E_{c} &amp;= E-E_{0}= \sqrt{P^{2}c^{2}+m^{2}c^{4}}-mc^{2} \\
+&amp;= mc^{2}\left(\sqrt{P^{2}/m^{2}c^{2}+1} - 1\right),
 \end{align}
-Como $\langle\chi_{1}|\chi_{1}\rangle=\langle\psi_{1}^{(1)}|\psi_{1}^{(1)}\rangle=\epsilon^{2}/4\omega^{2}$ e $\langle\chi_{2}|\chi_{2}\rangle=\langle\psi_{2}^{(1)}|\psi_{2}^{(1)}\rangle=\epsilon^{2}/4\omega^{2}$ temos \begin{equation}
-N_{1}=N_{2}=1/\sqrt{1+\epsilon^{2}/4\omega^{2}}
+com $m=m_{e}m_{p}/(m_{e}+m_{p})$ sendo a massa reduzida. Seguindo, usamos a série 
+\begin{equation}
+\sqrt{1+x}=1+x/2-x^{2}/8+\cdots \text{, para } |x|&lt;1,
 \end{equation}
-e as aproximações perturbativas para os autovetores de $H$ são:
+para escrever
 \begin{align}
-&amp; |\psi_{1}\rangle \approx \frac{|y_{+}\rangle+\frac{i\epsilon}{2\omega}|y_{-}\rangle}{\sqrt{1+\epsilon^{2}/4\omega^{2}}}, \\
-&amp; |\psi_{2}\rangle \approx \frac{|y_{-}\rangle+\frac{i\epsilon}{2\omega}|y_{+}\rangle}{\sqrt{1+\epsilon^{2}/4\omega^{2}}}.
+E_{c} &amp;= mc^{2}\left(1 + \frac{P^{2}}{2m^{2}c^{2}} - \frac{P^{4}}{8m^{4}c^{4}} + \cdots - 1\right) \approx \frac{P^{2}}{2m} - \frac{P^{4}}{8m^{3}c^{2}}.
+\end{align}
+Então, escrevendo o Hamiltoniano total, nesta aproximação, como 
+\begin{equation}
+H=H_{0}+H_{1}^{r},
+\end{equation}
+a correção relativística será calculada usando o <em>Hamiltoniano de perturbação</em>:
+\begin{equation}
+H_{1}^{r}=-\frac{P^{4}}{8m^{3}c^{2}}.
+\end{equation}</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">m</span> <span class="o">=</span> <span class="p">(</span><span class="n">me</span><span class="o">*</span><span class="n">mp</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">me</span><span class="o">+</span><span class="n">mp</span><span class="p">);</span> <span class="n">m</span><span class="p">,</span> <span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span><span class="p">,</span> <span class="n">me</span><span class="o">*</span><span class="p">(</span><span class="mi">10</span><span class="o">**</span><span class="mi">6</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left( 9.1044235768052 \cdot 10^{-31}, \  510720.711869285, \  5.68562909125462\right)$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Corre%C3%A7%C3%A3o-perturbativa-de-1%C2%AA-ordem">Corre&#231;&#227;o perturbativa de 1&#170; ordem<a class="anchor-link" href="#Corre%C3%A7%C3%A3o-perturbativa-de-1%C2%AA-ordem">&#182;</a></h3>\begin{equation}
+E_{n}^{r(1)} = \langle\psi_{n,l,m_{l}}^{(0)}|H_{1}^{r}|\psi_{n,l,m_{l}}^{(0)}\rangle = -\frac{1}{8m^{3}c^{2}}\langle\psi_{n,l,m_{l}}^{(0)}|P^{4}|\psi_{n,l,m_{l}}^{(0)}\rangle.
+\end{equation}<p>O termo $P^{4}$ pode ser reescrito como segue
+\begin{align}
+P^{4} &amp; = P^{2}P^{2} = 2m(H_{0}-U)2m(H_{0}-U) \\
+      &amp; = 4m^{2}\left(H_{0}^{2} - UH_{0} - H_{0}U + U^{2}\right).
+\end{align}
+Assim
+\begin{align}
+E_{n}^{r(1)} &amp; = -\frac{1}{2mc^{2}}\left(\langle \psi_{n,l,m_{l}}^{(0)}|H_{0}^{2}|\psi_{n,l,m_{l}}^{(0)}\rangle - \langle\psi_{n,l,m_{l}}^{(0)}|UH_{0}|\psi_{n,l,m_{l}}^{(0)}\rangle - \langle\psi_{n,l,m_{l}}^{(0)}|H_{0}U|\psi_{n,l,m_{l}}^{(0)}\rangle + \langle\psi_{n,l,m_{l}}^{(0)}|U^{2}|\psi_{n,l,m_{l}}^{(0)}\rangle \right) \\
+&amp; = -\frac{1}{2mc^{2}}\left((E_{n}^{(0)})^{2} -2E_{n}^{(0)}\langle\psi_{n,l,m_{l}}^{(0)}|U|\psi_{n,l,m_{l}}^{(0)}\rangle + \langle\psi_{n,l,m_{l}}^{(0)}|U^{2}|\psi_{n,l,m_{l}}^{(0)}\rangle \right) \\
+&amp; = -\frac{1}{2mc^{2}}\left((E_{n}^{(0)})^{2} +2E_{n}^{(0)}\frac{e^{2}}{4\pi\epsilon_{0}}\langle\psi_{n,l,m_{l}}^{(0)}|r^{-1}|\psi_{n,l,m_{l}}^{(0)}\rangle + \left(-\frac{e^{2}}{4\pi\epsilon_{0}}\right)^{2}\langle\psi_{n,l,m_{l}}^{(0)}|r^{-2}|\psi_{n,l,m_{l}}^{(0)}\rangle \right).
 \end{align}</p>
-<p>Vemos, usando o código abaixo, que a solução aproximada é igual à exata no limite de perturbações pequenas.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Usando o teorema de Pauli (<a href="https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/19_pauli_thm.ipynb">https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/19_pauli_thm.ipynb</a>), temos que
+\begin{align}
+&amp; \langle\psi_{n,l,m_{l}}^{(0)}|r^{-1}|\psi_{n,l,m_{l}}^{(0)}\rangle=\frac{1}{an^{2}}, \\
+&amp; \langle\psi_{n,l,m_{l}}^{(0)}|r^{-2}|\psi_{n,l,m_{l}}^{(0)}\rangle = \frac{1}{a^{2}n^{3}(l+1/2)}.
+\end{align}
+Assim
+\begin{align}
+E_{n}^{r(1)} &amp; = -\frac{1}{2mc^{2}}\left((E_{n}^{(0)})^{2} + 2E_{n}^{(0)}\frac{e^{2}}{4\pi\epsilon_{0}}\frac{1}{an^{2}} + \left(\frac{e^{2}}{4\pi\epsilon_{0}}\right)^{2}\frac{1}{a^{2}n^{3}(l+1/2)} \right) \\
+&amp; = -\frac{1}{2mc^{2}}\left((E_{n}^{(0)})^{2} + 2E_{n}^{(0)}\frac{e^{2}}{4\pi\epsilon_{0}}\frac{me^{2}}{4\pi\epsilon_{0}\hbar^{2}}\frac{1}{n^{2}} + \left(\frac{e^{2}}{4\pi\epsilon_{0}}\right)^{2}\frac{m^{2}e^{4}}{(4\pi\epsilon_{0}\hbar^{2})^{2}}\frac{1}{n^{3}(l+1/2)} \right) \\
+&amp; = -\frac{1}{2mc^{2}}\left((E_{n}^{(0)})^{2} - 4(E_{n}^{(0)})^{2} + (E_{n}^{(0)})^{2}\frac{4n}{l+1/2} \right) \\
+&amp; = -\frac{1}{2mc^{2}}(E_{n}^{(0)})^{2}\left(1 - 4 + \frac{4n}{l+1/2} \right) = -\frac{(E_{n}^{(0)})^{2}}{2mc^{2}}\left(\frac{4n}{l+1/2} -3 \right) \\
+&amp; = -\alpha^{4}mc^{2}\frac{1}{8n^{4}}\left(\frac{4n}{l+1/2} -3 \right).
+\end{align}
+Para obter a última igualdade, usamos 
+\begin{equation}
+\frac{(E_{n}^{(0)})^{2}}{mc^{2}}=\frac{\alpha^{4}mc^{2}}{4n^{4}}.
+\end{equation}
+Note que essa correção quebra a degenerescência da energia em $l$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Ordem-de-magnitude-da-corre%C3%A7%C3%A3o-relativ%C3%ADstica:">Ordem de magnitude da corre&#231;&#227;o relativ&#237;stica:<a class="anchor-link" href="#Ordem-de-magnitude-da-corre%C3%A7%C3%A3o-relativ%C3%ADstica:">&#182;</a></h3><p>O fator principal para determinação da magnitude da estrutura fina de H é 
+\begin{equation}
+\alpha^{4}mc^{2}\approx 1,45\mathrm{x}10^{-3}\text{ eV}.
+\end{equation}
+Consideremos como exemplo o caso $n=1$ e $l=0$, para o qual
+\begin{equation}
+E_{1}^{r(1)} = -\alpha^{4}mc^{2}(5/8) \approx -9,05\mathrm{x}10^{-4}\text{ eV}. 
+\end{equation}
+Note, dos resultados mostrados abaixo e da expressão geral, que esse valor tipicamente diminui em magnitude com o aumento de $n$.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;omega&#39;</span><span class="p">)</span>
-<span class="n">H0</span><span class="o">=-</span><span class="n">w</span><span class="o">*</span><span class="n">pauli</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span> <span class="n">H0</span><span class="p">,</span> <span class="n">H0</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span><span class="p">,</span> <span class="p">(</span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">8</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14347,28 +14282,46 @@ e as aproximações perturbativas para os autovetores de $H$ são:
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle \left( \left[\begin{matrix}0 &amp; 1.0 i \omega\\- 1.0 i \omega &amp; 0\end{matrix}\right], \  \left[ \left( - \omega, \  1, \  \left[ \left[\begin{matrix}- 1.0 i\\1.0\end{matrix}\right]\right]\right), \  \left( \omega, \  1, \  \left[ \left[\begin{matrix}1.0 i\\1.0\end{matrix}\right]\right]\right)\right]\right)$
+$\displaystyle \left( 0.00144825507843012, \  0.000905159424018822\right)$
 </div>
 
 </div>
 
 </div>
 
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">):</span> <span class="c1"># em eV</span>
+    <span class="k">return</span> <span class="o">-</span><span class="p">(</span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">e</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">8</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">4</span><span class="p">))</span><span class="o">*</span><span class="p">((</span><span class="mi">4</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[109]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eps</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;epsilon&#39;</span><span class="p">);</span> <span class="n">H</span> <span class="o">=</span> <span class="n">H0</span> <span class="o">-</span> <span class="n">eps</span><span class="o">*</span><span class="n">pauli</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span> <span class="n">H</span><span class="p">,</span> <span class="n">H</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n=&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;, l=&#39;</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="s1">&#39;, Erel=&#39;</span><span class="p">,</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">),</span><span class="s1">&#39;eV&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14384,15 +14337,22 @@ $\displaystyle \left( \left[\begin{matrix}0 &amp; 1.0 i \omega\\- 1.0 i \omega &
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 
 
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle \left( \left[\begin{matrix}0 &amp; - \epsilon + 1.0 i \omega\\- \epsilon - 1.0 i \omega &amp; 0\end{matrix}\right], \  \left[ \left( - \left(\epsilon^{2} + \omega^{2}\right)^{0.5}, \  1, \  \left[ \left[\begin{matrix}\frac{\left(\epsilon^{2} + \omega^{2}\right)^{0.5}}{\epsilon + i \omega}\\1.0\end{matrix}\right]\right]\right), \  \left( \left(\epsilon^{2} + \omega^{2}\right)^{0.5}, \  1, \  \left[ \left[\begin{matrix}- \frac{\left(\epsilon^{2} + \omega^{2}\right)^{0.5}}{\epsilon + i \omega}\\1.0\end{matrix}\right]\right]\right)\right]\right)$
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>n= 1 , l= 0 , Erel= -0.0009051594240188222 eV
+n= 2 , l= 0 , Erel= -0.0001470884064030586 eV
+n= 2 , l= 1 , Erel= -2.6400483200548978e-05 eV
+n= 3 , l= 0 , Erel= -4.6934192356531516e-05 eV
+n= 3 , l= 1 , Erel= -1.1174807703936075e-05 eV
+n= 3 , l= 2 , Erel= -4.0229307734169865e-06 eV
+n= 4 , l= 0 , Erel= -2.0507518200426443e-05 eV
+n= 4 , l= 1 , Erel= -5.421527800112737e-06 eV
+n= 4 , l= 2 , Erel= -2.4043297200499968e-06 eV
+n= 4 , l= 3 , Erel= -1.111244828594536e-06 eV
+</pre>
 </div>
-
 </div>
 
 </div>
@@ -14402,10 +14362,23 @@ $\displaystyle \left( \left[\begin{matrix}0 &amp; - \epsilon + 1.0 i \omega\\- \
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[78]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">x0</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_Hrel</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;n=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">),</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+        <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">),</span><span class="s1">&#39;l=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plot_Hrel</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14421,13 +14394,640 @@ $\displaystyle \left( \left[\begin{matrix}0 &amp; - \epsilon + 1.0 i \omega\\- \
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>OBS. Note que ainda temos a estrutura principal de níveis de energia, claro, mas se a plotarmos, a estrutura fina não aparecerá.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Corre%C3%A7%C3%A3o-da-intera%C3%A7%C3%A3o-spin-%C3%B3rbita">Corre&#231;&#227;o da intera&#231;&#227;o spin-&#243;rbita<a class="anchor-link" href="#Corre%C3%A7%C3%A3o-da-intera%C3%A7%C3%A3o-spin-%C3%B3rbita">&#182;</a></h2><p>No referencial do elétron, o próton está em movimento e gera um campo magnético que pode ser calculado usando a lei de Biot-Savart:
+\begin{equation}
+\vec{B} = \frac{\mu_{0}i}{4\pi}\oint_{c}\frac{d\vec{l}\mathrm{x}\hat{r}}{r^{2}} = \frac{\mu_{0}i}{4\pi r^{2}}\oint_{c}ds\hat{e} = \frac{\mu_{0}i}{4\pi r^{2}}2\pi r\hat{e} = \frac{\mu_{0}e/\tau}{2r}\hat{e},
+\end{equation}
+em que aproximamos a "trajetória" por um círculo. O momento angular do próton, nessas condições, será
+\begin{equation}
+L = rP = rmv = rm\frac{2\pi r}{\tau}.
+\end{equation}
+Assim
+\begin{equation}
+\vec{B} = \frac{\mu_{0}e}{2r}\frac{L}{2\pi m r^{2}}\hat{e} = \frac{\mu_{0}e}{4\pi mr^{3}}\vec{L} = \frac{e}{4\pi\epsilon_{0} mc^{2}r^{3}}\vec{L},
+\end{equation}
+onde usamos $c=1/\sqrt{\mu_{0}\epsilon_{0}}$. Este campo magnético interage como o momento magnético de spin do elétron 
+\begin{equation}
+\vec{\mu}_{e} = (-e/m)\vec{S}_{e}
+\end{equation}
+segundo o Hamiltoniano:
+\begin{equation}
+H_{1}^{so} = -\mu_{e}\cdot \vec{B} = \frac{e^{2}}{4\pi\epsilon_{0} m^{2}c^{2}r^{3}}\vec{S}\cdot\vec{L}.
+\end{equation}</p>
+<p>OBS. Note que acima a massa reduzida $m$ aparece em vez das massas do elétron e do próton, e isso é por causa da transformação que fizemos do problema de dois corpos em um problema de um corpo.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A correção perturbativa de 1ª ordem devido à interação spin-órbita será dada por
+\begin{align}
+E_{n}^{so(1)} &amp; = \langle\psi_{n,l,m_{l}}^{(0)}|H_{1}^{so}|\psi_{n,l,m_{l}}^{(0)}\rangle \\
+&amp; = \frac{e^{2}}{4\pi\epsilon_{0} m^{2}c^{2}}\langle\psi_{n,l,m_{l}}^{(0)}|r^{-3}\vec{S}\cdot\vec{L}|\psi_{n,l,m_{l}}^{(0)}\rangle.
+\end{align}
+Para o momento angular total do elétron,
+\begin{equation}
+\vec{J} = \mathbb{I}_{L}\otimes\vec{S} + \vec{L}\otimes\mathbb{I}_{S}\therefore J^{2} = \mathbb{I}_{L}\otimes S^{2} + L^{2}\otimes\mathbb{I}_{S}+2(\mathbb{I}_{L}\otimes\vec{S})\cdot(\vec{L}\otimes\mathbb{I}_{S}),
+\end{equation}
+teremos que
+\begin{equation}
+\vec{S}\cdot\vec{L} \equiv (\mathbb{I}_{L}\otimes\vec{S})\cdot(\vec{L}\otimes\mathbb{I}_{S}) = 2^{-1}\left(J^{2} - \mathbb{I}_{L}\otimes S^{2} - L^{2}\otimes\mathbb{I}_{S} \right).
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Assim, usando autoestados com momento angular total bem difinido, que são autovetores compartilhados de $J^{2}$ e $L^{2}$ (de $H_{1}^{so}$ e de $H_{0}$),
+\begin{equation}
+|\psi_{n,l,m_{l}}^{(0)}\rangle \rightarrow |n,l,s,j,m_{j}\rangle,
+\end{equation}
+teremos
+\begin{align}
+E_{n}^{so(1)} &amp; = \frac{e^{2}}{4\pi\epsilon_{0} m^{2}c^{2}}\langle n,l,s,j,m_{j}|r^{-3}2^{-1}\left(J^{2} - \mathbb{I}_{L}\otimes S^{2} - L^{2}\otimes\mathbb{I}_{S} \right)|n,l,s,j,m_{j}\rangle \\
+&amp; = \frac{e^{2}\hbar^{2}\left(j(j+1)-l(l+1)-s(s+1)\right)}{8\pi\epsilon_{0} m^{2}c^{2}}\langle n,l,s,j,m_{j}|r^{-3}|n,l,s,j,m_{j}\rangle.
+\end{align}
+Usando os resultados demonstrados em (<a href="https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/19_pauli_thm.ipynb">https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica_1900-1925/blob/master/19_pauli_thm.ipynb</a>), obtemos
+\begin{equation}
+\langle n,l,s,j,m_{j}|r^{-3}|n,l,s,j,m_{j}\rangle = \frac{1}{l(l+1/2)(l+1)n^{3}a^{3}}
+\end{equation}
+e $s=1/2$, vem que
+\begin{align}
+E_{n}^{so(1)} &amp; = \frac{e^{2}\hbar^{2}\left(j(j+1)-l(l+1)-3/4\right)}{8\pi\epsilon_{0} m^{2}c^{2}}\frac{1}{l(l+1/2)(l+1)n^{3}a^{3}} \\
+&amp; = \frac{e^{2}\hbar^{2}}{8\pi\epsilon_{0}m^{2}c^{2}}\frac{1}{n^{3}}\frac{m^{3}e^{6}}{(4\pi\epsilon_{0})^{3}\hbar^{6}}\frac{j(j+1)-l(l+1)-3/4}{l(l+1/2)(l+1)} \\
+&amp; = \frac{(E_{n}^{(0)})^{2}2n}{mc^{2}}\left(\frac{j(j+1)-l(l+1)-3/4}{l(l+1/2)(l+1)}\right) \\
+&amp; = \alpha^{4}mc^{2}\frac{1}{2n^{3}}\left(\frac{j(j+1)-l(l+1)-3/4}{l(l+1/2)(l+1)}\right)
+\end{align}
+Para obter a última igualdade, usamos $(E_{n}^{(0)})^{2}/mc^{2}=\alpha^{4}mc^{2}/4n^{4}$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Vale notar que para $l=0\therefore j=s=1/2$ temos (não há momento angular/magnético orbital, mas ainda assim há momento angular/magnético intrínseco para interagir com o campo magnético gerado pelo movimento do próton):
+\begin{align}
+E_{n}^{so(1)}(l=0) &amp;= \alpha^{4}mc^{2}\frac{1}{2n^{3}}\left(\frac{(1/2)(1/2+1)-l(l+1)-3/4}{l(l+1/2)(l+1)}\right) \\
+&amp;=  \alpha^{4}mc^{2}\frac{1}{2n^{3}}\left(\frac{-(l+1)}{(l+1/2)(l+1)}\right) \\
+&amp; =  \alpha^{4}mc^{2}\frac{1}{2n^{3}}\left(\frac{-1}{1/2}\right) = -\frac{\alpha^{4}mc^{2}}{n^{3}}.
+\end{align}</p>
+<p>Lembremos que, de forma geral
+\begin{equation}
+j = |l-s|, |l-s|+1,\cdots,l+s.
+\end{equation}
+Assim, como $s=1/2$ para o elétron, teremos
+\begin{align}
+&amp; l = 0 \ \therefore\ j=1/2, \\
+&amp; l = 1 \ \therefore\ j = 1/2, 3/2, \\
+&amp; l = 2 \ \therefore\ j = 3/2, 5/2, \\
+&amp; l = 3 \ \therefore\ j = 5/2, 7/2, \\
+&amp; \vdots.
+\end{align}
+Como para cada valor de $n$, temos $n$ possíveis valores de $l$, termos $2n-1$ pares de valores de $(l,j)$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Ordem-de-magnitude-da-corre%C3%A7%C3%A3o-pela-intera%C3%A7%C3%A3o-spin-%C3%B3rbita">Ordem de magnitude da corre&#231;&#227;o pela intera&#231;&#227;o spin-&#243;rbita<a class="anchor-link" href="#Ordem-de-magnitude-da-corre%C3%A7%C3%A3o-pela-intera%C3%A7%C3%A3o-spin-%C3%B3rbita">&#182;</a></h3><p>A ordem de magnitude para a interação spin-órbita também é ditada principalmente por $\alpha^{4}mc^{2}$, como no caso da correção relativística.</p>
+<p>Alguns exemplos específicos podem ser obtidos com o código abaixo. Por exemplo, para $n=1,l=0,j=1/2$ temos \begin{equation}
+E_{n}^{so(1)}\approx -1,45\mathrm{x}10^{-3}\text{ eV}.
+\end{equation}</p>
+<p>OBS. Eu não incluí aqui o termo $1/2$ da precessão de Thomas (um efeito relativístico), que faria com essa correção ficasse ainda mais próxima da correção relativística.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">):</span> <span class="c1"># em eV</span>
+    <span class="k">if</span> <span class="n">l</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">e</span><span class="o">*</span><span class="n">bohrH</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span> <span class="c1"># j=0+1/2=1/2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">e</span><span class="o">*</span><span class="n">bohrH</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="p">((</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">l</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="mi">3</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">l</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[108]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">j</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n=&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;, l=&#39;</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="s1">&#39;, j=&#39;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="s1">&#39;, Eso=&#39;</span><span class="p">,</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="s1">&#39; eV&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>n= 1 , l= 0 , j= 0.5 , Eso= 0.0014482550784301158  eV
+n= 2 , l= 0 , j= 0.5 , Eso= 0.00018103188480376447  eV
+n= 2 , l= 1 , j= 0.5 , Eso= -6.034396160125482e-05  eV
+n= 2 , l= 1 , j= 1.5 , Eso= 3.017198080062741e-05  eV
+n= 3 , l= 0 , j= 0.5 , Eso= 5.363907697889317e-05  eV
+n= 3 , l= 1 , j= 0.5 , Eso= -1.787969232629772e-05  eV
+n= 3 , l= 1 , j= 1.5 , Eso= 8.93984616314886e-06  eV
+n= 3 , l= 2 , j= 1.5 , Eso= -5.3639076978893175e-06  eV
+n= 3 , l= 2 , j= 2.5 , Eso= 3.5759384652595445e-06  eV
+n= 4 , l= 0 , j= 0.5 , Eso= 2.262898560047056e-05  eV
+n= 4 , l= 1 , j= 0.5 , Eso= -7.542995200156853e-06  eV
+n= 4 , l= 1 , j= 1.5 , Eso= 3.7714976000784263e-06  eV
+n= 4 , l= 2 , j= 1.5 , Eso= -2.262898560047056e-06  eV
+n= 4 , l= 2 , j= 2.5 , Eso= 1.5085990400313707e-06  eV
+n= 4 , l= 3 , j= 2.5 , Eso= -1.0775707428795504e-06  eV
+n= 4 , l= 3 , j= 3.5 , Eso= 8.081780571596628e-07  eV
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[77]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_Hso</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;n=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">j</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="s1">&#39;l=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,j=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plot_Hso</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Corre%C3%A7%C3%A3o-de-Darwin">Corre&#231;&#227;o de Darwin<a class="anchor-link" href="#Corre%C3%A7%C3%A3o-de-Darwin">&#182;</a></h2><p>OBS. Esse físico também tem o nome Charles Darwin, mas ele é neto do Charles Darwin que propôs a teoria da evolução das espécies por seleção natural.</p>
+<p>Consideremos que o elétron possui <em>extensão espacial finita</em>, com sua carga elétrica $-e$ distribuída em uma esfera of raio igual ao seu comprimento de onda de Compton:
+\begin{equation}
+R_{e^{-}}=\frac{\hbar}{mc}.
+\end{equation}
+Seja $\vec{r}'$ a posição de um elemento de carga $dq$ do elétron em relação ao centro de cargas, que está na posição $\vec{r}$ em relação ao próton. A verdadeira energia potencial elétrica de interação entre elétron e próton nesse caso é
+\begin{equation}
+\tilde{V} = \int_{e^{-}}dq(\vec{r}') \Phi(||\vec{r}+\vec{r}'||),
+\end{equation}
+com $\Phi(r)=ke/r$ sendo o potencial elétrico criado pelo próton na posição do elemento de carga $dq$. Vamos escrever a densidade volumétrica de carga elétrica do elétron como
+\begin{equation}
+\rho(\vec{r}')=-e\rho_{0}(\vec{r}'),
+\end{equation}
+de forma que $-e=\int_{e^{-}}d^{3}r'\rho(\vec{r}')=\int_{e^{-}}d^{3}r'(-e\rho_{0}(\vec{r}'))=-e\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')$, e assim devemos ter $\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')=1$. Uma forma de satisfazermos essa relação é utilizando
+\begin{equation}
+\rho_{0}(\vec{r}')=\begin{cases}\frac{1}{4\pi R_{e^{-}}^{3}/3}\text{, }r'&lt;R_{e^{-}}, \\ 0\hspace{1cm}\text{, } r'&gt;R_{e^{-}}.\end{cases}
+\end{equation}
+e
+\begin{align}
+\tilde{V} &amp;= \int_{e^{-}}d^{3}r'\rho(\vec{r}') \Phi(||\vec{r}+\vec{r}'||) = \int_{e^{-}}d^{3}r'(-e\rho_{0}(\vec{r}')) \Phi(||\vec{r}+\vec{r}'||) \\
+&amp;= -e\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')\Phi(||\vec{r}+\vec{r}'||).
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Considerando o pequeno tamanho do elétron, vamos usar a expansão em série de Taylor:
+\begin{align}
+\Phi(||\vec{r}+\vec{r}'||) = \Phi(r) + \sum_{j=1}^{3}\left(\frac{\partial \Phi}{\partial x_{j}'}\right)_{r}x_{j}' + \frac{1}{2}\sum_{j,k=1}^{3}\left(\frac{\partial^{2} \Phi}{\partial x_{j}'\partial x_{k}'}\right)_{r}x_{j}'x_{k}'+\cdots,
+\end{align}
+para escrever
+\begin{align}
+\tilde{V} &amp;\approx -e\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') \Phi(r) -e\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') \sum_{j=1}^{3}\left(\frac{\partial \Phi}{\partial x_{j}'}\right)_{r}x_{j}' -e\frac{1}{2}\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')\sum_{j,k=1}^{3}\left(\frac{\partial^{2} \Phi}{\partial x_{j}'\partial x_{k}'}\right)_{r}x_{j}'x_{k}' \\
+&amp;=  -e\Phi(r)\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') -e\sum_{j=1}^{3}\left(\frac{\partial \Phi}{\partial x_{j}'}\right)_{r}\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') x_{j}' -e\frac{1}{2}\sum_{j,k=1}^{3}\left(\frac{\partial^{2} \Phi}{\partial x_{j}'\partial x_{k}'}\right)_{r}\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')x_{j}'x_{k}' \\
+&amp;=  -e\Phi(r) +0 -e\frac{1}{2}\sum_{j,k=1}^{3}\left(\frac{\partial^{2} \Phi}{\partial x_{j}'\partial x_{k}'}\right)_{r}\delta_{j,k}\frac{1}{3}\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')r'^{2} \\
+&amp;=  V(r) - \frac{e}{6}\nabla^{2}\Phi\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')r'^{2} =  V(r) + \frac{R_{e^{-}}}{10}\nabla^{2}V(r) \\
+&amp;=  V(r) + \frac{\hbar^{2}}{10m^{2}c^{2}}\nabla^{2}V(r).
+\end{align}</p>
+<p>Para obter os resultados acima, assumimos que a distribuição de cargas do elétron é esfericamente simétrica e com densidade constante, como explicitado acima para $\rho_{0}(\vec{r}')$.
+Além disso, usamos $r'^{2}=\sum_{j=1}^{2}x_{j}'^{2}$, $\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') x_{j}'=0$ para $j=1,2,3$ e $\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')r'^{2}=3R_{e^{-}}^{2}/5$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Com isso, teremos um Hamiltoniano de perturbação devido ao termo de Darwin
+\begin{align}
+H_{1}^{d} &amp;= \frac{\hbar^{2}}{10m^{2}c^{2}}\nabla^{2}V(r) = \frac{\hbar^{2}}{10m^{2}c^{2}}\nabla^{2}\left(-\frac{ke^{2}}{r}\right) = -\frac{\hbar^{2}ke^{2}}{10m^{2}c^{2}}\nabla^{2}\left(\frac{1}{r}\right) \\
+&amp; = -\frac{\hbar^{2}ke^{2}}{10m^{2}c^{2}}\left(-4\pi\delta(\vec{r})\right) = \frac{2\pi\hbar^{2}ke^{2}}{5m_{e}^{2}c^{2}}\delta(\vec{r}).
+\end{align}
+em que usamos o resultado $\nabla^{2}(1/r)=-4\pi\delta(\vec{r})$. Nesse caso a correção perturbativa de 1ª ordem pode ser escrita como
+\begin{align}
+E_{n}^{d(1)} &amp;= \langle\psi_{n,l,m_{l}}^{(0)}|H_{1}^{d}|\psi_{n,l,m_{l}}^{(0)}\rangle = \langle\psi_{n,l,m_{l}}^{(0)}|\frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\delta(\vec{r})|\psi_{n,l,m_{l}}^{(0)}\rangle \\
+&amp;= \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\langle\psi_{n,l,m_{l}}^{(0)}|\int d^{3}r'|\vec{r}'\rangle\langle\vec{r}'|\delta(\vec{r})|\psi_{n,l,m_{l}}^{(0)}\rangle \\
+&amp;= \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\int d^{3}r'\langle\psi_{n,l,m_{l}}^{(0)}|\vec{r}'\rangle\langle\vec{r}'|\psi_{n,l,m_{l}}^{(0)}\rangle\delta(\vec{r}) \\
+&amp; = \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\int d^{3}r'|\psi_{n,l,m_{l}}^{(0)}(\vec{r}')|^{2}\delta(\vec{r}) \\
+&amp; = \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\left|\psi_{n,l,m_{l}}^{(0)}(\vec{0})\right|^{2}.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>As funções de onda não perturbadas de átomos hidrogenóides são
+\begin{equation}
+\psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial z^{|m_{l}|}}e^{im_{l}\phi},
+\end{equation}
+com $L_{j}^{k}(x)=(e^{x}x^{-k}/j!)\partial_{x^{j}}(e^{-x}x^{j+k})$ e $P_{l}(z)=(1/l!2^{l})\partial_{z^{l}}(z^{2}-1)^{l}$. O termo $\left(\frac{2Zr}{a_{0}n}\right)^{l}$ implica que 
+$$\psi_{n,l&gt;0,m_{l}}(r,\theta,\phi)=0\Rightarrow E_{n}^{d(1)}=0.$$
+Para $n=1,l=0,m_{l}=0$ teremos ($Z=1$):
+\begin{equation}
+\psi_{1,0,0}(r=0,\theta,\phi) = \frac{1}{\sqrt{\pi}}\left(\frac{Z}{a}\right)^{3/2}e^{-Z0/a_{0}} = 1/\sqrt{\pi a^{3}}.
+\end{equation}
+Assim
+\begin{align}
+E_{n=1,l=0,m_{l}=0}^{d(1)} &amp;= \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\left|\psi_{1,0,0}^{(0)}(\vec{0})\right|^{2} = \frac{2\pi\hbar^{2}ke^{2}}{5m^{2}c^{2}}\frac{1}{\pi a^{3}} = \frac{2\hbar^{2}ke^{2}}{5m^{2}c^{2}}\frac{k^{3}m^{3}e^{6}}{\hbar^{6}} \\
+&amp;= \frac{k^{4}e^{8}}{\hbar^{4}c^{4}}c^{2}m\frac{2}{5} = \alpha^{4}mc^{2}\frac{2}{5} \approx 5,79\times 10^{-4}\text{ eV}.
+\end{align}
+Vemos assim que a correção de Darwin é da mesma ordem de grandeza que as correções relativística e de interação spin-órbita.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[92]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">/</span><span class="n">e</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[92]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$$1 + \frac{x^{2}}{2} + \mathcal{O}\left(x^{3}\right)$$
+$\displaystyle 0.000579302031372046$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para o código a seguir, consideremos a função de onda de átomos hidrogenóides com $l=0$ e calculada em $r=0$:
+\begin{align}
+\psi_{n,l=0,m_{l}=0}(r=0,\theta,\phi) &amp; = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-0-1)!}{(n+0)!2n}}e^{-Z(0)/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{0}L_{n-0-1}^{2(0)+1}\left(\frac{2Z(0)}{a_{0}n}\right)\sqrt{\frac{2(0)+1}{4\pi}\frac{(0-|0|)!}{(0+|0|)!}}(\sin\theta)^{|0|}\frac{\partial^{|0|}P_{0}(\cos\theta)}{\partial z^{|0|}}e^{i(0)\phi} \\
+&amp;  = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-1)!}{n!2n}}(1)(1)L_{n-1}^{1}(0)\sqrt{\frac{1}{4\pi}}(1)(1)(1)
+\end{align}
+em que usamos $P_{0}(z)=(1/0!2^{0})\partial_{z^{0}}(z^{2}-1)^{0} = 1$ e $L_{j=n-1}^{k=1}(x)=(e^{x}x^{-1}/(n-1)!)\partial_{x^{n-1}}(e^{-x}x^{n-1+1})$.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[131]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">rodrigues_laguerre</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+    <span class="n">rod</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="n">rod</span> <span class="o">=</span> <span class="n">diff</span><span class="p">(</span><span class="n">rod</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">((</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">k</span><span class="p">)))</span><span class="o">/</span><span class="p">(</span><span class="n">factorial</span><span class="p">(</span><span class="n">j</span><span class="p">)))</span><span class="o">*</span><span class="n">rod</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[134]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">psi</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span><span class="o">*</span><span class="p">(((</span><span class="mi">2</span><span class="o">*</span><span class="n">Z</span><span class="p">)</span><span class="o">/</span><span class="n">a0</span><span class="o">*</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="c1">#*rodrigues_laguerre(n-1,1,0.00001)</span>
+    <span class="k">return</span> <span class="p">(((</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">hb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">*</span><span class="n">e</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">m</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">*</span><span class="n">psi</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n=&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;, Ed=&#39;</span><span class="p">,</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39; eV&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>n= 1 , Ed= 0.000579302031372046  eV
+n= 2 , Ed= 0.00115860406274409  eV
+n= 3 , Ed= 0.00173790609411614  eV
+n= 4 , Ed= 0.00231720812548819  eV
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[135]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_Hd</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;n=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.9</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.7</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;n=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plot_Hd</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Estrutura-fina">Estrutura fina<a class="anchor-link" href="#Estrutura-fina">&#182;</a></h2><p>OBS. Todos esses termos de correção fina, o relativístico, o de interação spin-órbita e o de Darwin, aparecem, de forma mais precisa, como um limite da Equação de Dirac da Mecânica Quântica Relativística aplicada ao átomo de Hidrogênio. Por isso, não incluiremos "na mão" um fator devido à precessão de Thomas, que é um efeito relativístico.</p>
+<p>Usando as fórmulas obtidas aqui, vamos somar essas três contribuições descritas acima para obter a correção de estrutura fina para o estado fundamental $(n=1,l=0,m_{l}=0,j=1/2)$ do átomo de Hidrogênio:
+\begin{align}
+E_{1}^{f(1)} &amp;= E_{1}^{r(1)} + E_{1}^{so(1)} + E_{1}^{d(1)} \\ 
+&amp; = -\alpha^{4}mc^{2}\frac{1}{8(1)^{4}}\left(\frac{4(1)}{0+1/2} -3 \right) -\frac{\alpha^{4}mc^{2}}{(1)^{3}} + \alpha^{4}mc^{2}\frac{2}{5} \\
+&amp; = \alpha^{4}mc^{2}\left(-\frac{5}{8}-1+\frac{2}{5}\right) \\
+&amp; = -1,225\alpha^{4}mc^{2}.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para $l&gt;0$ a correção de Darwin é nula. Vamos adicionar as duas contribuições restantes para obter uma fórmula geral para a estrutura fina do átomo de Hidrogênio:
+\begin{align}
+E_{n,l&gt;0} &amp; \rightarrow E_{n}^{(0)} + E_{n}^{r(1)} + E_{n}^{so(1)} \\
+&amp; = -\alpha^{2}mc^{2}\frac{1}{2n^{2}} - \alpha^{4}mc^{2}\frac{1}{8n^{4}}\left(\frac{4n}{l+1/2} -3 \right) + \alpha^{4}mc^{2}\frac{1}{2n^{3}}\left(\frac{j(j+1)-l(l+1)-3/4}{l(l+1/2)(l+1)}\right) \\
+&amp; = \frac{-\alpha^{2}mc^{2}}{2n^{2}}\left(1 + \frac{\alpha^{2}}{4n^{2}}\left(\frac{4n}{l+1/2} -3 \right) - \frac{\alpha^{2}}{n}\left(\frac{j(j+1)-l(l+1)-3/4}{l(l+1/2)(l+1)}\right)\right) \\
+&amp; = \cdots
+\end{align}
+Notemos que $j=|l-s|,\cdots,l+s = |l-1/2|,l+1/2$, ou $1\le l=j\mp1/2$.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[142]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">l</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)</span> <span class="o">+</span> <span class="n">Ed</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Erel</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">)</span> <span class="o">+</span> <span class="n">Eso</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)</span>
+<span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
+        <span class="n">j</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;n=&#39;</span><span class="p">,</span><span class="n">n</span><span class="p">,</span><span class="s1">&#39;, l=&#39;</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="s1">&#39;, j=&#39;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="s1">&#39;, Ef=&#39;</span><span class="p">,</span> <span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span> <span class="s1">&#39; eV&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>n= 1 , l= 0 , j= 0.5 , Ef= 0.00112239768578334  eV
+n= 2 , l= 0 , j= 0.5 , Ef= 0.00119254754114480  eV
+n= 2 , l= 1 , j= 0.5 , Ef= -8.67444448018038e-05  eV
+n= 2 , l= 1 , j= 1.5 , Ef= 3.7714976000784327e-06  eV
+n= 3 , l= 0 , j= 0.5 , Ef= 0.00174461097873850  eV
+n= 3 , l= 1 , j= 0.5 , Ef= -2.9054500030233795e-05  eV
+n= 3 , l= 1 , j= 1.5 , Ef= -2.2349615407872142e-06  eV
+n= 3 , l= 2 , j= 1.5 , Ef= -9.386838471306303e-06  eV
+n= 3 , l= 2 , j= 2.5 , Ef= -4.46992308157442e-07  eV
+n= 4 , l= 0 , j= 0.5 , Ef= 0.00231932959288823  eV
+n= 4 , l= 1 , j= 0.5 , Ef= -1.296452300026959e-05  eV
+n= 4 , l= 1 , j= 1.5 , Ef= -1.650030200034311e-06  eV
+n= 4 , l= 2 , j= 1.5 , Ef= -4.667228280097053e-06  eV
+n= 4 , l= 2 , j= 2.5 , Ef= -8.957306800186261e-07  eV
+n= 4 , l= 3 , j= 2.5 , Ef= -2.1888155714740864e-06  eV
+n= 4 , l= 3 , j= 3.5 , Ef= -3.0306677143487324e-07  eV
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[143]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">plot_Hf</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.15</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span> <span class="s1">&#39;n=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="n">j</span><span class="o">=</span><span class="nb">abs</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="n">s</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="p">(</span><span class="n">l</span><span class="o">+</span><span class="n">s</span><span class="p">):</span>
+            <span class="n">j</span><span class="o">+=</span><span class="mi">1</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.6</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.9</span><span class="p">],[</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.9</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">%10.7f</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">)),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+            <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="n">bohr</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="n">Ef</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">j</span><span class="p">),</span><span class="s1">&#39;l=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;,j=&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;off&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plot_Hf</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
 </div>
@@ -14441,11 +15041,21 @@ $$1 + \frac{x^{2}}{2} + \mathcal{O}\left(x^{3}\right)$$
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h1 id="Exerc%C3%ADcios">Exerc&#237;cios<a class="anchor-link" href="#Exerc%C3%ADcios">&#182;</a></h1><ol>
-<li><p>Verifique que a constante de normalização na eq. $(\star)$, considerada $\in\mathbb{R}$, é dada por $N_{n} = 1/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}$, i.e., verifique que $|\psi_{n}\rangle=(|\psi_{n}^{(0)}\rangle+|\chi_{n}\rangle)/\sqrt{1+\langle\chi_{n}|\chi_{n}\rangle}$.</p>
+<li><p>Verifique que $(E_{n}^{(0)})^{2}/mc^{2}=\alpha^{4}mc^{2}/4n^{4}$.</p>
 </li>
-<li><p>Considere o Hamiltoniano $H=H_{0}+H_{1}$ com $H_{0}=\omega\sigma_{z}=\omega\begin{bmatrix}1&amp;0\\0&amp;-1\end{bmatrix}$ e Hamiltoniano perturbativo $H_{1}=\epsilon\sigma_{x}$, i.e., $\omega\gg\epsilon$. Calcule as correções perturbativas de primeira e de segunda ordens para as auto-energias desse sistema. Calcule os autovetores de $H$ com correção perturbativa de primeira ordem.</p>
+<li><p>Calcule os valores possíveis da correção perturbativa relativística para $n=2$.</p>
 </li>
-<li><p>Para espectros discretos não degenerados, obtenha as expressões que devemos usar para calcular as correções perturbativas de 4ª ordem para as autoenergias, $E_{n}^{(4)}$, e de 3ª ordem para as autofunções, $|\psi_{n}^{(3)}\rangle$.</p>
+<li><p>Calcule os valores possíveis da correção perturbativa pela interação spin-órbita para $n=2$.</p>
+</li>
+<li><p>Verifique que $\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}') x_{j}'=0$ para $j=1,2,3$, assumindo $\rho_{0}(\vec{r}')=\rho_{0}(r')$ constante.</p>
+</li>
+<li><p>Verifique que $\int_{e^{-}}d^{3}r'\rho_{0}(\vec{r}')r'^{2}=3R_{e^{-}}^{2}/5$, assumindo $\rho_{0}(\vec{r}')=\rho_{0}(r')$ constante.</p>
+</li>
+<li><p>Verifique que $\nabla^{2}(1/r)=-4\pi\delta(\vec{r})$.</p>
+</li>
+<li><p>Calcule os valores possíveis da correção perturbativa pelo termo de Darwin para $n=2$.</p>
+</li>
+<li><p>Calcule os possíveis valores de energia do átomo de Hidrogênio para $n=2$, incluindo as correções relativística, de interação spin-órbita e de Darwin.</p>
 </li>
 </ol>
 
