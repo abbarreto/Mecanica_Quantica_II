@@ -13975,7 +13975,7 @@ a.anchor-link {
 \begin{equation}
 \text{estrutura principal}\propto 1\text{ eV}.
 \end{equation}
-No entanto, também vimos que a interação entre o spin do elétron com o campo magnético gerado pelo movimento relativo do próton, a consideração de efeitos relativísticos do movimento do elétron e a consideração de que o elétron, sendo um sistema quântico, tem dimensão espacial finita, nos levam à identificação de uma estrutura fina para os níveis de energia do átomo de Hidrogênio:
+No entanto, também vimos que a interação entre o momento magnético do elétron com o campo magnético gerado pelo movimento relativo do próton, a consideração de efeitos relativísticos do movimento do elétron e a consideração de que o elétron, sendo um sistema quântico, tem dimensão espacial finita, nos levam à identificação de uma estrutura fina para os níveis de energia do átomo de Hidrogênio:
 \begin{equation}
 \text{estrutura fina}\propto 10^{-3}\text{ eV}.
 \end{equation}
@@ -14010,10 +14010,10 @@ Na última passagem, desprezamos o 2º termo considerando um dipolo magnético d
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="o">*</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
 <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 </pre></div>
 
@@ -14030,7 +14030,7 @@ Na última passagem, desprezamos o 2º termo considerando um dipolo magnético d
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -14110,7 +14110,7 @@ em que usamos a definição de <strong>momento de dipolo magnético</strong>:
 \end{equation}
 vamos passar para o cálculo do <strong>campo magnético</strong> gerado pelo dipolo magnético:
 \begin{align}
-\vec{B}_{\mu} &amp; = \vec{\nabla}\times\vec{\mathcal{A}} = -\frac{\mu_{0}}{4\pi}\vec{\nabla}\times\Big(\frac{\vec{r}}{r^{3}}\times\vec{\mu}\Big) \\
+\vec{B} &amp; = \vec{\nabla}\times\vec{\mathcal{A}} = -\frac{\mu_{0}}{4\pi}\vec{\nabla}\times\Big(\frac{\vec{r}}{r^{3}}\times\vec{\mu}\Big) \\
 &amp; = -\frac{\mu_{0}}{4\pi}\Big((\vec{\nabla}\cdot\vec{\mu})\frac{\vec{r}}{r^{3}} -\Big(\vec{\nabla}\cdot\frac{\vec{r}}{r^{3}}\Big)\vec{\mu} +(\vec{\mu}\cdot\vec{\nabla})\frac{\vec{r}}{r^{3}} -\Big(\frac{\vec{r}}{r^{3}}\cdot\vec{\nabla}\Big)\vec{\mu}\Big) \\
 &amp; = \frac{\mu_{0}}{4\pi}\Big(\Big(\vec{\nabla}\cdot\frac{\vec{r}}{r^{3}}\Big)\vec{\mu} -(\vec{\mu}\cdot\vec{\nabla})\frac{\vec{r}}{r^{3}}\Big),
 \end{align}
@@ -14139,13 +14139,13 @@ e que
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Substituindo esses resultados, podemos escrever o campo magnético como segue
 \begin{align}
-\vec{B}_{\mu} &amp; = \frac{\mu_{0}}{4\pi}\Big(4\pi\delta(\vec{r})\vec{\mu} - \frac{\vec{\mu}}{r^{3}} + \frac{3(\vec{\mu}\cdot\vec{r})\vec{r}}{r^{5}}\Big) \\
+\vec{B} &amp; = \frac{\mu_{0}}{4\pi}\Big(4\pi\delta(\vec{r})\vec{\mu} - \frac{\vec{\mu}}{r^{3}} + \frac{3(\vec{\mu}\cdot\vec{r})\vec{r}}{r^{5}}\Big) \\
 &amp; = \frac{\mu_{0}}{4\pi}\Big(\frac{3(\vec{\mu}\cdot\hat{r})\hat{r} - \vec{\mu}}{r^{3}} + 4\pi(1-d)\delta(\vec{r})\vec{\mu} \Big),
 \end{align}
-onde introduzimos o parâmetro $d$, chamado de fator de desmagnetização, que é usado de maneira fenomenológica para levar em conta possíveis assimetrias da distribuição de correntes responsável pelo dispolo magnético.</p>
+onde introduzimos o parâmetro $d$, chamado de fator de desmagnetização, que é usado de maneira fenomenológica para levar em conta possíveis assimetrias da distribuição de correntes responsável pelo dipolo magnético.</p>
 <p>Com isso, podemos calcular a energia potencial de interação entre o momento magnético do elétron com o campo magnético gerado pelo momento magnético do próton:
 \begin{align}
-U &amp; = -\vec{\mu}_{e}\cdot\vec{B}_{\mu_{p}} \\
+U &amp; = -\vec{\mu}_{e}\cdot\vec{B} \\
 &amp; = -\vec{\mu}_{e}\cdot\frac{\mu_{0}}{4\pi}\Big(\frac{3(\vec{\mu}_{p}\cdot\hat{r})\hat{r} - \vec{\mu}_{p}}{r^{3}} + 4\pi(1-d)\delta(\vec{r})\vec{\mu}_{p} \Big) \\
 &amp; = \frac{\mu_{0}}{4\pi}\Big(\frac{\vec{\mu}_{e}\cdot\vec{\mu}_{p} - 3(\vec{\mu}_{p}\cdot\hat{r})(\vec{\mu}_{e}\cdot\hat{r})}{r^{3}} - 4\pi(1-d)\delta(\vec{r})\vec{\mu}_{e}\cdot\vec{\mu}_{p}\Big).
 \end{align}</p>
@@ -14154,7 +14154,7 @@ U &amp; = -\vec{\mu}_{e}\cdot\vec{B}_{\mu_{p}} \\
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Usando a relação entre momento magnético e momento angular (veja a aula sobre spin):
+<p>Usando a relação entre momento magnético e momento angular:
 \begin{equation}
 \vec{\mu} = \frac{q}{2m}\vec{L} = \frac{1}{\hbar}\frac{q\hbar}{2m}\vec{L} = \frac{1}{\hbar}\mu_{b}\vec{L},
 \end{equation}
@@ -14166,7 +14166,10 @@ sendo o magneton de Bohr, podemos escrever as relações entre os momentos de di
 \begin{equation}
 \vec{\mu}_{e} = \frac{g_{e}\mu_{be}}{\hbar}\vec{S}_{e} \text{ e } \vec{\mu}_{p} = \frac{g_{p}\mu_{bp}}{\hbar}\vec{S}_{p},
 \end{equation}
-em que introduzimos os fatores giromagnéticos do elétron e do próton.</p>
+em que introduzimos os fatores giromagnéticos do elétron e do próton e usamos 
+\begin{equation}
+\mu_{be} = \frac{-e\hbar}{2m_{e}} \text{ e } \mu_{bp} = \frac{e\hbar}{2m_{p}}.
+\end{equation}</p>
 <p>Com isso podemos substituir as variáveis clássicas na expressão para a energia potencial de interação entre os dois momentos de dipolo magnético para assim obter o operador hamiltoniano quântico:
 \begin{equation}
 H_{1}^{ss} = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{4\pi\hbar^{2}}\Big(\frac{\vec{S}_{e}\cdot\vec{S}_{p} - 3(\vec{S}_{p}\cdot\hat{r})(\vec{S}_{e}\cdot\hat{r})}{r^{3}} - 4\pi(1-d)\delta(\vec{r})\vec{S}_{e}\cdot\vec{S}_{p}\Big).
@@ -14260,15 +14263,15 @@ Com isso, vemos que
 \begin{equation}
 S_{e,p}^{2}|1/2,1/2,s,m_{s}\rangle = \hbar^{2}(1/2)(1/2+1)|1/2,1/2,s,m_{s}\rangle = \hbar^{2}(3/4)|1/2,1/2,s,m_{s}\rangle,
 \end{equation}
-a correção perturbativa de primeira ordem pode ser escrita como
+a correção perturbativa de primeira ordem para a energia do átomo de Hidrogênio devido à interação spin-spin pode ser escrita como:
 \begin{align}
-E_{n,l}^{ss(1)} &amp; = \langle\psi|\otimes\langle1/2,1/2,s,m_{s}|H_{1}^{ss}|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle \\
-&amp; = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{8\pi\hbar^{2}}\Big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|r^{-3}\big(S^{2} - S_{e}^{2}\otimes\mathbb{I}_{p} - \mathbb{I}_{e}\otimes S_{p}^{2}\big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle \\
-&amp; \hspace{3.5cm} - 3\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|r^{-3}\big(\big(\vec{S}\cdot\hat{r}\big)^{2} -22^{-2}\hbar^{2}\mathbb{I}_{e}\otimes\mathbb{I}_{p} \big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle \\
-&amp; \hspace{3.5cm} - 4\pi(1-d)\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\delta(\vec{r})\big(S^{2} - S_{e}^{2}\otimes\mathbb{I}_{p} - \mathbb{I}_{e}\otimes S_{p}^{2}\big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\Big) \\
-&amp; = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{8\pi\hbar^{2}}\Big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|r^{-3}\big(S^{2} - (3\hbar^{2}/2)\big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle \\
-&amp; \hspace{3.5cm} - 3\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|r^{-3}\big(\big(\vec{S}\cdot\hat{r}\big)^{2} -(\hbar^{2}/2)\big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle \\
-&amp; \hspace{3.5cm} - 4\pi(1-d)\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\delta(\vec{r})\big(S^{2} - (3\hbar^{2}/2)\big)|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\Big).
+E_{n,l}^{ss(1)} &amp; = \big(\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)\big)H_{1}^{ss}\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{8\pi\hbar^{2}}\Big(\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)r^{-3}\big(S^{2} - S_{e}^{2}\otimes\mathbb{I}_{p} - \mathbb{I}_{e}\otimes S_{p}^{2}\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; \hspace{3.5cm} - 3\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)r^{-3}\big(\big(\vec{S}\cdot\hat{r}\big)^{2} -22^{-2}\hbar^{2}\mathbb{I}_{e}\otimes\mathbb{I}_{p} \big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; \hspace{3.5cm} - 4\pi(1-d)\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)\delta(\vec{r})\big(S^{2} - S_{e}^{2}\otimes\mathbb{I}_{p} - \mathbb{I}_{e}\otimes S_{p}^{2}\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big)\Big) \\
+&amp; = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{8\pi\hbar^{2}}\Big(\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)r^{-3}\big(S^{2} - (3\hbar^{2}/2)\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; \hspace{3.5cm} - 3\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)r^{-3}\big(\big(\vec{S}\cdot\hat{r}\big)^{2} -(\hbar^{2}/2)\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; \hspace{3.5cm} - 4\pi(1-d)\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)\delta(\vec{r})\big(S^{2} - (3\hbar^{2}/2)\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big)\Big).
 \end{align}</p>
 
 </div>
@@ -14281,15 +14284,269 @@ l=0.
 \end{equation}
 Com isso, além de simplificar as contas, anulamos a contribuição da interação do spin do próton com o momento magnético orbital do elétron. Nesse caso, a função de onda é dada por
 \begin{align}
-\psi_{n,l,m_{l}}(r,\theta,\phi) &amp; = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial z^{|m_{l}|}}e^{im_{l}\phi}, \\
-\psi_{n,0,0}(r,\theta,\phi) &amp; = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{1}{2n^{2}}}e^{-Zr/a_{0}n}L_{n-1}^{1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{1}{4\pi}}P_{0}(\cos\theta).
+&amp; \psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial z^{|m_{l}|}}e^{im_{l}\phi}, \\
+&amp; \therefore\ \psi_{n,0,0}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{1}{2n^{2}}}e^{-Zr/a_{0}n}L_{n-1}^{1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{1}{4\pi}} \equiv \psi_{n,0,0}(r),
 \end{align}
-Como $L_{j}^{k}(x)=(e^{x}x^{-k}/j!)\partial_{x^{j}}(e^{-x}x^{j+k})$ e $P_{l}(z)=(1/l!2^{l})\partial_{z^{l}}(z^{2}-1)^{l}$, vem que
+com $L_{j}^{k}(x)=(e^{x}x^{-k}/j!)\partial_{x^{j}}(e^{-x}x^{j+k})$ e $P_{l}(z)=(1/l!2^{l})\partial_{z^{l}}(z^{2}-1)^{l}\ \therefore\ P_{0}(z)=1$.</p>
+<p>Ademais
+\begin{align}
+\big(\vec{S}\cdot\hat{r}\big)^{2} &amp; = \big((\hat{i}S_{x}+\hat{j}S_{y}+\hat{k}S_{z})\cdot(\hat{i}\sin\theta\cos\phi +\hat{j}\sin\theta\sin\phi + \hat{k}\cos\theta)\big)^{2} \\
+&amp; = \big(S_{x}\sin\theta\cos\phi + S_{y}\sin\theta\sin\phi + S_{z}\cos\theta)\big)^{2} \\
+&amp; = S_{x}^{2}\sin^{2}\theta\cos^{2}\phi + S_{y}^{2}\sin^{2}\theta\sin^{2}\phi + S_{z}^{2}\cos^{2}\theta + \sin^{2}\theta\sin\phi\cos\phi\{S_{x},S_{y}\} \\
+&amp; + \sin\theta\cos\theta\cos\phi\{S_{x},S_{z}\}  + \sin\theta\cos\theta\sin\phi\{S_{y},S_{z}\} \\
+&amp; = S_{x}^{2}\sin^{2}\theta\cos^{2}\phi + S_{y}^{2}\sin^{2}\theta\sin^{2}\phi + S_{z}^{2}\cos^{2}\theta
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>pois 
 \begin{equation}
-L_{j}^{k}(x)=(e^{x}x^{-k}/j!)\partial_{x^{j}}(e^{-x}x^{j+k})
+\{S_{j},S_{k}\} = \frac{\hbar^{2}}{4}\{\sigma_{j},\sigma_{k}\} = \mathbb{O} \ \forall\ j\ne k.
+\end{equation}</p>
+<p>Também temos que
+\begin{align}
+&amp; \int d\Omega \big(\vec{S}\cdot\hat{r}\big)^{2} = \int_{0}^{\pi}\int_{0}^{2\pi}\sin\theta d\theta d\phi \big(\vec{S}\cdot\hat{r}\big)^{2} \\
+&amp; = S_{x}^{2}\int_{0}^{\pi}\sin^{3}\theta d\theta\int_{0}^{2\pi}\cos^{2}\phi d\phi + S_{y}^{2}\int_{0}^{\pi}\sin^{3}\theta d\theta\int_{0}^{2\pi}\sin^{2}\phi d\phi \\
+&amp; + S_{z}^{2}\int_{0}^{\pi}\sin\theta\cos^{2}\theta d\theta\int_{0}^{2\pi}d\phi \\
+&amp; = S_{x}^{2}(4/3)(\pi) + S_{y}^{2}(4/3)(\pi) + S_{z}^{2}(2/3)(2\pi) \\
+&amp; = \frac{4\pi}{3}S^{2},
+\end{align}
+o que implica que 
+\begin{equation}
+\int d\Omega\Big(3\big(\vec{S}\cdot\hat{r}\big)^{2}-S^{2}\Big) = 4\pi S^{2}-S^{2}\int d\Omega = 4\pi S^{2}-S^{2}4\pi=0.
 \end{equation}</p>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">)),</span> <span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left( \frac{4}{3}, \  \frac{2}{3}\right)$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">integrate</span><span class="p">(</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)),</span> <span class="n">integrate</span><span class="p">(</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left( \pi, \  \pi\right)$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Com isso, vem que
+\begin{align}
+&amp; \big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)r^{-3}\big(3\big(\vec{S}\cdot\hat{r}\big)^{2}-S^{2}\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; = \big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)\Big(\int d^{3}r'|\vec{r}'\rangle\langle\vec{r}'|\otimes\mathbb{I}_{ep}\Big)r^{-3}\big(3\big(\vec{S}\cdot\hat{r}\big)^{2}-S^{2}\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big) \\
+&amp; = \langle1/2,1/2,s,m_{s}|\Big(\int_{0}^{\infty}\int_{0}^{pi}\int_{0}^{2\pi}r'^{2}\sin\theta dr'd\theta d\phi\langle\psi|\vec{r}'\rangle r^{-3}\big(3\big(\vec{S}\cdot\hat{r}\big)^{2}-S^{2}\big)\langle\vec{r}'|\psi\rangle\Big)|1/2,1/2,s,m_{s}\rangle \\
+&amp; = \langle1/2,1/2,s,m_{s}|\Big(\int_{0}^{\infty}r'^{2}r^{-3}dr'\psi(\vec{r}')^{*}\psi(\vec{r}') \int d\Omega\big(3\big(\vec{S}\cdot\hat{r}\big)^{2}-S^{2}\big)\Big)|1/2,1/2,s,m_{s}\rangle \\
+&amp; = \langle1/2,1/2,s,m_{s}|\Big(\int_{0}^{\infty}r'^{2}r^{-3}dr'|\psi(\vec{r}')|^{2}0\Big)|1/2,1/2,s,m_{s}\rangle \\
+&amp; = 0.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Por conseguinte, os dois primeiros termos na expressão para $E_{n,l=0}^{ss(1)}$ se cancelam, sobrando somento o termo proporcional a $\delta(\vec{r})$:
+\begin{align}
+E_{n,l=0}^{ss(1)} &amp; = \frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{8\pi\hbar^{2}}\Big(- 4\pi(1-d)\big(\langle\psi|\otimes\langle1/2,1/2,s,m_{s}|\big)\delta(\vec{r})\big(S^{2} - (3\hbar^{2}/2)\big)\big(|\psi\rangle\otimes|1/2,1/2,s,m_{s}\rangle\big)\Big) \\
+&amp; = -\frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}(1-d)}{2\hbar^{2}}\int d^{3}r'|\psi(\vec{r}')|^{2}\delta(\vec{r}) \langle1/2,1/2,s,m_{s}|\big(S^{2} - (3\hbar^{2}/2)\big)|1/2,1/2,s,m_{s}\rangle \\
+&amp; = -\frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}(1-d)}{2\hbar^{2}}|\psi(\vec{0})|^{2}\big(\hbar^{2}s(s+1) - (3\hbar^{2}/2)\big)\langle1/2,1/2,s,m_{s}|1/2,1/2,s,m_{s}\rangle \\
+&amp; = -\frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}(1-d)}{2}|\psi_{n,l=0,m_{l}=0}(\vec{0})|^{2}\big(s(s+1) - 3/2\big) \\
+&amp; = E_{n,l=0,s}^{ss(1)},
+\end{align}
+em que usamos $\int d^{3}r'f(\vec{r}')\delta(\vec{r}'-\vec{a})=f(\vec{a})$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Vamos utilizar 
+\begin{equation}
+d = 1/3 \ \therefore\ 1-d=2/3,
+\end{equation}
+que corresponde a uma distribuição uniforme esférica de magnetização para o próton.</p>
+<p>Vamos usar $\lim_{x\rightarrow 0}L_{n-0-1}^{2(0)+1}(x) = n$ e vamos considerar primeiramente
+\begin{equation}
+n=1.
+\end{equation}
+Nesse caso (faz $Z=1$)
+\begin{equation}
+\psi_{1,0,0}(\vec{0}) = \sqrt{\left(\frac{2Z}{a_{0}}\right)^{3}\frac{1}{2}}(1)(1)\sqrt{\frac{1}{4\pi}} =\sqrt{\left(\frac{2Z}{a_{0}}\right)^{3}\frac{1}{8\pi}} =\sqrt{\frac{1}{a_{0}^{3}\pi}}.
+\end{equation}
+Com isso, usando também $\mu_{0}=\frac{1}{\epsilon_{0}c^{2}}$, $\mu_{be} = \frac{-e\hbar}{2m_{e}}$, $\mu_{bp} = \frac{e\hbar}{2m_{p}}$, $\alpha=\frac{ke^{2}}{\hbar c}$ e $a_{0} = \frac{\hbar}{km_{e}e^{2}}=\frac{\hbar}{m_{e}c\alpha}$, teremos
+\begin{align}
+E_{n=1,l=0,s}^{ss(1)} &amp; = -\frac{\mu_{0}g_{e}\mu_{be}g_{p}\mu_{bp}}{3}\frac{1}{a_{0}^{3}\pi}\big(s(s+1) - 3/2\big) \\
+&amp; = \frac{g_{e}g_{p}}{3\pi}\frac{1}{\epsilon_{0}c^{2}}\frac{e\hbar}{2m_{e}}\frac{e\hbar}{2m_{p}}\frac{m_{e}^{3}c^{3}\alpha^{3}}{\hbar^{3}}\big(s(s+1) - 3/2\big) \\
+&amp; = \frac{g_{e}g_{p}}{3}\frac{ke^{2}}{\hbar c}\frac{m_{e}}{m_{p}}\alpha^{3}m_{e}c^{2}\big(s(s+1) - 3/2\big) \\
+&amp; = \frac{g_{e}g_{p}}{3}\frac{m_{e}}{m_{p}}\alpha^{4}m_{e}c^{2}\big(s(s+1) - 3/2\big) \\
+&amp; \approx (2.94\times 10^{-6}\text{ eV})\big(s(s+1) - 3/2\big).
+\end{align}</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">ge</span><span class="o">*</span><span class="n">gp</span><span class="o">*</span><span class="p">((</span><span class="n">me</span><span class="o">/</span><span class="n">mp</span><span class="p">)</span><span class="o">*</span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle 2.93572651542712 \cdot 10^{-6}$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Assim, para o estado fundamental do átomo de Hidrogênio temos as seguintes correções de estrutura hiperfina:
+\begin{align}
+E_{n=1,l=0,s=0}^{ss(1)} &amp; = (2.94\times 10^{-6}\text{ eV})\big(0(0+1) - 3/2\big) \approx -4.40\times 10^{-6}\text{ eV}, \\
+E_{n=1,l=0,s=1}^{ss(1)} &amp; = (2.94\times 10^{-6}\text{ eV})\big(1(1+1) - 3/2\big) \approx 1.47\times 10^{-6}\text{ eV}.
+\end{align}</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Ess</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span>
+    <span class="c1"># colocar psiˆ2 geral para l=0</span>
+    <span class="k">return</span> <span class="p">((</span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">ge</span><span class="o">*</span><span class="n">gp</span><span class="o">*</span><span class="p">((</span><span class="n">me</span><span class="o">/</span><span class="n">mp</span><span class="p">)</span><span class="o">*</span><span class="n">al</span><span class="o">**</span><span class="mi">4</span><span class="o">*</span><span class="n">me</span><span class="o">*</span><span class="n">c</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Ess</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">Ess</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">s</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left( -4.40358977314068 \cdot 10^{-6}, \  1.46786325771356 \cdot 10^{-6}\right)$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14349,6 +14606,15 @@ e $\hat{r}$ um versor e $\{\hat{e}_{j}\}$ a base padrão de $\mathbb{R}^{3}$, ve
 (\vec{\sigma}\cdot\hat{r})^{2}=\sigma_{0},
 \end{equation}
 com $\sigma_{0}=\begin{bmatrix}1&amp;0\\0&amp;1\end{bmatrix}$.</p>
+</li>
+<li><p>Verifique que
+\begin{align}
+&amp; \int_{0}^{\pi}\sin^{3}x dx = \frac{4}{3}, \\
+&amp; \int_{0}^{\pi}\sin x\cos^{2}x dx = \frac{2}{3}, \\
+&amp; \int_{0}^{2\pi}\sin^{2}x dx = \int_{0}^{2\pi}\cos^{2}x dx = \pi. 
+\end{align}</p>
+</li>
+<li><p>Calcule as correções de 1ª ordem para a estrutura hiperfina do átomo de Hidrogênio para $n=2$ e $l=0$.</p>
 </li>
 </ol>
 
