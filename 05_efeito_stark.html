@@ -14002,10 +14002,16 @@ que essa Lagrangena é consistente com a força de Lorentz e a 2ª lei de Newton
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>O momento canonicamente conjugado a $\vec{r}$ é obtido de
 \begin{align}
-&amp; p_{k} = \frac{\partial L}{\partial \dot{r}_{k}} = m\dot{r}_{k} + qA_{k} \ \therefore\ \vec{p} = m\dot{\vec{r}} + q\vec{A}, \\
-&amp; \dot{\vec{r}} = \frac{1}{m}\big(\vec{p}-q\vec{A}\big).
-\end{align}
-A hamiltoniana associada a lagrangeana acima é
+&amp; p_{k} = \frac{\partial L}{\partial \dot{r}_{k}} = \frac{m}{2}\sum_{j=1}^{3}2\dot{r}_{j}\frac{\partial \dot{r}_{j}}{\partial \dot{r}_{k}} + q\sum_{j=1}^{3}\frac{\partial \dot{r}_{j}}{\partial \dot{r}_{k}}A_{j}-q\frac{\partial \Phi}{\partial \dot{r}_{k}} \\
+&amp;  = m\sum_{j=1}^{3}\dot{r}_{j}\delta_{j,k} + q\sum_{j=1}^{3}\delta_{j,k}A_{j}-q0 = m\dot{r}_{k} + qA_{k} \\
+&amp; \therefore\ \vec{p} = m\dot{\vec{r}} + q\vec{A}, \ \therefore\ \dot{\vec{r}} = \frac{1}{m}\big(\vec{p}-q\vec{A}\big).
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A hamiltoniana associada à lagrangeana acima é
 \begin{align}
 H &amp; = \vec{p}\cdot\dot{\vec{r}} - L \\ 
 &amp; = \vec{p}\cdot\dot{\vec{r}} - \frac{1}{2}m\dot{\vec{r}}^{2} - q\dot{\vec{r}}\cdot\vec{A} + q\Phi \\
@@ -14035,7 +14041,7 @@ com $\Psi=\Psi(\vec{r},t)$.</p>
 pois
 \begin{align}
 \vec{p}\cdot\vec{A}\Psi &amp; = \sum_{j=1}^{3}p_{j}A_{j}\Psi = \sum_{j=1}^{3}(-i\hbar)\nabla_{j}A_{j}\Psi = \sum_{j=1}^{3}(-i\hbar)\big((\nabla_{j}A_{j})\Psi+A_{j}\nabla_{j}\Psi\big) \\
-&amp; = \sum_{j=1}^{3}(-i\hbar)\big((\nabla_{j}A_{j})\Psi+A_{j}\nabla_{j}\Psi\big) = (-i\hbar)\big((\vec{\nabla}\cdot\vec{A})\Psi + \vec{A}\cdot\vec{\nabla}\Psi\big) \\
+&amp; =(-i\hbar)\big((\sum_{j=1}^{3}\nabla_{j}A_{j})\Psi+ (\sum_{j=1}^{3}A_{j}\nabla_{j})\Psi\big) = (-i\hbar)\big((\vec{\nabla}\cdot\vec{A})\Psi + \vec{A}\cdot\vec{\nabla}\Psi\big) \\
 &amp; = (-i\hbar)(\vec{\nabla}\cdot\vec{A})\Psi + \vec{A}\cdot\vec{p}\Psi.
 \end{align}</p>
 
@@ -14045,10 +14051,14 @@ pois
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Ou seja
 \begin{equation}
-\vec{p}\cdot\vec{A} - \vec{A}\cdot\vec{p} = (-i\hbar)(\vec{\nabla}\cdot\vec{A}),
+\vec{p}\cdot\vec{A} - \vec{A}\cdot\vec{p} = (-i\hbar)\vec{\nabla}\cdot\vec{A},
 \end{equation}
 que é igual ao operador nulo somente se o potencial vetor magnético tiver divergente nulo, i.e., se $\vec{\nabla}\cdot\vec{A}=0$. Isso é de se esperar pois $\vec{A}=\vec{A}(\vec{r},t)$ e $\vec{p}\cdot\vec{r}\ne \vec{r}\cdot\vec{p}$.</p>
-<p>Da teoria eletromagnética, sabemos que se fazemos uma transformação de calibre 
+<p>Da teoria eletromagnética, sabemos que, para
+\begin{equation}
+\chi = \chi(\vec{r},t)
+\end{equation}
+uma função escalar real qualquer, se fazemos uma transformação de calibre 
 \begin{align}
 &amp; \Phi\rightarrow \Phi' = \Phi - \partial_{t}\chi, \\
 &amp; \vec{A}\rightarrow \vec{A}' = \vec{A} + \vec{\nabla}\chi,
@@ -14086,7 +14096,8 @@ i\hbar\partial_{t}\Psi &amp; = i\hbar e^{-iq\chi/\hbar}(-iq/\hbar)(\partial_{t}\
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Substituindo esse resultado na eq. ($*$), vem que
 \begin{align}
-&amp; \Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)\Psi = q e^{-iq\chi/\hbar}(\partial_{t}\chi)\Psi' + i\hbar e^{-iq\chi/\hbar}\partial_{t}\Psi' \\
+&amp; \Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)\Psi = i\hbar\partial_{t}\Psi \\
+&amp; \therefore\ \Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)e^{-iq\chi/\hbar}\Psi' = q e^{-iq\chi/\hbar}(\partial_{t}\chi)\Psi' + i\hbar e^{-iq\chi/\hbar}\partial_{t}\Psi' \\
 &amp; \therefore\ e^{iq\chi/\hbar}\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)e^{-iq\chi/\hbar}\Psi' - e^{iq\chi/\hbar}q(\partial_{t}\chi)e^{-iq\chi/\hbar}\Psi' = i\hbar\partial_{t}\Psi' \\
 &amp; \therefore\ e^{iq\chi/\hbar}\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi-q(\partial_{t}\chi)\Big)e^{-iq\chi/\hbar}\Psi' = i\hbar\partial_{t}\Psi' \\
 &amp; \therefore\ \Big(e^{iq\chi/\hbar}\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2}e^{-iq\chi/\hbar} + q(\Phi-\partial_{t}\chi)\Big)\Psi' = i\hbar\partial_{t}\Psi' \\
@@ -14110,12 +14121,11 @@ i\hbar\partial_{t}\Psi &amp; = i\hbar e^{-iq\chi/\hbar}(-iq/\hbar)(\partial_{t}\
 \end{align}</p>
 <p>Ou seja, parece assim que a transformação de calibre não tem nenhuma consequência observável pois
 \begin{equation}
-|\Psi'|^{2} = e^{iq\chi/\hbar}\Psi e^{-iq\chi/\hbar}\Psi^{*} = |\Psi|^{2}. 
+|\Psi'|^{2} = \Psi'(\Psi')^{*} = e^{iq\chi/\hbar}\Psi e^{-iq\chi/\hbar}\Psi^{*} = |\Psi|^{2}. 
 \end{equation}</p>
-<p>No entanto, existem discussões sobre fundamentos de MQ que envolvem esse tema, principalmente o efeito Aharonov-Bohm, que geral publicações científicas até os dias de hoje. Veja e.g.:</p>
+<p>No entanto, existem discussões sobre fundamentos de MQ que envolvem esse tema, principalmente o efeito Aharonov-Bohm, que geram publicações científicas até os dias de hoje. Veja e.g.:</p>
 <ul>
 <li>Aharonov, Y; Bohm, D (1959). "Significance of electromagnetic potentials in quantum theory". Physical Review. 115 (3): 485–491.</li>
-<li>Aharonov, Y; Bohm, D (1961). "Further Considerations on Electromagnetic Potentials in the Quantum Theory". Physical Review. 123 (4): 1511–1524.</li>
 <li>Olariu, S; Popescu, II (1985). "The quantum effects of electromagnetic fluxes". Reviews of Modern Physics. 57 (2): 339.</li>
 <li>Overstreet, Chris; Asenbaum, Peter; Curti, Joseph; Kim, Minjeong; Kasevich, Mark A. (January 14, 2022). "Observation of a gravitational Aharonov-Bohm effect". Science. 375 (6577): 226–229.</li>
 </ul>
@@ -14132,7 +14142,7 @@ em que
 \begin{equation}
 p_{s} = -i\hbar\vec{\nabla}_{s},\ \vec{A}_{s} = \vec{A}(\vec{r}_{s},t),\ \Phi_{s} = \Phi(\vec{r}_{s},t) \text{ para } s=e,p.
 \end{equation}
-Esse hamiltoniano é chamado de <strong>acoplamento mínimo</strong> pois não estão inclusas nele as interações envolvendo os spins do próton e do elétron, que levam às estruturas fina e hiperfina do átomo de Hidrogênio. As intereções com campos eletromagnéticos externos envolvendo spins devem ser inseridas explicitamente usando
+Esse hamiltoniano é chamado de <strong>acoplamento mínimo</strong> pois não estão inclusas nele as interações envolvendo os spins do próton e do elétron, que levam às estruturas fina e hiperfina do átomo de Hidrogênio. As interações com campos eletromagnéticos externos envolvendo spins devem ser inseridas explicitamente usando
 \begin{equation}
 -\vec{\mu}\cdot\vec{B} = -\frac{gq}{2m}\vec{S}\cdot\vec{\nabla}\times\vec{A}.
 \end{equation}</p>
@@ -14148,11 +14158,15 @@ Esse hamiltoniano é chamado de <strong>acoplamento mínimo</strong> pois não e
 \end{align}
 Teremos assim que
 \begin{align}
-H = \frac{\vec{p}_{e}^{2}}{2m_{e}} + \frac{\vec{p}_{p}^{2}}{2m_{p}} - \frac{ke^{2}}{|\vec{r}_{p}-\vec{r}_{e}|} - e\vec{E}\cdot(\vec{r}_{p}-\vec{r}_{e}) \\
-= \Big(\frac{\vec{p}^{2}}{2m} - \frac{ke^{2}}{r}\Big) - e\vec{E}\cdot\vec{r} \\
-= H_{0} + H_{1},
+H &amp; = \frac{\vec{p}_{e}^{2}}{2m_{e}} + \frac{\vec{p}_{p}^{2}}{2m_{p}} - \frac{ke^{2}}{|\vec{r}_{p}-\vec{r}_{e}|} - e\vec{E}\cdot(\vec{r}_{p}-\vec{r}_{e}) \\
+&amp; = \Big(\frac{\vec{p}^{2}}{2m} - \frac{ke^{2}}{r}\Big) - e\vec{E}\cdot\vec{r} \\
+&amp; = H_{0} + H_{1},
 \end{align}
-em que $\vec{r}$ é a posição da massa reduzida $m=m_{e}m_{p}/(m_{e}+m_{p})$ em relação ao centro de massa e o hamiltoniano de perturbação é identificado como
+em que $\vec{r}$ é a posição da massa reduzida,
+\begin{equation}
+m = \frac{m_{e}m_{p}}{m_{e}+m_{p}},
+\end{equation}
+em relação ao centro de massa e o hamiltoniano de perturbação é identificado como
 \begin{equation}
 H_{1} = - e\vec{E}\cdot\vec{r} = \vec{E}\cdot\vec{d}
 \end{equation}
@@ -14160,7 +14174,7 @@ com
 \begin{equation}
 \vec{d} = -e\vec{r}
 \end{equation}
-é o momento de dipolo elétrico.</p>
+é o <strong>momento de dipolo elétrico</strong>.</p>
 
 </div>
 </div>
@@ -14184,18 +14198,18 @@ em que $\langle\vec{d}\rangle_{1,0,0}=\vec{0}$ é o momento de dipolo elétrico 
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Acima usamos
 \begin{align}
-\langle\vec{d}\rangle_{1,0,0} = e\int d^{3}r|\psi_{1,0,0}(\vec{r})|^{2}\vec{r} = 0
+\langle\vec{d}\rangle_{1,0,0} = e\int d^{3}r|\psi_{1,0,0}(\vec{r})|^{2}\vec{r} = 0,
 \end{align}
-pois é a integral de uma função ímpar em todo $\mathbb{R}^{3}$, uma vez que 
+pois esta é a integral de uma função ímpar em todo $\mathbb{R}^{3}$, uma vez que 
 \begin{equation}
 |\psi_{1,0,0}(\vec{r})|^{2} = |\psi_{1,0,0}(-\vec{r})|^{2}
 \end{equation}
 é uma função par. Podemos ver isto de
 \begin{align}
-&amp; \psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial z^{|m_{l}|}}e^{im_{l}\phi}, \\
-&amp; \psi_{1,0,0}(r,\theta,\phi) = \sqrt{\frac{1}{\pi a_{0}^{3}}}e^{-Zr/a_{0}} = \psi_{1,0,0}(r),
+&amp; \psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{im_{l}\phi}, \\
+&amp; \therefore\ \psi_{1,0,0}(r,\theta,\phi) = \sqrt{\frac{1}{\pi a_{0}^{3}}}e^{-Zr/a_{0}} = \psi_{1,0,0}(r),
 \end{align}
-com $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l}$, $L_{j}^{k}(\rho) = L_{n-l-1}^{2l+1}(\rho) = \frac{e^{\rho}\rho^{-(2l+1)}}{(n-l-1)!}\frac{\partial^{n-l-1}}{\partial\rho^{n-l-1}}\left(e^{-\rho}\rho^{n+l}\right)$, $\rho = 2\sqrt{-2\mu E_{n}^{(0)}}r/\hbar$. Vemos assim que $\psi_{1,0,0}$ depende somente de $|\vec{r}|$, e não da direção.</p>
+com $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l}$, $L_{j}^{k}(\rho) = L_{n-l-1}^{2l+1}(\rho) = \frac{e^{\rho}\rho^{-(2l+1)}}{(n-l-1)!}\frac{\partial^{n-l-1}}{\partial\rho^{n-l-1}}\left(e^{-\rho}\rho^{n+l}\right)$, $\rho = 2\sqrt{-2\mu E_{n}^{(0)}}r/\hbar$. Vemos assim que $\psi_{1,0,0}$ depende somente de $|\vec{r}|=|-\vec{r}|$, e não da direção.</p>
 
 </div>
 </div>
@@ -14205,26 +14219,119 @@ com $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{
 \begin{align}
 E_{1,0,0}^{(2)} = \sum_{m,l,m\ne 1,0,0}\frac{|\langle\psi_{1,0,0}^{(0)}|H_{1}|\psi_{m,l,m_{l}}^{(0)}\rangle|^{2}}{E_{1}-E_{n}}  = \sum_{m,l,m_{l}\ne 1,0,0}\frac{|\vec{E}\cdot\langle\vec{d}\rangle_{100,nlm}|^{2}}{E_{1}-E_{n}},
 \end{align}
-em que o chamado momento de dipolo de transição é
+em que o chamado <strong>momento de dipolo de transição</strong> é
 \begin{align}
 \langle\vec{d}\rangle_{100,nlm} = \int d^{3}r\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\psi_{n,l,m}(\vec{r})
+\end{align}
+Como $\vec{r}$ é ímpar e $\psi_{100}$ é para pela reflexão $\vec{r}\rightarrow -\vec{r}$, a integral será nula se $\psi_{n,l,m}$ for par, i.e., se $\psi_{nlm}(\vec{r})=\psi_{nlm}(-\vec{r})$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para tratar esse problema de encontrar os estados $\psi_{nlm}$ que podem possivelmente contribuir para a integral do momento de dipolo de transição, é útil usar as simetrias do Hamiltoniano $H_{0}$. Para isso, vamos começar definindo o operador de inversão espacial ou <strong>operador de paridade</strong>:
+\begin{equation}
+\langle\vec{r}|\mathcal{P}|\psi\rangle = \langle -\vec{r}|\psi\rangle = \psi(-\vec{r})\ \forall\ |\vec{r}\rangle,|\psi\rangle.
+\end{equation}
+Por essa definição, vemos que
+\begin{equation}
+\langle\vec{r}|\mathcal{P}^{2}|\psi\rangle = \langle-\vec{r}|\mathcal{P}|\psi\rangle =  \langle\vec{r}|\psi\rangle = \psi(\vec{r}).
+\end{equation}
+Portanto
+\begin{equation}
+\mathcal{P}^{2}=\mathcal{P}\mathcal{P} = \mathbb{I}\ \therefore \mathcal{P}^{-1}=\mathcal{P}.
+\end{equation}
+Além disso, assim como é o caso de projetores, como $\mathcal{P}^{2}=\mathbb{I}$, temos que os autovalores do operador de paridade são
+\begin{equation}
+p = \pm 1.
+\end{equation}
+Para os autovetores correspondentes, $\psi_{p}$, notemos que
+\begin{align}
+&amp; \langle\vec{r}|\mathcal{P}|\psi_{p}\rangle = p\langle\vec{r}|\psi_{p}\rangle = \langle-\vec{r}|\psi_{p}\rangle \\
+&amp; \therefore\ \psi_{p}(-\vec{r}) = p\psi_{p}(\vec{r}).
+\end{align}
+Então
+\begin{align}
+&amp; p = 1 \ \therefore\ \psi_{p}(-\vec{r}) = \psi_{p}(\vec{r})  \ \therefore\ \text{autofunção ímpar}, \\
+&amp; p = -1 \ \therefore\ \psi_{p}(-\vec{r}) = -\psi_{p}(\vec{r})  \ \therefore\ \text{autofunção par}.
+\end{align}
+Daqui vem o nome deste operador, pois suas autofunções tem paridade bem definida.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos verificar também que o operador de paridade é hermitiano:
+\begin{align}
+\langle\psi'|\mathcal{P}^{\dagger}|\psi\rangle  &amp; = \langle\psi|\mathcal{P}|\psi'\rangle^{*} = \Big(\int d^{3}r\langle\psi|\vec{r}\rangle\langle\vec{r}|\mathcal{P}|\psi'\rangle\Big)^{*} \\
+&amp; = \int d^{3}r\big(\langle\psi|\vec{r}\rangle\langle-\vec{r}|\psi'\rangle\big)^{*} = \int d^{3}r\langle\psi|\vec{r}\rangle^{*}\langle-\vec{r}|\psi'\rangle^{*} \\
+&amp; = \int d^{3}r\langle\vec{r}|\psi\rangle\langle\psi'|-\vec{r}\rangle = \int d^{3}r\langle\psi'|\vec{r}\rangle\langle-\vec{r}|\psi\rangle \\
+&amp; = \int d^{3}r\langle\psi'|\vec{r}\rangle\langle\vec{r}|\mathcal{P}|\psi\rangle = \langle\psi'|\mathcal{P}|\psi\rangle,
+\end{align}
+em que trocamos $\vec{r}\leftrightarrow -\vec{r}$ pois estamos fazendo a integral sobre toto $\mathbb{R}^{3}$. Portanto
+\begin{equation}
+\mathcal{P}^{\dagger}=\mathcal{P}.
+\end{equation}</p>
+<p>Com isso, como $\mathcal{P}^{2}=\mathcal{P}$, vemos que o operador de paridade também é unitário, i.e.,
+\begin{equation}
+\mathcal{P}^{\dagger}\mathcal{P} = \mathcal{P}\mathcal{P}^{\dagger} = \mathbb{I}.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos verificar ainda que
+\begin{align}
+&amp; \langle\vec{r}|\mathcal{P}\vec{r}\mathcal{P}^{\dagger}|\psi\rangle = \langle- \vec{r}|\vec{r}\mathcal{P}^{\dagger}|\psi\rangle = - \vec{r}\langle- \vec{r}|\mathcal{P}|\psi\rangle \\
+&amp; = - \vec{r}\langle\vec{r}|\psi\rangle \\
+&amp; \therefore\ \mathcal{P}\vec{r}\mathcal{P}^{\dagger} = -\vec{r}
+\end{align}
+e
+\begin{align}
+&amp; \langle\vec{r}|\mathcal{P}\vec{p}\mathcal{P}^{\dagger}|\psi\rangle = \langle- \vec{r}|\vec{p}\mathcal{P}|\psi\rangle = - \frac{\hbar}{i}\vec{\nabla}\langle- \vec{r}|\mathcal{P}|\psi\rangle \\
+&amp; = - \frac{\hbar}{i}\vec{\nabla}\langle\vec{r}|\psi\rangle \\
+&amp; \therefore\ \mathcal{P}\vec{p}\mathcal{P}^{\dagger} = - \frac{\hbar}{i}\vec{\nabla} = -\vec{p}.
+\end{align}
+Acima usamos a relação
+\begin{equation}
+\langle\vec{r}|\vec{p}|\psi\rangle = \frac{\hbar}{i}\vec{\nabla}\langle\vec{r}|\psi\rangle,
+\end{equation}
+que vale para qualquer $|\psi\rangle$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Com isso, podemos verificar que
+\begin{align}
+&amp; \mathcal{P}H_{0}\mathcal{P}^{\dagger} = \mathcal{P}\Big(\frac{\vec{p}^{2}}{2m}-\frac{ke^{2}}{|\vec{r}|}\Big)\mathcal{P}^{\dagger} = \frac{(-\vec{p})^{2}}{2m}-\frac{ke^{2}}{|-\vec{r}|} = \frac{\vec{p}^{2}}{2m}-\frac{ke^{2}}{|\vec{r}|} \\
+&amp; = H_{0} \\
+&amp; \therefore\ \mathcal{P}H_{0}\mathcal{P}^{\dagger}\mathcal{P}= \mathcal{P}H_{0}=H_{0}\mathcal{P}\ \therefore\ [\mathcal{P},H_{0}]=0.
+\end{align}
+Ou seja, $H_{0}$ e $\mathcal{P}$ compartilham uma mesma base de autovetores. Nos resta verificar se essa base é $\psi_{n,l,m_{l}}$. Notemos que em termos das coordenadas esféricas, o efeito da inversão espacial é o seguinte
+\begin{align}
+&amp; \vec{r}\rightarrow -\vec{r}\ \therefore\ (x,y,z)\rightarrow(-x,-y,-z) \\
+&amp; \therefore\ (r\sin\theta\cos\phi,r\sin\theta\sin\phi,r\cos\theta)\rightarrow (-r\sin\theta\cos\phi,-r\sin\theta\sin\phi,-r\cos\theta) \\
+&amp; \therefore\ (r,\theta,\phi)\rightarrow (r,\pi-\theta,\phi+\pi).
 \end{align}</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Notemos que as autofunções de $H_{0}$ pode ser escritas como
+\begin{equation}
+\psi_{n,l,m_{l}}(r,\theta,\phi) = f(r)(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{im_{l}\phi}.
+\end{equation}
+Temos ainda que
+\begin{align}
+e^{im_{l}(\pi+\phi)} &amp; = e^{im_{l}\pi}e^{im_{l}\phi} = \big(\cos(m_{l}\pi)+i\sin(m_{l}\pi)\big)e^{im_{l}\phi} \\
+&amp; =(-1)^{m_{l}}e^{im_{l}\phi}
+\end{align}
+Substituindo essa mudança de coordenadas na função de onda</p>
 
-     </div>
 </div>
-</div>
-</div>
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14244,7 +14351,8 @@ em que o chamado momento de dipolo de transição é
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h2 id="Exerc%C3%ADcios">Exerc&#237;cios<a class="anchor-link" href="#Exerc%C3%ADcios">&#182;</a></h2><ol>
-<li><p>Substitua a lagrangeana da eq. ($\star$) nas equações de Euler-Lagrange para verificar compatibilidade com a força de Lorentz  e a 2ª lei de Newton.</p>
+<li><p>Substitua a lagrangeana da eq. ($\star$) nas equações de Euler-Lagrange para verificar 
+compatibilidade com a força de Lorentz  e a 2ª lei de Newton.</p>
 </li>
 <li><p>Considere as transformações de calibre para os potenciais elétrico e magnético:
 \begin{align}
@@ -14256,6 +14364,8 @@ com $\chi=\chi(\vec{r},t)$ sendo uma função escalar real qualquer. Mostre que
 &amp; \vec{E}'=-\vec{\nabla}\Phi'-\partial_{t}\vec{A}' = -\vec{\nabla}\Phi-\partial_{t}\vec{A} = \vec{E}, \\
 &amp; \vec{B}' = \vec{\nabla}\times\vec{B}' = \vec{\nabla}\times\vec{B} = \vec{B}.
 \end{align}</p>
+</li>
+<li><p>Verifique que a mudança de coordenadas $(r,\theta,\phi)\rightarrow (r,\pi-\theta,\phi+\pi)$ nos fornece a inversão espacial $\vec{r}\rightarrow -\vec{r}$.</p>
 </li>
 </ol>
 
