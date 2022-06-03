@@ -13974,6 +13974,20 @@ a.anchor-link {
 <h3>Notas de aula de Mecânica Quântica <br> Autor: Jonas Maziero</h3>
 
 </div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -13984,9 +13998,10 @@ a.anchor-link {
 \end{align}
 com $\Phi=\Phi(\vec{r},t)$ e $\vec{A}=\vec{A}(\vec{r},t)$.</p>
 <p>A dinâmica clássica dessa partícula pode ser descrita através da Lagrangeana
-\begin{equation}
-L = \frac{1}{2}m\dot{\vec{r}}^{2} + q\dot{\vec{r}}\cdot\vec{A} - q\Phi = \frac{m}{2}\sum_{j=1}^{3}\dot{r}_{j}^{2}+ q\sum_{j=1}^{3}\dot{r}_{j}A_{j}-q\Phi. \hspace{1cm} (\star)
-\end{equation}
+\begin{align}
+L &amp; = \frac{1}{2}m\dot{\vec{r}}^{2} + q\dot{\vec{r}}\cdot\vec{A} - q\Phi \\
+&amp; = \frac{m}{2}\sum_{j=1}^{3}\dot{r}_{j}^{2}+ q\sum_{j=1}^{3}\dot{r}_{j}A_{j}-q\Phi. \hspace{1cm} (\star)
+\end{align}
 Pode-se verificar, usando as equações de Euler-Lagrange,
 \begin{equation}
 \frac{\partial L}{\partial r_{j}}-\frac{d}{dt}\frac{\partial L}{\partial\dot{r}_{j}}=0 \text{ para } j=1,2,3,
@@ -14018,8 +14033,9 @@ H &amp; = \vec{p}\cdot\dot{\vec{r}} - L \\
 &amp; = \vec{p}\cdot\dot{\vec{r}} - \frac{1}{2}m\dot{\vec{r}}^{2} - q\vec{A}\cdot\dot{\vec{r}} + q\Phi \\
 &amp; = \vec{p}\cdot\frac{1}{m}\big(\vec{p}-q\vec{A}\big) - \frac{1}{2}m\frac{1}{m^{2}}\big(\vec{p}-q\vec{A}\big)^{2} - q\vec{A}\cdot\frac{1}{m}\big(\vec{p}-q\vec{A}\big) + q\Phi \\
 &amp; = \frac{1}{m}\big(\vec{p}-q\vec{A}\big)\cdot\big(\vec{p}-q\vec{A}\big) - \frac{1}{2m}\big(\vec{p}-q\vec{A}\big)^{2}  + q\Phi \\
-&amp; = \frac{1}{2m}\big(\vec{p}-q\vec{A}\big)^{2} + q\Phi.
-\end{align}</p>
+&amp; = \frac{1}{2m}\big(\vec{p}-q\vec{A}\big)^{2} + q\Phi,
+\end{align}
+em que usamos a notação $\nabla_{j}=\partial_{j}=\partial_{r_{j}}=\frac{\partial}{\partial r_{j}}$.</p>
 
 </div>
 </div>
@@ -14029,9 +14045,9 @@ H &amp; = \vec{p}\cdot\dot{\vec{r}} - L \\
 \begin{equation}
 \vec{p}\rightarrow -i\hbar\vec{\nabla}
 \end{equation}
-podemos escrever a equação de Schrödinger para a função de onda de uma partícula não relativśitica de massa $m$ e carga elétrica $q$ sujeita a campos elétrico e magnético representados pelos potenciais $\Phi$ e $\vec{A}$:
+podemos escrever a equação de Schrödinger para a função de onda de uma partícula não relativística de massa $m$ e carga elétrica $q$ sujeita a campos elétrico e magnético representados pelos potenciais $\Phi$ e $\vec{A}$:
 \begin{equation}
-\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)\Psi = i\hbar\frac{\partial}{\partial t}\Psi, \hspace{1cm} (*)
+H\Psi=\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2} + q\Phi\Big)\Psi = i\hbar\frac{\partial}{\partial t}\Psi, \hspace{1cm} (*)
 \end{equation}
 com $\Psi=\Psi(\vec{r},t)$.</p>
 <p>Vale observar que em geral 
@@ -14058,7 +14074,7 @@ que é igual ao operador nulo somente se o potencial vetor magnético tiver dive
 \begin{equation}
 \chi = \chi(\vec{r},t)
 \end{equation}
-uma função escalar real qualquer, se fazemos uma transformação de calibre 
+uma função escalar real qualquer, se fazemos uma transformação de calibre ou transformação de gauge:
 \begin{align}
 &amp; \Phi\rightarrow \Phi' = \Phi - \partial_{t}\chi, \\
 &amp; \vec{A}\rightarrow \vec{A}' = \vec{A} + \vec{\nabla}\chi,
@@ -14080,7 +14096,7 @@ Por conseguinte a força de Lorentz também será a mesma
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>No entanto, como os potenciais elétrico e magnético aparecem explicitamente na equação de Schrödinger, eq. ($*$), fica a questão sobre quais são os efeitos de transformações de calibre nesse caso. Vamos verificar isso substituindo a transformação de calibre, $\Phi\rightarrow \Phi' = \Phi - \partial_{t}\chi$ e $\vec{A}\rightarrow \vec{A}' = \vec{A} + \vec{\nabla}\chi$ na eq. ($*$). Vamos verificar que o que essa transformação faz é adicionar uma fase na função de onda
+<p>No entanto, como os potenciais elétrico e magnético aparecem explicitamente na equação de Schrödinger, eq. ($*$), fica a questão sobre quais são os efeitos de transformações de calibre nesse caso. Vamos verificar isso substituindo a transformação de calibre, $\Phi\rightarrow \Phi' = \Phi - \partial_{t}\chi$ e $\vec{A}\rightarrow \vec{A}' = \vec{A} + \vec{\nabla}\chi$ na eq. $(*)$. Vamos verificar que o que essa transformação faz é adicionar uma fase proporcional a $q\chi$ na função de onda
 \begin{equation}
     \Psi \rightarrow \Psi' = e^{iq\chi/\hbar}\Psi \ \therefore\ \Psi = e^{-iq\chi/\hbar}\Psi'.
 \end{equation}
@@ -14142,7 +14158,7 @@ em que
 \begin{equation}
 p_{s} = -i\hbar\vec{\nabla}_{s},\ \vec{A}_{s} = \vec{A}(\vec{r}_{s},t),\ \Phi_{s} = \Phi(\vec{r}_{s},t) \text{ para } s=e,p.
 \end{equation}
-Esse hamiltoniano é chamado de <strong>acoplamento mínimo</strong> pois não estão inclusas nele as interações envolvendo os spins do próton e do elétron, que levam às estruturas fina e hiperfina do átomo de Hidrogênio. As interações com campos eletromagnéticos externos envolvendo spins devem ser inseridas explicitamente usando
+Esse hamiltoniano é chamado de <strong>acoplamento mínimo</strong> pois não estão incluídas nele as interações envolvendo os spins do próton e do elétron, que levam às estruturas fina e hiperfina do átomo de Hidrogênio. As interações com campos eletromagnéticos externos envolvendo <strong>spins</strong> devem ser inseridas explicitamente usando
 \begin{equation}
 -\vec{\mu}\cdot\vec{B} = -\frac{gq}{2m}\vec{S}\cdot\vec{\nabla}\times\vec{A}.
 \end{equation}</p>
@@ -14172,25 +14188,33 @@ H_{1} = - e\vec{E}\cdot\vec{r} = \vec{E}\cdot\vec{d}
 \end{equation}
 com
 \begin{equation}
-\vec{d} = -e\vec{r}
+\vec{d} := -e\vec{r}
 \end{equation}
-é o <strong>momento de dipolo elétrico</strong>.</p>
+sendo o <strong>momento de dipolo elétrico</strong> do H.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="C%C3%A1lculos-para-o-estado-fundamental">C&#225;lculos para o estado fundamental<a class="anchor-link" href="#C%C3%A1lculos-para-o-estado-fundamental">&#182;</a></h3><p>O estado fundamental $|\psi_{1,0,0}\rangle$ é o único estado não degenerado do H. Nesse caso, a correção perturbativa de 1ª ordem é calculada como segue
+<h3 id="C%C3%A1lculos-para-o-estado-fundamental:-Efeito-Stark-quadr%C3%A1tico">C&#225;lculos para o estado fundamental: Efeito Stark quadr&#225;tico<a class="anchor-link" href="#C%C3%A1lculos-para-o-estado-fundamental:-Efeito-Stark-quadr%C3%A1tico">&#182;</a></h3><p>O estado fundamental 
+\begin{equation}
+E_{1},|\psi_{1,0,0}\rangle
+\end{equation}
+é o único estado <strong>não degenerado</strong> do átomo de Hidrogênio. Nesse caso, a correção perturbativa de 1ª ordem é calculada como segue
 \begin{align}
 E_{1,0,0}^{(1)} &amp; = \langle\psi_{1,0,0}|H_{1}|\psi_{1,0,0}\rangle \\
 &amp; = \iint d^{3}rd^{3}r'\langle\psi_{1,0,0}|\vec{r}\rangle\langle\vec{r}|(\vec{E}\cdot \vec{d})|\vec{r}'\rangle\langle\vec{r}'|\psi_{1,0,0}\rangle \\
-&amp; = \vec{E}\cdot\iint d^{3}rd^{3}r'\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\langle\vec{r}|\vec{r}'\rangle\psi_{1,0,0}(\vec{r'}) \\
-&amp; = \vec{E}\cdot\iint d^{3}rd^{3}r'\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\delta(\vec{r}-\vec{r}')\psi_{1,0,0}(\vec{r'}) \\
-&amp; = \vec{E}\cdot\int d^{3}r\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\psi_{1,0,0}(\vec{r}) \\
+&amp; = -\vec{E}\cdot\iint d^{3}rd^{3}r'\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\langle\vec{r}|\vec{r}'\rangle\psi_{1,0,0}(\vec{r'}) \\
+&amp; = -\vec{E}\cdot\iint d^{3}rd^{3}r'\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\delta(\vec{r}-\vec{r}')\psi_{1,0,0}(\vec{r'}) \\
+&amp; = \vec{E}\cdot\int d^{3}r\psi_{1,0,0}(\vec{r})^{*}(-e\vec{r})\psi_{1,0,0}(\vec{r}) \\
 &amp; = \vec{E}\cdot\langle\vec{d}\rangle_{1,0,0} = \vec{E}\cdot\vec{0} \\
 &amp; = \vec{0},
 \end{align}
-em que $\langle\vec{d}\rangle_{1,0,0}=\vec{0}$ é o momento de dipolo elétrico do estado $\psi_{1,0,0}$.</p>
+em que 
+\begin{equation}
+\langle\vec{d}\rangle_{1,0,0}:=\int d^{3}r\psi_{1,0,0}(\vec{r})^{*}(-e\vec{r})\psi_{1,0,0}(\vec{r})=\vec{0}
+\end{equation}
+é o <strong>momento de dipolo elétrico do estado $\psi_{1,0,0}$</strong>.</p>
 
 </div>
 </div>
@@ -14200,30 +14224,35 @@ em que $\langle\vec{d}\rangle_{1,0,0}=\vec{0}$ é o momento de dipolo elétrico 
 \begin{align}
 \langle\vec{d}\rangle_{1,0,0} = e\int d^{3}r|\psi_{1,0,0}(\vec{r})|^{2}\vec{r} = 0,
 \end{align}
-pois esta é a integral de uma função ímpar em todo $\mathbb{R}^{3}$, uma vez que 
+pois esta é a integral de uma função ímpar em todo $\mathbb{R}^{3}$, pela troca $\vec{r}\rightarrow -\vec{r}$, uma vez que 
 \begin{equation}
 |\psi_{1,0,0}(\vec{r})|^{2} = |\psi_{1,0,0}(-\vec{r})|^{2}
 \end{equation}
-é uma função par. Podemos ver isto de
+é uma função par e $\vec{r}$ é uma função ímpar. Podemos ver isto de
 \begin{align}
-&amp; \psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{im_{l}\phi}, \\
+&amp; \psi_{n,l,m_{l}}(r,\theta,\phi) = \sqrt{\left(\frac{2Z}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-Zr/a_{0}n}\left(\frac{2Zr}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2Zr}{a_{0}n}\right)\sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{i|m_{l}|\phi}, \\
 &amp; \therefore\ \psi_{1,0,0}(r,\theta,\phi) = \sqrt{\frac{1}{\pi a_{0}^{3}}}e^{-Zr/a_{0}} = \psi_{1,0,0}(r),
 \end{align}
-com $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l}$, $L_{j}^{k}(\rho) = L_{n-l-1}^{2l+1}(\rho) = \frac{e^{\rho}\rho^{-(2l+1)}}{(n-l-1)!}\frac{\partial^{n-l-1}}{\partial\rho^{n-l-1}}\left(e^{-\rho}\rho^{n+l}\right)$, $\rho = 2\sqrt{-2\mu E_{n}^{(0)}}r/\hbar$. Vemos assim que $\psi_{1,0,0}$ depende somente de $|\vec{r}|=|-\vec{r}|$, e não da direção.</p>
+com $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l}$, $L_{j}^{k}(\rho) = L_{n-l-1}^{2l+1}(\rho) = \frac{e^{\rho}\rho^{-(2l+1)}}{(n-l-1)!}\frac{\partial^{n-l-1}}{\partial\rho^{n-l-1}}\left(e^{-\rho}\rho^{n+l}\right)$, $\rho = 2\sqrt{-2m E_{n}^{(0)}}r/\hbar$. Vemos assim que $\psi_{1,0,0}$ depende somente de $|\vec{r}|=|-\vec{r}|$, e não da direção.</p>
+<p><em>OBS.</em> Aqui escolhemos a dependência da função de onda longitudinal como $\Phi(\phi)\propto e^{i|m_{l}|\phi}$, por conveniência em relação ao cálculos que faremos na sequência.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Como a correção de 1ª ordem é nula, partimos para a correção perturbativa de segunda ordem $\Big(E_{n}^{(2)} = \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}\Big)$
+<p>Como a correção de 1ª ordem é nula, partimos para a correção perturbativa de segunda ordem
+\begin{equation}
+E_{n}^{(2)} = \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}},
+\end{equation}
+que neste caso pode ser escrita como
 \begin{align}
-E_{1,0,0}^{(2)} = \sum_{m,l,m\ne 1,0,0}\frac{|\langle\psi_{1,0,0}^{(0)}|H_{1}|\psi_{m,l,m_{l}}^{(0)}\rangle|^{2}}{E_{1}-E_{n}}  = \sum_{m,l,m_{l}\ne 1,0,0}\frac{|\vec{E}\cdot\langle\vec{d}\rangle_{100,nlm}|^{2}}{E_{1}-E_{n}},
+E_{1,0,0}^{(2)} = \sum_{n,l,m_{l}\ne 1,0,0}\frac{|\langle\psi_{1,0,0}^{(0)}|H_{1}|\psi_{m,l,m_{l}}^{(0)}\rangle|^{2}}{E_{1}-E_{n}}  = \sum_{n,l,m_{l}\ne 1,0,0}\frac{|\vec{E}\cdot\langle\vec{d}\rangle_{100,nlm_{l}}|^{2}}{E_{1}-E_{n}},
 \end{align}
 em que o chamado <strong>momento de dipolo de transição</strong> é
 \begin{align}
-\langle\vec{d}\rangle_{100,nlm} = \int d^{3}r\psi_{1,0,0}(\vec{r})^{*}e\vec{r}\psi_{n,l,m}(\vec{r})
+\langle\vec{d}\rangle_{100,nlm_{l}} = \int d^{3}r\psi_{1,0,0}(\vec{r})^{*}(-e\vec{r})\psi_{n,l,m_{l}}(\vec{r}) \hspace{1cm} (\diamond)
 \end{align}
-Como $\vec{r}$ é ímpar e $\psi_{100}$ é para pela reflexão $\vec{r}\rightarrow -\vec{r}$, a integral será nula se $\psi_{n,l,m}$ for par, i.e., se $\psi_{nlm}(\vec{r})=\psi_{nlm}(-\vec{r})$.</p>
+Como $\vec{r}$ é ímpar e $\psi_{100}$ é par pela reflexão espacial $\vec{r}\rightarrow -\vec{r}$, a integral será nula se $\psi_{n,l,m_{l}}$ for par, i.e., se $\psi_{nlm_{l}}(\vec{r})=\psi_{nlm_{l}}(-\vec{r})$.</p>
 
 </div>
 </div>
@@ -14231,11 +14260,11 @@ Como $\vec{r}$ é ímpar e $\psi_{100}$ é para pela reflexão $\vec{r}\rightarr
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Para tratar esse problema de encontrar os estados $\psi_{nlm}$ que podem possivelmente contribuir para a integral do momento de dipolo de transição, é útil usar as simetrias do Hamiltoniano $H_{0}$. Para isso, vamos começar definindo o operador de inversão espacial ou <strong>operador de paridade</strong>:
 \begin{equation}
-\langle\vec{r}|\mathcal{P}|\psi\rangle = \langle -\vec{r}|\psi\rangle = \psi(-\vec{r})\ \forall\ |\vec{r}\rangle,|\psi\rangle.
+\langle\vec{r}|\mathcal{P}|\psi\rangle := \langle -\vec{r}|\psi\rangle = \psi(-\vec{r})\ \forall\ |\vec{r}\rangle,|\psi\rangle.
 \end{equation}
 Por essa definição, vemos que
 \begin{equation}
-\langle\vec{r}|\mathcal{P}^{2}|\psi\rangle = \langle-\vec{r}|\mathcal{P}|\psi\rangle =  \langle\vec{r}|\psi\rangle = \psi(\vec{r}).
+\langle\vec{r}|\mathcal{P}^{2}|\psi\rangle = \langle\vec{r}|\mathcal{P}(\mathcal{P}|\psi\rangle)  = \langle-\vec{r}|\mathcal{P}|\psi\rangle =  \langle\vec{r}|\psi\rangle = \psi(\vec{r}).
 \end{equation}
 Portanto
 \begin{equation}
@@ -14247,15 +14276,15 @@ p = \pm 1.
 \end{equation}
 Para os autovetores correspondentes, $\psi_{p}$, notemos que
 \begin{align}
-&amp; \langle\vec{r}|\mathcal{P}|\psi_{p}\rangle = p\langle\vec{r}|\psi_{p}\rangle = \langle-\vec{r}|\psi_{p}\rangle \\
+&amp; \langle\vec{r}|\mathcal{P}|\psi_{p}\rangle = \langle\vec{r}|p|\psi_{p}\rangle = p\langle\vec{r}|\psi_{p}\rangle = \langle-\vec{r}|\psi_{p}\rangle \\
 &amp; \therefore\ \psi_{p}(-\vec{r}) = p\psi_{p}(\vec{r}).
 \end{align}
 Então
 \begin{align}
-&amp; p = 1 \ \therefore\ \psi_{p}(-\vec{r}) = \psi_{p}(\vec{r})  \ \therefore\ \text{autofunção ímpar}, \\
-&amp; p = -1 \ \therefore\ \psi_{p}(-\vec{r}) = -\psi_{p}(\vec{r})  \ \therefore\ \text{autofunção par}.
+&amp; p = 1 \ \therefore\ \psi_{p}(-\vec{r}) = \psi_{p}(\vec{r})  \ \therefore\ \text{autofunção é par}, \\
+&amp; p = -1 \ \therefore\ \psi_{p}(-\vec{r}) = -\psi_{p}(\vec{r})  \ \therefore\ \text{autofunção é ímpar}.
 \end{align}
-Daqui vem o nome deste operador, pois suas autofunções tem paridade bem definida.</p>
+Deste resultado vem o nome deste operador de paridade, pois suas autofunções tem paridade bem definida.</p>
 
 </div>
 </div>
@@ -14263,16 +14292,16 @@ Daqui vem o nome deste operador, pois suas autofunções tem paridade bem defini
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Podemos verificar também que o operador de paridade é hermitiano:
 \begin{align}
-\langle\psi'|\mathcal{P}^{\dagger}|\psi\rangle  &amp; = \langle\psi|\mathcal{P}|\psi'\rangle^{*} = \Big(\int d^{3}r\langle\psi|\vec{r}\rangle\langle\vec{r}|\mathcal{P}|\psi'\rangle\Big)^{*} \\
+\langle\psi'|\mathcal{P}^{\dagger}|\psi\rangle  &amp; = \langle\psi|\mathcal{P}|\psi'\rangle^{*} = \langle\psi|\mathbb{I}\mathcal{P}|\psi'\rangle^{*} = \Big(\int d^{3}r\langle\psi|\vec{r}\rangle\langle\vec{r}|\mathcal{P}|\psi'\rangle\Big)^{*} \\
 &amp; = \int d^{3}r\big(\langle\psi|\vec{r}\rangle\langle-\vec{r}|\psi'\rangle\big)^{*} = \int d^{3}r\langle\psi|\vec{r}\rangle^{*}\langle-\vec{r}|\psi'\rangle^{*} \\
 &amp; = \int d^{3}r\langle\vec{r}|\psi\rangle\langle\psi'|-\vec{r}\rangle = \int d^{3}r\langle\psi'|\vec{r}\rangle\langle-\vec{r}|\psi\rangle \\
 &amp; = \int d^{3}r\langle\psi'|\vec{r}\rangle\langle\vec{r}|\mathcal{P}|\psi\rangle = \langle\psi'|\mathcal{P}|\psi\rangle,
 \end{align}
-em que trocamos $\vec{r}\leftrightarrow -\vec{r}$ pois estamos fazendo a integral sobre toto $\mathbb{R}^{3}$. Portanto
+em que trocamos $\vec{r}\leftrightarrow -\vec{r}$, pois estamos fazendo a integral sobre todo $\mathbb{R}^{3}$ e essa troca não muda o valor dessa integral. Portanto
 \begin{equation}
 \mathcal{P}^{\dagger}=\mathcal{P}.
 \end{equation}</p>
-<p>Com isso, como $\mathcal{P}^{2}=\mathcal{P}$, vemos que o operador de paridade também é unitário, i.e.,
+<p>Com isso, como $\mathcal{P}^{2}=\mathcal{P}$, vemos que o operador de paridade também é unitário, i.e.
 \begin{equation}
 \mathcal{P}^{\dagger}\mathcal{P} = \mathcal{P}\mathcal{P}^{\dagger} = \mathbb{I}.
 \end{equation}</p>
@@ -14284,7 +14313,7 @@ em que trocamos $\vec{r}\leftrightarrow -\vec{r}$ pois estamos fazendo a integra
 <p>Podemos verificar ainda que
 \begin{align}
 &amp; \langle\vec{r}|\mathcal{P}\vec{r}\mathcal{P}^{\dagger}|\psi\rangle = \langle- \vec{r}|\vec{r}\mathcal{P}^{\dagger}|\psi\rangle = - \vec{r}\langle- \vec{r}|\mathcal{P}|\psi\rangle \\
-&amp; = - \vec{r}\langle\vec{r}|\psi\rangle \\
+&amp; = - \vec{r}\langle\vec{r}|\psi\rangle  =\langle\vec{r}|( - \vec{r})|\psi\rangle \\
 &amp; \therefore\ \mathcal{P}\vec{r}\mathcal{P}^{\dagger} = -\vec{r}
 \end{align}
 e
@@ -14320,25 +14349,311 @@ Ou seja, $H_{0}$ e $\mathcal{P}$ compartilham uma mesma base de autovetores. Nos
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Notemos que as autofunções de $H_{0}$ pode ser escritas como
+<p>Notemos que as autofunções de $H_{0}$ podem ser escritas como
 \begin{equation}
-\psi_{n,l,m_{l}}(r,\theta,\phi) = f(r)(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{im_{l}\phi}.
+\psi_{n,l,m_{l}}(r,\theta,\phi) = f_{n,l,m_{l}}(r)(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial \cos\theta^{|m_{l}|}}e^{i|m_{l}|\phi}.
 \end{equation}
 Temos ainda que
 \begin{align}
-e^{im_{l}(\pi+\phi)} &amp; = e^{im_{l}\pi}e^{im_{l}\phi} = \big(\cos(m_{l}\pi)+i\sin(m_{l}\pi)\big)e^{im_{l}\phi} \\
-&amp; =(-1)^{m_{l}}e^{im_{l}\phi}
+e^{i|m_{l}|(\pi+\phi)} &amp; = e^{i|m_{l}|\pi}e^{i|m_{l}|\phi} = \big(\cos(|m_{l}|\pi)+i\sin(|m_{l}|\pi)\big)e^{i|m_{l}|\phi} \\
+&amp; =(-1)^{|m_{l}|}e^{i|m_{l}|\phi}.
 \end{align}
-Substituindo essa mudança de coordenadas na função de onda</p>
+Notando que $\sin(\pi-\theta)=\sin(\theta)$ e $\cos(\pi-\theta)=-\cos(\theta)$ e substituindo essa mudança de coordenadas $(r,\theta,\phi)\rightarrow(r,\pi-\theta,\pi+\phi)$ na função de onda teremos
+\begin{align}
+\psi_{n,l,m_{l}}(r,\pi-\theta,\pi+\phi) &amp; = f_{n,l,m_{l}}(r)(\sin\theta)^{|m_{l}|}(-1)^{|m_{l}|+l}\frac{\partial^{|m_{l}|}P_{l}(-\cos\theta)}{\partial(-\cos\theta)^{|m_{l}|}}(-1)^{|m_{l}|}e^{i|m_{l}|\phi} \\
+&amp; = (-1)^{l}\psi_{n,l,m_{l}}(r,\theta,\phi).
+\end{align}</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para obter esse resultado, usamos que 
+\begin{equation}
+\frac{\partial}{\partial(-z)} = -\frac{\partial}{\partial z}\ \therefore\ \frac{\partial^{l}}{\partial(-z)^{l}} = (-1)^{l}\frac{\partial^{l}}{\partial z^{l}} \text{ e } \frac{\partial^{|m_{l}|}}{\partial(-z)^{|m_{l}|}} = (-1)^{|m_{l}|}\frac{\partial^{|m_{l}|}}{\partial z^{|m_{l}|}}. 
+\end{equation}
+Assim, usando $P_{l}(z) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l}$, vem que
+\begin{align}
+\frac{\partial^{|m_{l}|}P_{l}(-\cos\theta)}{\partial(-\cos\theta)^{|m_{l}|}} &amp;\equiv \frac{\partial^{|m_{l}|}P_{l}(-z)}{\partial(-z)^{|m_{l}|}} \\
+&amp; = \frac{\partial^{|m_{l}|}}{\partial(-z)^{|m_{l}|}}\frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial (-z)^{l}}((-z)^{2}-1)^{l} \\
+&amp; = (-1)^{|m_{l}|}(-1)^{l}\frac{\partial^{|m_{l}|}}{\partial z^{|m_{l}|}}\frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial z^{l}}(z^{2}-1)^{l} \\
+&amp; =  (-1)^{|m_{l}|+l}\frac{\partial^{|m_{l}|}P_{l}(-\cos\theta)}{\partial(-\cos\theta)^{|m_{l}|}}.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Então, como
+\begin{equation}
+\langle -\vec{r}|\psi_{n,l,m_{l}}\rangle = \psi_{n,l,m_{l}}(-\vec{r}) = (-1)^{l}\psi_{n,l,m_{l}}(\vec{r}) = (-1)^{l}\langle\vec{r}|\psi_{n,l,m_{l}}\rangle,
+\end{equation}
+vemos que
+\begin{align}
+\langle\vec{r}|\mathcal{P}|\psi_{n,l,m_{l}}\rangle = \langle -\vec{r}|\psi_{n,l,m_{l}}\rangle = (-1)^{l}\psi_{n,l,m_{l}}(\vec{r}).
+\end{align}
+Ou seja, as autofunções de $H_{0}$ também são autofunções do operador de paridade $\mathcal{P}$, com autovalores
+\begin{equation}
+p = (-1)^{l}.
+\end{equation}
+Portanto, temos o seguinte resultado geral sobre a paridade das autofunções de $H_{0}$:
+\begin{align}
+l\text{ é par }\therefore\ p=(-1)^{l}=1\ \therefore\ \psi_{n,l,m_{l}} \text{ é par }: \psi_{n,l,m_{l}}(-\vec{r})=\psi_{n,l,m_{l}}(\vec{r}), \\
+l\text{ é ímpar }\therefore\ p=(-1)^{l}=-1\ \therefore\ \psi_{n,l,m_{l}} \text{ é ímpar }: \psi_{n,l,m_{l}}(-\vec{r})=-\psi_{n,l,m_{l}}(\vec{r}).
+\end{align}</p>
+<p>Por conseguinte, os momentos de dipolo de transição da eq. $(\diamond)$ são nulos para $l$ par, podendo ser não nulos somente quando $l$ é ímpar. Portanto somente funções de onda $\psi_{n,l,m_{l}}$ com $l$ ímpar pode contribuir para as correções perturbativas de 2ª ordem.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Sem perda de generalidade, vamos escolher o referencial inercial de forma que a direção $\hat{z}$ coincide com a direção do campo elétrico externo, i.e.
+\begin{equation}
+\vec{E} = E\hat{k}.
+\end{equation}
+Assim, notando que
+\begin{align}
+\langle\vec{d}\rangle_{100,nlm_{l}} = \hat{i}\langle d_{x}\rangle_{100,nlm} + \hat{j}\langle d_{y}\rangle_{100,nlm} + \hat{k}\langle d_{z}\rangle_{100,nlm_{l}},
+\end{align}
+teremos que
+\begin{align}
+E_{1,0,0}^{(2)} &amp; = \sum_{m,l,m_{l}\ne 1,0,0}\frac{|\vec{E}\cdot\langle\vec{d}\rangle_{100,nlm_{l}}|^{2}}{E_{1}-E_{n}} \\  
+&amp; = E^{2}\sum_{m,l,m_{l}\ne 1,0,0}\frac{|\langle d_{z}\rangle_{100,nlm_{l}}|^{2}}{E_{1}-E_{n}}
+\end{align}
+com
+\begin{align}
+\langle d_{z}\rangle_{100,nlm_{l}} &amp; = \int d^{3}r\psi_{1,0,0}(\vec{r})^{*}(-ez)\psi_{n,l,m_{l}}(\vec{r}) \\
+&amp;  = -e\int d^{3}r\psi_{1,0,0}(\vec{r})^{*}r\cos(\theta)\psi_{n,l,m_{l}}(\vec{r}).
+\end{align}
+Por causa do $E^{2}$ que aparece na equação para $E_{1,0,0}^{(2)}$, este efeito é chamdado de <strong>efeito Stark quadrático</strong>.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Usaremos agora alguns resultados obtidos em (<a href="https://github.com/jonasmaziero/mecanica_quantica_1900-1925/blob/master/16_hidrogenio.ipynb">https://github.com/jonasmaziero/mecanica_quantica_1900-1925/blob/master/16_hidrogenio.ipynb</a>). Lembremos que
+\begin{equation}
+\psi_{n,l,m_{l}}(r,\theta,\phi) = \Omega_{n,l}(r)\Theta_{l,m_{l}}(\theta)\Phi_{m_{l}}(\phi)
+\end{equation}
+com
+\begin{equation}
+\Theta_{l,m_{l}}(\theta) = (\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial (\cos\theta)^{|m_{l}|}}
+\end{equation}
+em que
+\begin{equation}
+P_{l}(\cos\theta) := \frac{1}{l!2^{l}}\frac{\partial^{l}}{\partial (\cos\theta)^{l}}(\cos^{2}\theta-1)^{l}.
+\end{equation}
+Os harmônicos esféricos podem ser escritos como
+\begin{align}
+\Upsilon_{l,m_{l}}(\theta,\phi) &amp; = \sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}(\sin\theta)^{|m_{l}|}\frac{\partial^{|m_{l}|}P_{l}(\cos\theta)}{\partial (\cos\theta)^{|m_{l}|}}e^{im_{l}\phi} \\
+&amp; = \sqrt{\frac{2l+1}{4\pi}\frac{(l-|m_{l}|)!}{(l+|m_{l}|)!}}\Theta_{l,m_{l}}(\theta)\Phi_{m_{l}}(\phi).
+\end{align}
+Ou seja
+\begin{equation}
+\psi_{n,l,m_{l}}(r,\theta,\phi) = \Omega_{n,l}(r)\sqrt{\frac{4\pi}{2l+1}\frac{(l+|m_{l}|)!}{(l-|m_{l}|)!}}\Upsilon_{l,m_{l}}(\theta,\phi).
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Mostramos também que
+\begin{align}
+\langle\psi_{n,l,m_{l}}|\psi_{n',l',m_{l}'}\rangle &amp; = \int_{0}^{\infty}\Omega_{n,l}(r)^{*}\Omega_{n',l'}(r)r^{2}dr\int_{0}^{\pi}\Theta_{l,m_{l}}(\theta)^{*}\Theta_{l',m_{l}'}(\theta)\sin\theta d\theta\int_{0}^{2\pi}\Phi_{m_{l}}(\phi)^{*}\Phi_{m_{l}'}(\phi)d\phi \\
+&amp; = \int_{0}^{\infty}\Omega_{n,l}(r)^{*}\Omega_{n',l'}(r)r^{2}dr\frac{2}{2l+1}\frac{(l+|m_{l}|)!}{(l-|m_{l}|)!}\delta_{l,l'}2\pi\delta_{m_{l}m_{l}'},
+\end{align}
+da qual podemos obter a seguinte relação de ortogonalidade para os harmônicos esféricos
+\begin{equation}
+\int_{0}^{\pi}\int_{0}^{2\pi}\Upsilon_{l,m_{l}}(\theta,\phi)^{*}\Upsilon_{l,m_{l}}(\theta,\phi)\sin\theta d\theta d\phi = \delta_{l,l'}\delta_{m_{l}m_{l}'}.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Pode-se verificar que
+\begin{equation}
+z = r\cos\theta = r\sqrt{\frac{4\pi}{3}}\Upsilon_{1,0}(\theta,\phi).
+\end{equation}
+Com isso, podemos escrever
+\begin{align}
+\langle d_{z}\rangle_{100,nlm} &amp; = \int r^{2} \psi_{1,0,0}(\vec{r})^{*}(-ez)\psi_{n,l,m}(\vec{r}) \\
+&amp;  = -e\int d^{3}r\psi_{1,0,0}(\vec{r})^{*}r\cos(\theta)\psi_{n,l,m_{l}}(\vec{r}) \\
+&amp; = -e\int_{0}^{\infty}\int_{0}^{\pi}\int_{0}^{2\pi}r^{2}\sin\theta dr d\theta d\phi \Omega_{1,0}(r)\sqrt{\frac{1}{4\pi}}r\sqrt{\frac{4\pi}{3}}\Upsilon_{1,0}(\theta,\phi)\Omega_{n,l}(r)\Upsilon_{l,m_{l}}(\theta,\phi) \\
+&amp; = \frac{-e}{\sqrt{3}}\int_{0}^{\infty}r^{3}\Omega_{1,0}(r)\Omega_{n,l}(r)dr\int_{0}^{\pi}\int_{0}^{2\pi}\sin\theta d\theta d\phi \Upsilon_{1,0}(\theta,\phi)\Upsilon_{l,m_{l}}(\theta,\phi) \\
+&amp; = \Big(\frac{-e}{\sqrt{3}}\int_{0}^{\infty}r^{3}\Omega_{1,0}(r)\Omega_{n,l}(r)dr\Big)\delta_{1,l}\delta_{0,m_{l}} \\
+&amp; = \Big(\frac{-e}{\sqrt{3}}\int_{0}^{\infty}r^{3}\Omega_{1,0}(r)\Omega_{n,1}(r)dr\Big)\delta_{1,l}\delta_{0,m_{l}} \\
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>em que
+\begin{align}
+&amp; \Omega_{n,l}(r)=\sqrt{\left(\frac{2}{a_{0}n}\right)^{3}\frac{(n-l-1)!}{(n+l)!2n}}e^{-r/a_{0}n}\left(\frac{2r}{a_{0}n}\right)^{l}L_{n-l-1}^{2l+1}\left(\frac{2r}{a_{0}n}\right) \\
+&amp; \therefore\ \Omega_{n,1}(r)=\sqrt{\left(\frac{2}{a_{0}n}\right)^{3}\frac{(n-2)!}{(n+1)!2n}}e^{-r/a_{0}n}\left(\frac{2r}{a_{0}n}\right)L_{n-2}^{3}\left(\frac{2r}{a_{0}n}\right).
+\end{align}</p>
+<p>Obtemos assim
+\begin{align}
+E_{1,0,0}^{(2)} = E^{2}\sum_{n&gt;1}\frac{|\langle d_{z}\rangle_{100,n10}|^{2}}{E_{1}-E_{n}}
+\end{align}
+com
+\begin{equation}
+\langle d_{z}\rangle_{100,n10} = \frac{-e}{\sqrt{3}}\int_{0}^{\infty}r^{2}\Omega_{1,0}(r)\Omega_{n,1}(r)dr.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="C%C3%A1lculos-para-o-1%C2%BA-estado-excitado:-Efeito-Stark-linear">C&#225;lculos para o 1&#186; estado excitado: Efeito Stark linear<a class="anchor-link" href="#C%C3%A1lculos-para-o-1%C2%BA-estado-excitado:-Efeito-Stark-linear">&#182;</a></h3><p>Ignorando o spin, do elétron e do próton, para $n=2$ temos quatro estados (autovetores de $H_{0}$) que correspondem a um mesmo autovalor
+\begin{equation}
+    E_{2},\ \{|\psi_{2,0,0}\rangle,|\psi_{2,1,0}\rangle,|\psi_{2,1,0}\rangle,|\psi_{2,0,0}\rangle\}.
+\end{equation}
+Neste caso, como temos degenerescência, as correções perturbativas de 1ª ordem são calculadas diagonalizando-se a matriz com elementos
+\begin{equation}
+H_{1(j,k)}^{n}=\langle\psi_{n,j}^{(0)}|H_{1}|\psi_{n,k}^{(0)}\rangle.
+\end{equation}
+Usando a base para o auto-espaço degenerado $n=2$ com a mesma sequência mostrada acima, teremos que diagonalizar a matriz
+\begin{equation}
+H_{1} \doteq
+\begin{bmatrix} 
+\langle\psi_{200}|H_{1}|\psi_{200}\rangle &amp; \langle\psi_{200}|H_{1}|\psi_{210}\rangle &amp; \langle\psi_{200}|H_{1}|\psi_{21-1}\rangle &amp; \langle\psi_{200}|H_{1}|\psi_{211}\rangle \\
+\langle\psi_{210}|H_{1}|\psi_{200}\rangle &amp; \langle\psi_{210}|H_{1}|\psi_{210}\rangle &amp; \langle\psi_{210}|H_{1}|\psi_{21-1}\rangle &amp; \langle\psi_{210}|H_{1}|\psi_{211}\rangle \\
+\langle\psi_{21-1}|H_{1}|\psi_{200}\rangle &amp; \langle\psi_{21-1}|H_{1}|\psi_{210}\rangle &amp; \langle\psi_{21-1}|H_{1}|\psi_{21-1}\rangle &amp; \langle\psi_{21-1}|H_{1}|\psi_{211}\rangle \\
+\langle\psi_{211}|H_{1}|\psi_{200}\rangle &amp; \langle\psi_{211}|H_{1}|\psi_{210}\rangle &amp; \langle\psi_{211}|H_{1}|\psi_{21-1}\rangle &amp; \langle\psi_{211}|H_{1}|\psi_{211}\rangle
+\end{bmatrix},
+\end{equation}
+com $H_{1} = - e\vec{E}\cdot\vec{r} = \vec{E}\cdot\vec{d}$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Vamos considerar agora um operador $O_{p}$ de paridade bem definida, ou seja
+\begin{equation}
+\mathcal{P}O_{p}\mathcal{P}^{\dagger} = pO_{p} \therefore\ \mathcal{P}O_{p} = p O_{p}\mathcal{P}\text{ com } p=\pm 1. 
+\end{equation}
+Assim
+\begin{align}
+&amp; p = +1\ \therefore\ [\mathcal{P},O_{p}]=\mathbb{O}, \\
+&amp; p = -1\ \therefore\ \{\mathcal{P},O_{p}\}=\mathbb{O}.
+\end{align}</p>
+<p>Vamos considerar os elementos de matriz desse operador na base de autovetores de $H_{0}$:
+\begin{align}
+&amp; \langle\psi_{nlm_{l}}|O_{p}|\psi_{n'l'm_{l}'}\rangle = \langle\psi_{nlm_{l}}|\mathcal{P}^{\dagger}\mathcal{P}O_{p}\mathcal{P}^{\dagger}\mathcal{P}|\psi_{n'l'm_{l}'}\rangle \\
+&amp; = \langle\psi_{nlm_{l}}|(-1)^{l}pO_{p}(-1)^{l'}|\psi_{n'l'm_{l}'}\rangle  = p(-1)^{l+l'}\langle\psi_{nlm_{l}}|O_{p}|\psi_{n'l'm_{l}'}\rangle \\
+&amp; \therefore\ \big(1-p(-1)^{l+l'}\big)\langle\psi_{nlm_{l}}|O_{p}|\psi_{n'l'm_{l}'}\rangle = 0.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Portanto, para que $\langle\psi_{nlm_{l}}|O_{p}|\psi_{n'l'm_{l}'}\rangle\ne 0$, devemos ter
+\begin{equation}
+p(-1)^{l+l'} = 1.
+\end{equation}
+Por conseguinte
+\begin{align}
+&amp; p=1\ \therefore\ l+l' \text{ deve ser par}, \\
+&amp; p=-1\ \therefore\ l+l' \text{ deve ser ímpar}.
+\end{align}
+Com isso, vemos que o valor médio de um operador com paridade ímpar, $O_{\iota}$, é nulo,
+\begin{equation}
+\langle\psi_{nlm_{l}}|O_{\iota}|\psi_{nlm_{l}}\rangle = 0,
+\end{equation}
+pois $l'=l$ e nesse caso
+\begin{equation}
+l+l'=2l \text{ é par}.
+\end{equation}
+Como exemplos de operadores ímpares, podemos citar o operador posição, $\vec{r}$, o operador momento linear, $\vec{p}$, e o momento de dipolo elétrico, $\vec{d}=-e\vec{r}$. Como exemplo de operador par podemos citar o hamiltoniano não perturbado do átomo de Hidrogênio, $H_{0}$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>De particular importância para nós aqui é o hamiltoniano de perturbação, $H_{1} = - e\vec{E}\cdot\vec{r}$, que é um operador ímpar. Neste caso teremos
+\begin{equation}
+\langle\psi_{nlm_{l}}|H_{1}|\psi_{nlm_{l}}\rangle = 0.
+\end{equation}</p>
+<p>Para os elementos fora da diagonal, usando novamente $\vec{E}=E\hat{k}$, teremos
+\begin{align}
+\langle\psi_{nlm_{l}}|H_{1}|\psi_{n'l'm_{l}'}\rangle &amp; = \langle\psi_{nlm_{l}}|\vec{E}\cdot\vec{d}|\psi_{n'l'm_{l}'}\rangle  = E\langle\psi_{nlm_{l}}|d_{z}|\psi_{n'l'm_{l}'}\rangle \\
+&amp; = -eE\langle\psi_{nlm_{l}}|z|\psi_{n'l'm_{l}'}\rangle = -eE\langle\psi_{nlm_{l}}|r\cos\theta|\psi_{n'l'm_{l}'}\rangle.
+\end{align}
+Assim, usando
+\begin{align}
+\psi_{2,0,0}(r,\theta,\phi) &amp; = \Omega_{2,0}(r)\sqrt{\frac{4\pi}{2\cdot 0+1}\frac{(0+|0|)!}{(0-|0|)!}}\Upsilon_{0,0}(\theta,\phi) = \Omega_{2,0}(r)\sqrt{4\pi}\sqrt{\frac{1}{4\pi}} \\
+&amp; = \Omega_{2,0}(r),
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>podemos escrever
+\begin{align}
+\langle\psi_{200}|H_{1}|\psi_{2l'm_{l}'}\rangle &amp; = -eE\int_{0}^{\infty}\int_{0}^{\pi}\int_{0}^{2\pi}r^{2}\sin\theta dr d\theta d\phi\psi_{200}(r,\theta,\phi)^{*}r\cos\theta\psi_{2l'm_{l}'}(r,\theta,\phi) \\
+&amp; = -eE\int_{0}^{\infty}\int_{0}^{\pi}\int_{0}^{2\pi}r^{2}\sin\theta dr d\theta d\phi\Omega_{2,0}(r)r\sqrt{\frac{4\pi}{3}}\Upsilon_{1,0}(\theta,\phi)\Omega_{2,l'}(r)\sqrt{\frac{4\pi}{2l'+1}\frac{(l'+|m_{l}'|)!}{(l'-|m_{l}'|)!}}\Upsilon_{l',m_{l}'}(\theta,\phi) \\
+&amp; = -eE\sqrt{\frac{4\pi}{3}\frac{4\pi}{2l'+1}\frac{(l'+|m_{l}'|)!}{(l'-|m_{l}'|)!}}\int_{0}^{\infty}r^{3}\Omega_{2,0}(r)\Omega_{2,l'}(r)dr\int_{0}^{\pi}\int_{0}^{2\pi}\sin\theta d\theta d\phi\Upsilon_{1,0}(\theta,\phi)\Upsilon_{l',m_{l}'}(\theta,\phi) \\
+&amp; = -eE\sqrt{\frac{4\pi}{3}\frac{4\pi}{2l'+1}\frac{(l'+|m_{l}'|)!}{(l'-|m_{l}'|)!}}\int_{0}^{\infty}r^{3}\Omega_{2,0}(r)\Omega_{2,l'}(r)dr \delta_{1,l'}\delta_{0,m_{l}'} \\
+&amp; = \delta_{1,l'}\delta_{0,m_{l}'}\Big(-\frac{4\pi}{3}eE\int_{0}^{\infty}r^{3}\Omega_{2,0}(r)\Omega_{2,l'}(r)dr\Big) \\
+&amp; = \delta_{1,l'}\delta_{0,m_{l}'}\gamma,
+\end{align}
+em que definimos
+$$\gamma := -\frac{4\pi}{3}eE\int_{0}^{\infty}r^{3}\Omega_{2,0}(r)\Omega_{2,l'}(r)dr = E\langle\psi_{200}|d_{z}|\psi_{210}\rangle.$$
+Portanto
+\begin{align}
+&amp; \langle\psi_{200}|H_{1}|\psi_{21-1}\rangle = \langle\psi_{200}|H_{1}|\psi_{211}\rangle = 0 \\
+&amp; = \langle\psi_{21-1}|H_{1}|\psi_{200}\rangle = \langle\psi_{211}|H_{1}|\psi_{200}\rangle.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Usando 
+\begin{equation}
+\psi_{2,1,0}(r,\theta,\phi) = \Omega_{2,1}(r)\sqrt{\frac{4\pi}{2+1}\frac{(1+0)!}{(1-0)!}}\Upsilon_{1,0}(\theta,\phi) = \Omega_{2,1}(r)\sqrt{\frac{4\pi}{3}}\Upsilon_{1,0}(\theta,\phi).
+\end{equation}
+podemos verificar também que
+\begin{align}
+&amp; \langle\psi_{210}|H_{1}|\psi_{21-1}\rangle = \langle\psi_{210}|H_{1}|\psi_{211}\rangle = 0 \\
+&amp; = \langle\psi_{21-1}|H_{1}|\psi_{210}\rangle = \langle\psi_{211}|H_{1}|\psi_{210}\rangle \\
+&amp; = \langle\psi_{21-1}|H_{1}|\psi_{211}\rangle = \langle\psi_{211}|H_{1}|\psi_{21-1}\rangle.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Temos assim que
+\begin{equation}
+H_{1} \doteq
+\begin{bmatrix} 
+0 &amp; \gamma &amp; 0 &amp; 0 \\
+\gamma &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{bmatrix}.
+\end{equation}
+Da equação secular, $\det(H_{1}-\lambda\mathbb{I})=0$, temos que
+\begin{align}
+\lambda^{2}(\lambda^{2}-\gamma^{2}) = 0 \ \therefore\ \lambda_{1}=\lambda_{2}=0 \text{ e } \lambda_{3}=-\gamma,\ \lambda_{4}=\gamma.
+\end{align}</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ga</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">)</span>
+<span class="n">H1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="n">ga</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="n">ga</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">H1</span><span class="o">.</span><span class="n">eigenvects</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14346,6 +14661,49 @@ Substituindo essa mudança de coordenadas na função de onda</p>
 </div>
 </div>
 
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left[ \left( 0, \  2, \  \left[ \left[\begin{matrix}0\\0\\1\\0\end{matrix}\right], \  \left[\begin{matrix}0\\0\\0\\1\end{matrix}\right]\right]\right), \  \left( - \gamma, \  1, \  \left[ \left[\begin{matrix}-1\\1\\0\\0\end{matrix}\right]\right]\right), \  \left( \gamma, \  1, \  \left[ \left[\begin{matrix}1\\1\\0\\0\end{matrix}\right]\right]\right)\right]$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Teremos assim que um campo magnético constante no tempo e no espaço vai levar na seguinte mudança das energias do átomo de Hidrogênio pra o 1º estado excitado:
+\begin{equation}
+E_{2}, \{|\psi_{200}\rangle,|\psi_{210}\rangle\} \longrightarrow \begin{cases} E_{2}+\gamma, \hspace{0.2cm} \frac{1}{\sqrt{2}}\big(|\psi_{200}\rangle+|\psi_{210}\rangle\big), \\
+E_{2}, \hspace{1cm} \{|\psi_{200}\rangle,|\psi_{210}\rangle\}, \\
+E_{2}-\gamma, \hspace{0.2cm} \frac{1}{\sqrt{2}}\big(|\psi_{200}\rangle-|\psi_{210}\rangle\big).
+\end{cases}
+\end{equation}
+Note que o efeito Stark linear está associado a energias diferentes para estados que não tem paridade definida, pois são combinações lineares de estados com paridade definida. O valor médio do momento de dipolo elétrico nesses estados é
+\begin{align}
+&amp; 2^{-1}\big(\langle 200|\pm\langle 210|\big)d_{z}\big(|200\rangle\pm|210\rangle\big) = \pm 2^{-1}\big(\langle\psi_{200}|d_{z}|\psi_{210}\rangle+\langle\psi_{200}|d_{z}|\psi_{210}\rangle^{*}\big) \\
+&amp; = \pm \langle\psi_{200}|d_{z}|\psi_{210}\rangle = \pm \frac{\gamma}{E}.
+\end{align}</p>
+<p>A energia de interação de um dipolo elétrico clássico, $\vec{d}_{c}$, com um campo elétrico na direção $z$ é dada por
+$$\Delta U = -\vec{E}\cdot\vec{d}_{c} = -Ed_{c,z}.$$
+Ou seja, essa energia depende linearmente de $E$, é negativa quando $\vec{E}$ e $\vec{d}_{c}$ são paralelos e positiva quando esses vetores são anti-parelelos. A diferença de energia entre os estados sem paridade definida é igual ao caso de um dipolo elétrico clássico. Estes estados são chamados <strong>polares</strong>. Para que estes estados ocorram é essencial que exista degenerescência entre estados com paridade definida. Isso ocorre também no caso de <strong>moléculas polares</strong>, com um exemplo bem conhecido sendo a água, cujo hamiltoniano não muda por inversão espacial.</p>
+
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14365,7 +14723,30 @@ com $\chi=\chi(\vec{r},t)$ sendo uma função escalar real qualquer. Mostre que
 &amp; \vec{B}' = \vec{\nabla}\times\vec{B}' = \vec{\nabla}\times\vec{B} = \vec{B}.
 \end{align}</p>
 </li>
-<li><p>Verifique que a mudança de coordenadas $(r,\theta,\phi)\rightarrow (r,\pi-\theta,\phi+\pi)$ nos fornece a inversão espacial $\vec{r}\rightarrow -\vec{r}$.</p>
+<li><p>Verifique que a mudança de coordenadas esféricas $(r,\theta,\phi)\rightarrow (r,\pi-\theta,\phi+\pi)$ nos fornece a inversão espacial $\vec{r}\rightarrow -\vec{r}$.</p>
+</li>
+<li><p>Verifique que
+\begin{equation}
+\langle\psi_{1,0,0}^{(0)}|H_{1}|\psi_{m,l,m_{l}}^{(0)}\rangle = \vec{E}\cdot\langle\vec{d}\rangle_{100,nlm_{l}}
+\end{equation}
+com
+\begin{equation}
+\langle\vec{d}\rangle_{100,nlm_{l}} = \int d^{3}r\psi_{1,0,0}(\vec{r})^{*}(-e\vec{r})\psi_{n,l,m_{l}}(\vec{r}).
+\end{equation}</p>
+</li>
+<li><p>Considere um operador linear qualquer $A$ tal que $A^{2}=\mathbb{I}$. Verifique que para $A|a\rangle=a|a\rangle$ devemos ter $a=\pm1$.</p>
+</li>
+<li><p>Verifique que podemos escrever
+\begin{equation}
+z = r\cos\theta = r\sqrt{\frac{4\pi}{3}}\Upsilon_{1,0}(\theta,\phi).
+\end{equation}</p>
+</li>
+<li><p>Verifique que
+\begin{equation}
+\Upsilon_{0,0}(\theta,\phi)=\sqrt{\frac{1}{4\pi}} \ \therefore\ \psi_{1,0,0}(r,\theta,\phi)=\Omega_{1,0}(r)\sqrt{\frac{1}{4\pi}}.
+\end{equation}</p>
+</li>
+<li><p>Mostre que, para um par de vetores de estado $|\psi\rangle,|\phi\rangle$ e um observável $A$, se $\langle\psi|A|\phi\rangle=0$ então $\langle\phi|A|\psi\rangle=0$. Explique todos os passos da sua resolução.</p>
 </li>
 </ol>
 
