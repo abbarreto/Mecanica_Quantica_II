@@ -15081,7 +15081,7 @@ Esse limite superior pode ser calculado se conhecemos $E_{0}$ e $E_{1}$ de exper
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[52]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># hb = w = m = 1</span>
@@ -15954,11 +15954,11 @@ $\displaystyle -77.4886845069222$
 $$H = -\frac{\hbar^{2}}{2m_{e}}\nabla^{2} -ke^{2}\Big(\frac{1}{r_{1}}+\frac{1}{r_{2}}\Big).$$
 A energia de repulsão entre os prótons, $ke^{2}/R$, pode ser incluída depois que obtermos $R$, que por enquanto será considerado fixo.</p>
 <p><img src='fig_H2+.png' width='250'></p>
-<p>Se ignoramos um dos prótons, a função de onda é aquela do átomo de hidrogênio
+<p>Se ignoramos um dos prótons, a função de onda é aquela do átomo de hidrogênio. Para o estado fundamental
 $$\psi_{0}(r) = \frac{1}{\sqrt{\pi a_{0}^{3}}}e^{-r/a_{0}}.$$</p>
 <p>Assim, como uma 1ª tentativa de função de onda variacional, podemos usar
 $$\phi = A\big(\psi_{0}(r_{1})+\psi_{0}(r_{2})\big).$$
-Esse tipo de função de onda molecular é usualmente chamado de CLOA, que a sigla para Combinação Linear de Orbitais Atômicos (<strong>LCAO</strong>, que é a sigla para Linear Combination of Atomic Orbitals).</p>
+Esse tipo de função de onda molecular é usualmente chamado de CLOA, que a sigla para Combinação Linear de Orbitais Atômicos (<strong>LCAO</strong>, que é a sigla para Linear Combination of Atomic Orbitals). Pela simetria do sistema por troca dos prótons, temos que os módulos dos coeficientes na combinação linear devem ser iguais. Usaremos o sinal de mais, que leva a um estado ligado. Ficará como exercício mostrar que o uso do sinal de menos leva a um estado não ligado.</p>
 
 </div>
 </div>
@@ -15972,7 +15972,7 @@ Esse tipo de função de onda molecular é usualmente chamado de CLOA, que a sig
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">a0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r a_</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">a0</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="n">a0</span><span class="p">),(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">pi</span><span class="o">*</span><span class="n">a0</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r</span><span class="o">/</span><span class="n">a0</span><span class="p">),(</span><span class="n">r</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">))</span><span class="o">*</span><span class="mi">4</span><span class="o">*</span><span class="n">pi</span> <span class="c1"># ok psi0 esta normalizada</span>
 </pre></div>
 
      </div>
@@ -16015,11 +16015,12 @@ $\displaystyle 1$
 <p>Normalizando
 \begin{align}
 &amp; \int d^{3}r |\phi|^{2} = 1 = |A|^{2}\int d^{3}r\big(|\psi_{0}(r_{1})|^{2}+|\psi_{0}(r_{2})|^{2}+2\psi_{0}(r_{1})\psi_{0}(r_{2})\big) \\
-&amp; = |A|^{2}2\Big(1+1+\frac{2}{\pi a_{0}^{3}}\int d^{3}r e^{-(r_{1}+r_{2})/a_{0}}\big) =: |A|^{2}2\Big(1+I\big). \\
+&amp; = |A|^{2}\Big(1+1+\frac{2}{\pi a_{0}^{3}}\int d^{3}r e^{-(r_{1}+r_{2})/a_{0}}\big) =: |A|^{2}2(1+I), \\
+&amp; \therefore A = \frac{1}{\sqrt{2(1+I)}}.
 \end{align}</p>
 <p><img src='fig_H2+_ref1.png' width='300'></p>
 <p>Seguindo, escolhemos o referencial de forma que o próton 1 está na orgigem e o próton 2 está no eixo positivo $z$. Teremos assim que
-$$r_{1}=r \text{ e } r_{2} = \sqrt{r^{2}+R^{2}-2rR\cos\theta},$$
+$$r_{1}=r \text{ e } r_{2} =r'= \sqrt{r^{2}+R^{2}-2rR\cos\theta},$$
 em que $\theta$ é o ângulo entre $\vec{r}$ e o eixo $z$ ($\hat{k}$). Com isso, teremos que a chamada <strong>integral de sobreposição</strong> (de <em>overlap</em>) é
 \begin{align}
 I &amp; = \langle\psi_{0}(r_{1})|\psi_{0}(r_{2})\rangle = \int d^{3}r \psi_{0}(r_{1})^{*}\psi_{0}(r_{2})\\
@@ -16303,8 +16304,11 @@ $\displaystyle \frac{\pi a_{0} \left(R^{2} + 3 R a_{0} + 3 a_{0}^{2}\right) e^{-
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Tendo a integral de overlap, obtemos a constante de normalização
-$$A = \frac{1}{\sqrt{2(1+I)}} = \frac{1}{\sqrt{2\big(1+\big(R^{2}/3a_{0}^{2} + R/a_{0}+1\big)e^{-R/a_{0}}\big)}}.$$</p>
+<p>Tendo a integral de overlap, obtemos a constante de normalização e a função de onda teste
+\begin{align}
+&amp; A = \frac{1}{\sqrt{2(1+I)}} = \frac{1}{\sqrt{2\big(1+\big(R^{2}/3a_{0}^{2} + R/a_{0}+1\big)e^{-R/a_{0}}\big)}}, \\
+&amp; \phi = \frac{\psi_{0}(r_{1})+\psi_{0}(r_{2})}{\sqrt{2\big(1+\big(R^{2}/3a_{0}^{2} + R/a_{0}+1\big)e^{-R/a_{0}}\big)}}.
+\end{align}</p>
 <p>Seguindo, vamos usar
 $$\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla^{2}-\frac{ke^{2}}{r}\Big)\psi_{0}(r)=E_{1}^{(0)}\psi_{0}(r).$$
 Com isso, vem que
@@ -16327,7 +16331,8 @@ H\phi &amp; = \Big(-\frac{\hbar^{2}}{2m_{e}}\nabla^{2}-\frac{ke^{2}}{r}-\frac{ke
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Assim
 \begin{align}
-\langle H\rangle_{\phi} &amp; = E_{1}^{(0)}\int d^{3}r|\phi|^{2} - |A|^{2}ke^{2}\int d^{3}r \big(\psi_{0}(r)^{*}+\psi_{0}(r_{2})^{*}\big)\Big(\frac{\psi_{0}(r)}{r_{2}}+\frac{\psi_{0}(r_{2})}{r}\Big) \\
+\langle H\rangle_{\phi} &amp; = \int d^{3}r \phi^{*}H\phi \\
+&amp; = E_{1}^{(0)}\int d^{3}r|\phi|^{2} - |A|^{2}ke^{2}\int d^{3}r \big(\psi_{0}(r)^{*}+\psi_{0}(r_{2})^{*}\big)\Big(\frac{\psi_{0}(r)}{r_{2}}+\frac{\psi_{0}(r_{2})}{r}\Big) \\
 &amp; = E_{1}^{(0)} - A^{2}ke^{2}\Big(\int d^{3}r \psi_{0}(r)\frac{1}{r_{2}}\psi_{0}(r) + \int d^{3}r \psi_{0}(r)\frac{1}{r}\psi_{0}(r_{2}) \\
 &amp; \hspace{3cm} + \int d^{3}r \psi_{0}(r_{2})\frac{1}{r_{2}}\psi_{0}(r) + \int d^{3}r \psi_{0}(r_{2})\frac{1}{r}\psi_{0}(r_{2}) \Big) \\
 &amp; = E_{1}^{(0)} - 2A^{2}ke^{2}\Big(\int d^{3}r \psi_{0}(r)\frac{1}{r_{2}}\psi_{0}(r) + \int d^{3}r \psi_{0}(r)\frac{1}{r}\psi_{0}(r_{2}) \Big) \\
@@ -16335,7 +16340,7 @@ H\phi &amp; = \Big(-\frac{\hbar^{2}}{2m_{e}}\nabla^{2}-\frac{ke^{2}}{r}-\frac{ke
 \end{align}
 Passemos agora para o cálculo da chamada <strong>integral direta</strong>
 \begin{align}
-I_{D} &amp; = \int d^{3}r \psi_{0}(r)\frac{1}{r_{2}}\psi_{0}(r) \\
+I_{D} &amp; = \int d^{3}r \psi_{0}(r)\frac{1}{r_{2}}\psi_{0}(r) \equiv \langle\psi_{0}|\Big(\int d^{3}r \frac{|\vec{r}\rangle\langle \vec{r}|}{r_{2}}\Big)|\psi_{0}\rangle \\
 &amp; = \frac{1}{\pi a_{0}^{3}}\int_{0}^{2\pi}d\phi\int_{0}^{\infty}r^{2}e^{-2r/a_{0}}dr\int_{0}^{\pi}\frac{\sin\theta d\theta}{ \sqrt{r^{2}+R^{2}-2rR\cos\theta}} \\
 &amp; = \frac{1}{\pi a_{0}^{3}}2\pi\int_{0}^{\infty}r^{2}e^{-2r/a_{0}}dr\frac{1}{rR}\big(r+R-|r-R|\big) \\
 &amp; = \frac{2}{R a_{0}^{3}}\Big(\int_{0}^{R}re^{-2r/a_{0}}dr2r + \int_{R}^{\infty}re^{-2r/a_{0}}dr2R \Big) \\\
@@ -16453,7 +16458,7 @@ $\displaystyle \frac{a_{0}^{2} \left(- R + a_{0} e^{\frac{2 R}{a_{0}}} - a_{0}\r
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Já a chamada <strong>integral de troca</strong> é obtida como segue
 \begin{align}
-I_{T} &amp; = \int d^{3}r \psi_{0}(r)\frac{1}{r}\psi_{0}(r_{2}) \\
+I_{T} &amp; = \int d^{3}r \psi_{0}(r)\frac{1}{r}\psi_{0}(r_{2})  \equiv \langle\psi_{0}|\Big(\int d^{3}r \frac{|\vec{r}\rangle\langle \vec{r}_{2}|}{r}\Big)|\psi_{0}\rangle \\
 &amp; = \frac{1}{\pi a_{0}^{3}}\int_{0}^{2\pi}d\phi\int_{0}^{\infty}\frac{r^{2}e^{-r/a_{0}}}{r}dr\int_{0}^{\pi} e^{-\sqrt{r^{2}+R^{2}-2rR\cos\theta}/a_{0}} \sin\theta d\theta \\
 &amp; = \frac{1}{\pi a_{0}^{3}}2\pi\int_{0}^{\infty}re^{-r/a_{0}}dr\int_{|r-R|/a_{a}}^{(r+R)/a_{0}} e^{-y} \frac{a_{0}^{2}ydy}{rR} \\
 &amp; = \frac{2}{R a_{0}}\int_{0}^{\infty}e^{-r/a_{0}}dr\Big(-\big(1+y\big)e^{-y}\Big)_{|r-R|/a_{0}}^{(r+R)/a_{0}} \\
@@ -16603,10 +16608,10 @@ em que definimos $$x:=\frac{R}{a_{0}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Htm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Htm</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># em unidade de -E_1^0</span>
     <span class="k">return</span> <span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(((</span><span class="mi">1</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)))</span>
 </pre></div>
 
@@ -16620,11 +16625,11 @@ em que definimos $$x:=\frac{R}{a_{0}}.$$</p>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[57]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">Htm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\langle H_</span><span class="si">{t}</span><span class="s1">\rangle_{\phi}(-E_</span><span class="si">{1}</span><span class="s1">^{(0)})$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R/a_</span><span class="si">{0}</span><span class="s1">$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
@@ -16651,7 +16656,7 @@ em que definimos $$x:=\frac{R}{a_{0}}.$$</p>
 
 
 <div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAd8AAAFvCAYAAAALysEtAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/YYfK9AAAACXBIWXMAAA9hAAAPYQGoP6dpAAAyu0lEQVR4nO3deXxdZbn3/8+Vuc3UdEjTNm3pTIuUAmUoIJOgKIKij/NwnHA4Dkc9TsCjov4UjvpzOqhHUEQRQTnHgUHGI3OhZS7QgULTeUzTZp5zPX+stdMQkmba2Xvtle/79VqvJGuvtdeVdPjmvtd938vcHREREUmdrHQXICIiMtYofEVERFJM4SsiIpJiCl8REZEUU/iKiIikmMJXREQkxRS+IiIiKZaT7gLiwMwMmA7Up7sWERFJq2Jgpw+wiIbCNzmmA9vTXYSIiERCJbDjcAcofJOjHmDbtm2UlJSkuxYREUmDuro6Zs6cCYPoBVX4JlFJSYnCV0REBqQBVyIiIimm8BUREUkxha+IiEiKKXxFRERSTOErIiKSYgpfERGRFFP4ioiIpJjCV0REJMUUviIiIimm8I2Qzi6no7Mr3WWIiMgoU/hGxKdveIp5l/6D/3lKz2cQEYk7hW9E5GQbAPUtHWmuRERERpvCNyKKC4JnXNQpfEVEYk/hGxHFBbkA1Le0p7kSEREZbQrfiEi0fBvU8hURiT2Fb0QU5wfhq3u+IiLxp/CNiO5u51Z1O4uIxJ3CNyIS3c5q+YqIxJ/CNyIODbhS+IqIxF2swtfMyszsejOrDbfrzWzCIM5bbGa3hOfUm9ljZjYrBSV3O9TyVbeziEjcxSp8gT8Cy4Dzwm0ZcP3hTjCzecDDwHrgTOAY4DtAy+iV+WpFGnAlIjJm5KS7gGQxs8UEgXuyu68K910MPGpmi9x9Qz+nfhf4h7t/pce+TaNb7auVhN3OrR1dtHV0kZcTt9+LREQkIU7/w68AahPBC+DujwG1wCl9nWBmWcD5wItmdpeZ7TWzVWb21sNdyMzyzawksQHFIy2+qODQ70HqehYRibc4hW8FsLeP/XvD1/pSDhQBXwPuBF4P/BX4i5mdcZhrXUIQ6oltxE9DyM4yCvOyAXU9i4jEXeTD18wuNzMfYFseHu59vUU/++HQ9/93d/+xuz/j7lcCtwGfPExZVwClPbbKoX9nr6YRzyIiY0Mm3PO9CrhpgGM2A0uBqX28NgXY08951UAHsLbX/nXAaf1dzN1bgdbE12Y2QHmDU1SQA3VaaENEJO4iH77uXk0QkodlZo8CpWZ2oruvDvedRNAyXdnPe7eZ2ePAol4vLQS2jKjwYdBCGyIiY0Pku50Hy93XEdy3vcbMTjazk4FrgNt6jnQ2s/VmdlGPU38AvMvMLjaz+Wb2GeAC4BeprB/U7SwiMlbEJnxD7wOeA+4OtzXAB3ods4igNQyAu/+V4P7uV8JzPwa83d0fTkXBPWmhDRGRsSHy3c5D4e41wPsHOOZVN2jd/Vrg2tGqa7BK1O0sIjImxK3lm9EOrXKllq+ISJwpfCMkcc+3oVUtXxGROFP4Rkjinm+dup1FRGJN4RshGu0sIjI2KHwjRKOdRUTGBoVvhBTrsYIiImOCwjdCDnU7q+UrIhJnCt8ISXQ7N6jlKyISawrfCEmEb2NbJ51d/T2ISUREMp3CN0KKCg4tOKbWr4hIfCl8IyQ/J5u8nOCPpE73fUVEYkvhGzFa31lEJP4UvhGjEc8iIvGn8I2Y7hHPWt9ZRCS2FL4RU6SFNkREYk/hGzElYbezBlyJiMSXwjdiSscF4VvbpPAVEYkrhW/ElI4Pw7dZ4SsiElcK34jpbvkqfEVEYkvhGzGJeb665ysiEl8K34gpUctXRCT2FL4Rc6jbWVONRETiSuEbMYnwrVPLV0QkthS+EaMBVyIi8afwjZhE+Da0dtDR2ZXmakREZDQofCMmMeAKoE5LTIqIxJLCN2Jys7MozMsGdN9XRCSuFL4RpOlGIiLxpvCNIA26EhGJN4VvBKnlKyISbwrfCFLLV0Qk3hS+EaTwFRGJN4VvBHWvcqWHK4iIxJLCN4K0xKSISLwpfCNI3c4iIvGm8I0gha+ISLwpfCOoZFwOoPAVEYkrhW8EqeUrIhJvsQpfMyszs+vNrDbcrjezCQOc4/1sX05R2a/SHb5NCl8RkTiKVfgCfwSWAeeF2zLg+gHOmdZr+wjgwP+MVpEDSaxwVd/aQVeXp6sMEREZJTnpLiBZzGwxQeCe7O6rwn0XA4+a2SJ339DXee6+u9f7vAW4z903jXbN/Um0fN2DAC7t8ZhBERHJfHFq+a4AahPBC+DujwG1wCmDeQMzmwqcD/xmgOPyzawksQHFwy/71fJzsinIDf5oNNdXRCR+4hS+FcDePvbvDV8bjH8B6oG/DHDcJQShnti2D/L9B02DrkRE4ivy4Wtmlx9mUFRiWx4e3tcNUutnf18+Atzg7i0DHHcFUNpjqxzk+w+awldEJL4y4Z7vVcBNAxyzGVgKTO3jtSnAnoEuYmavBRYB7xroWHdvBVp7nDvQKUNWUqDwFRGJq8iHr7tXA9UDHWdmjwKlZnaiu68O951E0DJdOYhLfRR40t2fHUm9yTJhfBC+BzXdSEQkdiLf7TxY7r4OuBO4xsxONrOTgWuA23qOdDaz9WZ2Uc9zw0FT7wB+ncqaD6dsfB4AB5ra0lyJiIgkW2zCN/Q+4Dng7nBbA3yg1zGLCFrDPb2b4N7wjaNd4GCVFQbhe1DhKyISO5Hvdh4Kd68B3j/AMa+6QevuVwNXj1Zdw5Hodq5pVLeziEjcxK3lGxuJbme1fEVE4kfhG1FlYctX93xFROJH4RtRh1q+6nYWEYkbhW9EJQZc1ajlKyISOwrfiEoMuKptbqdTTzYSEYkVhW9ETRgXtHzd9XAFEZG4UfhGVF5OFkX5wUwwDboSEYkXhW+ElRUmRjyr5SsiEicK3wjrXmKyUS1fEZE4UfhG2ASt7ywiEksK3wgr05ONRERiSeEbYXqykYhIPCl8I+xQ+KrlKyISJwrfCOse7awBVyIisaLwjTANuBIRiSeFb4RpwJWISDwpfCNMA65EROJJ4RthiScbHWxqx10PVxARiQuFb4Qlup3bOrtobOtMczUiIpIsCt8IG5ebTV5O8EekEc8iIvGh8I0wM9OgKxGRGFL4RpwGXYmIxI/CN+IS4VujbmcRkdhQ+EbcpKIgfPcrfEVEYkPhG3GTi/IB2N/QmuZKREQkWRS+ETcpnOu7v0EtXxGRuFD4RtykRMtX3c4iIrGh8I24iYmWb6O6nUVE4kLhG3GTi9TtLCISNwrfiJukAVciIrGj8I24xFSjxrZOWtq1vrOISBwofCOuOD+HvOzgj0mDrkRE4iFp4WtmuWY208wWmdnEZL3vWGdmhwZdqetZRCQWRhS+ZlZkZp8ws/uBWmAzsBbYZ2ZbzOwaMzth5GWObZM06EpEJFaGHb5m9gWCsL0Y+CfwNmAZsAhYAXwLyAHuMbM7zWzBSIsdqzTXV0QkXnJGcO4pwFnu/lw/r68GrjWzTwIfBc4ANo7gemPWZHU7i4jEyrDD193fMcjjWoFfDPc60nOhDbV8RUTiQKOdM0Ci27laLV8RkVgYcsvXzE4C3gOcClQALQSDrO4AbnT32qRWKBpwJSISM0Nq+ZrZP4APA/cAFwJzCAZZfQPIA/7bzN6a3BKHVF+ZmV1vZrXhdr2ZTRjgnCIzu8rMtptZs5mtM7NPpajkQUksMVmjbmcRkVgYasv3ve5+sNe+DuDZcPvZQGE3yv4IVALnhV9fDVwPXHCYc34MnAW8n2D09uuBX5jZTnf/++iVOniTCrXEpIhInAwpfN39YBiubwBmAA7sAu5y9wOJY5Jc46CY2WKC0D3Z3VeF+y4GHjWzRe6+oZ9TVwC/c/f7w6+vNrNPAMuBSIRvYsBVdWMb7o6ZpbkiEREZiaF2O3+UYArRyeG52eHnj4WvpdMKoDYRvADu/hjB4h+nHOa8h4ELzWyGBc4CFgJ39XeCmeWbWUliA4qT8y30LXHPt62ji4bWjtG8lIiIpMBQu52/Ahzn7g09d5rZ14Engd8kq7BhqAD29rF/b/hafz4HXANsJ+hC7wI+5u4PH+acS4BvDrPOIRufl8P4vGya2jqpaWyjuCA3VZcWEZFRMNSpRg4U9bG/KHwt6czscjPzAbblPep71VsMUNvnCFrvFwLHA/9OcM/3nMOccwVQ2mOrHOr3NVSJ1m+1RjyLiGS8obZ8vwQ8YGbPAzvCfZXAUQShNRquAm4a4JjNwFJgah+vTQH29HWSmY0Dvgdc5O63h7vXmNkygu/13r7OCxcO6R79lIp7sJMK89lW06y5viIiMTDUAVe3mdkdwInAdIJW5Q5gtbsP6mGzZna8uz85hGtWA9WDeN9HgVIzO9HdV4f7TiJoma7s57TccOvqtb+TiC1AMqU4GPG8t17hKyKS6Ya8yEYYso+O4Jp/BWaN4Pw+ufs6M7sTuCYcrQzBVKPbeo50NrP1wCXu/ld3rzOzB4AfmFkzsIVgDeoPAl9Mdo0jUR6G7z6Fr4hIxhtS+JrZXcDNwC3uvrfH/iyC1vD7gSeAN/X3FsBoPuv3fcDPgLvDr28BPtPrmEUEreGEdxPcw70hrG0LcBnwX6NY55CVFxcAsK++Jc2ViIjISA215XsRwROK/m5mFcBBoCDcHgB+4e6rzexHwAeAhl7nG3D6iCo+DHevIfgF4HDHWK+vdxOs2hVp3d3OdWr5iohkuqHe820C/hP4TzPLBSYDLYkFNnq4H2hw9wd6v4eZPT3MWse0ct3zFRGJjZE8UrCdYHWrvl5722HOO6+/16R/5SW65ysiEhcjGtEbPrhgfLKKkf4lup2rG1rp6hqVKdUiIpIiI51O8156LLphZr8ys7KeB4Td0zJCk4vyMYOOLqemSQttiIhkspGGb+/VJd4DdIevmU0F6kd4DQFys7OYOD5Y5UpdzyIimS3ZC0n0tdRTXpKvMWZpoQ0RkXhIxSpOukGZJIemG2mur4hIJktG+L7XzI7rcW9XYTtKEgttqOUrIpLZhj3VKPQw8C2C59m2h+/3PTN7GHgK2DfC95ceNN1IRCQeRhS+7n46gJktIHgc33Hhx+8AE1ArOKmmFCl8RUTiYKQtXwDcfSOwkR6P/jOzOcBy4NhkXEMOtXz3an1nEZGMlpTw7Yu7VwFVBA9ikCQ49HAFtXxFRDJZ0kc7h4OvNL1oFGiqkYhIPIzGVKPHgSNG4X3HvMTDFZraOmlo7UhzNSIiMlyjEb59LbQhSVCYn0NhXjagub4iIpksFYtsSBKp61lEJPMpfDNMRWkw6GqPWr4iIhlL4ZthppWOA2BXrcJXRCRTKXwzTKLlu1vhKyKSsRS+GWaawldEJOMpfDNMRUkQvrt0z1dEJGONRvh+C6gehfcVDt3z3V3bnOZKRERkuJK+vKS7fyvZ7ymHJO757q1vpb2zi9xsdV6IiGSaYf/PbWazhnj8jOFeSw6ZVJhHbrbhrjWeRUQy1UiaTY+b2TVmdmJ/B5hZqZldbGbPA28bwbUklJVlTE3c99WgKxGRjDSSbufFwKXAnWbWDjwB7ARagDJgCXBUuP/L7n7HCGuV0LTSArYfaNaIZxGRDDXslq+717j7l4DpwKeAF4HJwILwkBuA4939VAVvclV0L7ShQVciIploxAOu3L0F+Eu4SQporq+ISGbTUNkMpLm+IiKZbVTC18wuMLOnzewlM/uLmb1+NK4zVqnlKyKS2ZI6z9fMPg88BfwQ+D/AS8AxwKVmNtfd/yuZ1xurtL6ziEhmS3bLtwP4ADAT+BNwE3ABcDPwb2ZmSb7emJRY5WpPXQudXZ7makREZKiS2vJ196sAzGwe8HEgFzgaWApMA9aaWYO7n5DM6441U4rzyc4yOrqc/Q2tlIf3gEVEJDOM1oCrzxK0dj8DTAQKgefdfTFwzihdc8zIzjLKi/MBLbQhIpKJRiV83f0FYAVwDzAV2Aq8JXytdjSuOdZMnxB0Pe84qLm+IiKZJukPVjCzMqAunP/7t3CTJJsxYRxPbjnA9gNN6S5FRESGKCktXzObb2b/bmYPAnuBfWb2BzN7h5kVJeMa8kqVZWHL94BaviIimWYkTzWaaWbfM7MXgKeB04BrgQrgLGAD8DWCIL7DzD6VjIIlUFk2HoDtCl8RkYwzkm7n4wiC9hLg7rCbOWE/8CzwHTOrBC4Kt1+O4HrSw4yw5avwFRHJPCN5sMLf3f0j7n5Lr+Dtfdx2d/9Pdx/1Va7MrMzMrjez2nC73swmDHDOVDO7zsx2mlmTmd1pZgsOd04UdHc7H2zGXXN9RUQyyWgtL5k/Gu87CH8ElgHnhdsy4Pr+Dg4X/fgbMJdgNPaxwBbgXjMrHN1SR2ZGONq5obWD2ub2NFcjIiJDMVrzfFf23mFmC0fpWon3X0wQuB9z90fd/VHgYuDNZraon9MWACcDn3L3x919A/CvQBHwntGsd6QKcrOZXBT8jqOuZxGRzJLU8DWzN5vZl4BCM5ve6+Wbk3mtPqwAat19VWKHuz8G1AKn9HNOooXe3W3u7p1AG8EAsj6ZWb6ZlSQ2oHikxQ9Hpe77iohkpGS3fF8AmoBy4EYz22RmD5rZTUBnkq/VWwXBNKfe9oav9WU9QTfzFeH94jwz+1p4/LTDXOsSglBPbNuHXfUIHBp0pbm+IiKZZETh2/tBCe5e5e6/AN7q7me4+1yC7turgLOHeY3LzcwH2JYnSujrLfrZj7u3A28HFgI1BL84nAncweF/WbgCKO2xVQ7nexupnoOuREQkc4x0hasGM3sGeLLHttbdH0wc4O47gB0juMZVBE9HOpzNBA9vmNrHa1OAPf2d6O5PAsvMrBTIc/d9ZrYKeOIw57QCrYmv0/WwpsoJ6nYWEclEIw3fLxPM930t8EkgG2gxszUcCuOn3P3Z4V7A3auB6oGOM7NHgVIzO9HdV4f7TiJomb5qAFgf16kNz1kALAe+PtyaU0ULbYiIZKYRhW/YxQx0Ty9qBn5M8CSj5cBHCAY1ZY/kOoOsZZ2Z3QlcY2afCHdfDdwWjmJO1LkeuMTd/xp+/Q5gH8HDH44Gfgr8zd3vHu2aR+rQEpO65ysikkmS9mAFd28Nu1//7O5rAMwsGzgqWdcYhPcBPwMSwXkLwWMNe1pE0BpOmAb8iKDLehfwe+A7o1tmciQGXNW1BHN9S8flprkiEREZjKQ/1aincNrOmtG8Rq/r1QDvH+CY3oPEfkYQ2BlnfF4OEwvzqGlsY/uBJkrHlQ58koiIpN1oLbIhKTJzYnDfd1uNup5FRDLFSKcaXWNmnzSz5T2WlNRCwyl0xKQgfDfvV/iKiGSKkXY7LwLeSbDCU0e475tmdj/wFPCMuysVRtHsScES1Fv2N6a5EhERGayRjnY+Hbqn5xxPMO3oeODbwASg08xedPdUDroaU2aH3c6bq/U7johIpkjKgCt33whspMdiGGY2h2C60bHJuIb07YjJQfhu1T1fEZGMMezwNbNyoNnd6/t63d2rgCrCByqY2UJ3f3G415O+Jbqdd9Y209LeSUHuqE+pFhGRERrJgKszgH3hw+c/1cdTjDCzk8zse2a2juAesCTZpMI8ivJzcNcDFkREMsWww9fdbyZ4Hu5tBA8nqDKz1Wb2dTP7LzPbSbDIRQXwNYI1liXJzIxZ4X3fLRrxLCKSEUY64GobwYMPrgofTHABcD6wE3gX8Ii7d424SjmsIyaPZ+2uOk03EhHJEMlcXrIW+EO4SQppupGISGbRClcx0D3dSC1fEZGMoPCNgUTLd6taviIiGUHhGwOJub7bDzTT3qlb7CIiUafwjYGpxQXk52TR0eXsONCc7nJERGQACt8YyMoy5kwOup43VTekuRoRERmIwjcm5k0pAuDlvbrvKyISdQrfmJhXHoTvS3vV8hURiTqFb0zMmxJ0O7+8T+ErIhJ1Ct+YmB+2fBW+IiLRp/CNibmTizCDA03t7G9oTXc5IiJyGArfmBiXl82MCeMAeHmfBl2JiESZwjdGEiOeNehKRCTaFL4x0j3dSPd9RUQiTeEbIxp0JSKSGRS+MZKYbqRuZxGRaFP4xkii5bvjYDPNbZ1prkZERPqj8I2RiYV5lI3PxV2tXxGRKFP4xoiZsaiiGID1u+vSXI2IiPRH4RszR1aUALBhd32aKxERkf4ofGNm8bREy1fhKyISVQrfmEm0fNXtLCISXQrfmFk4tRgzqG5oY1+91ngWEYkihW/MjMvL5ohJwXxf3fcVEYkmhW8MHakRzyIikabwjaFD043U8hURiSKFbwxp0JWISLQpfGMoMd3oxT0NdHR2pbkaERHpTeEbQzPLxlOYl01bRxebqhvTXY6IiPQSq/A1s8vMbKWZNZnZwUGeY2Z2uZntNLNmM7vfzI4a5VJHVVaWcdT0UgCe216b5mpERKS3WIUvkAfcDPxyCOd8Bfgi8BngBGA3cI+ZFSe/vNQ5ujIM3x0KXxGRqIlV+Lr7N939x8BzgznezAz4PPBdd/+Luz8P/AswHnjvqBWaAkfPCMJ3zfaD6S1EREReJSfdBaTZHKACuDuxw91bzewB4BTgV32dZGb5QH6PXZFrJSdavmt31dHR2UVOdqx+zxKRDNHV5XR0OZ1dTkdXF51dTnvnK79OvN7e+cqvO3oc5w6dXU6XJzbo8uD1vl4L9h/6vK/XOruC93B3Ot2ZN6WItx1XmZKfy1gP34rw455e+/cAsw9z3iXAN0eloiSZM6mQovwcGlo7eGlfQ/f0IxGJL3entaOLlvZOmts7aW7rpKW9i+b2TloT+9qDfa0dnbR1dNHe2UVbR7h1+iv3dYZb+Por9vf4+IrQ7Aw+dnR10REGY6Y4Z/FUhW+CmV3OwEF3grs/MYLL9P7rYX3s6+kK4Ec9vi4Gto/g+kkXDLoqYVVVDWu21yp8RSKopb2TuuZ2Glo7aGztpKG1I/z80Mfg887gY1sHDS3Bvqa2Tlo6OmlpOxSoLR2dGRN2udlGdpaRk5UVfrTujznZWd1f99zMjGyDLDOysoys8PPDvRZ8/urXEudkGWRb8HlidcBUiHz4AlcBNw1wzOZhvvfu8GMFsKvH/nJe3Rru5u6tQPdTC4Jbx9GztLKUVVU1PL+jlncun5nuckRiyd1pautkf0Mb1Y2t1DS0UdvcTm1zOweb26kLP+9ra+sYvXn4udlGQU42BXnZjMvNpiA3K/wYbPk5WeTmZJGfnUVeTha54cfE5/k5WeRlZ5GbbeTlZIf7LdifOL7HubnZvUI0DNfcrCyys3uGaxZZFt3/N1Ml8uHr7tVA9Si9fRVBAJ8LPA1gZnnAGcBXR+maKXN05QQA1mi6kciQuDsHm9rZXdfCnroWqhvaqGlsDQK2oY39ja3UNLaFX7fSOoIQNYOivBwK83MozM+mKD/xeQ7FPT4vys9+xf5xYaiOywvC9FCwZlGQm02uxnlEWuTDdyjMbBYwEZgFZJvZsvCll9y9ITxmPXCJu//V3d3MfgJcamYbgY3ApUAT8MdU159siRHP63bV0d7ZpX+MIgQDgPbWt7L9QBO7aoNw3V3b0h20wcfWIbdKC3KzmFSYz6SiPErH5R52K0l8Pj6XorwcsrLGditwLIpV+ALfJpgqlPB0+PEs4P7w80VAaY9jvg+MA34BlAGrgNe7e8Y/lWD2xPGUjsultrmddbvqWBq2hEXizN3Z39jGtpomth9oZtuB8GP49Y4DzbQNctnViYV5lBfnM6U4n8lF+UwqzGNiUR6Tw5CdWJgX7C/KY3xe3P47ldEUq78t7v4h4EMDHGO9vnbg8nCLlaws47hZE7hvwz6e3HJA4Sux0tzWyabqBjbta+TlfcHHTdUNVO1rpLGt87DnZmcZFSUFzJgwjqmlBVSU5DO1pICpJQVUlBZQUVJAeUk++TnZKfpuZKyJVfjKqx0/u4z7NuzjiS0H+PCpc9JdjsiQ1bW08+LuetbtrmfjnvogZPc1sLO2pd9zzKCipIDKsnHMLBtPZdk4KieO7/56WmmB5r5LWil8Y+742RMBeGrLgTRXInJ4nV1OVXUj63fXsWF3Pet21bN+dx3bDzT3e07Z+FzmTili7uRC5k4pYt6U4OPMiePUapVIU/jG3DEzS8nOMnbVtrDjYDMzJoxLd0kiuDtba5p4dnsta7YdZM2OWp7fUUtTP93F00oLOLKimIUVxcxLhOzkIsoK81JcuUhyKHxjbnxeDkdNL2HN9lqe3HJA4StpUdvczlNbDvDklgM8u/0gz+2o5WBT+6uOK8jNYlFFCYsrijmyopgjp5VwZEUxE8YrZCVeFL5jwHGzylizvZanthzgwmOmp7scGQN217bw+OYaHt9cw+qqGjbsqX/Vykt52VksnlbM0soJLK0sZWnlBOaXF5GtaTcyBih8x4DlR5Rx3crNPLGlJt2lSEztqWvhoY3VrHy5msc317Ct5tX3aY+YNJ7lR0zkmJkTOKaylEUVxbovK2OWwncMOH52GQDrdtXT0NpBUb7+2GVkGls7WFW1n4c2VvPwxmo27m14xetZBkuml7B89kROnDOR5UeUUV5ckKZqRaJH/wuPAdNKxzF70ni27G/i8aoazjqyPN0lSYZxd9btquef6/fw4MZqnt56gPbOQ/3IZrB0Rimnzp/MSXMncdysCRQX5KaxYpFoU/iOEafMm8SW/U088lK1wlcGpa2ji9VVNdyzdjf3rtvLjoOv7EqeOXEcp82fwmsXTOaUeZM0KEpkCBS+Y8SKeZO5cfU2Vr68P92lSITVNrdz/4a93LN2Dw9s2Ed9a0f3awW5WZw2fzJnLirntQsmM3tSYRorFclsCt8xYsXcSQCs3VXHgcY2zY+Ubg2tHdy7dg+3PruTBzfue0V38uSifM5ZXM45i6dy6vzJjMvTACmRZFD4jhFTivNZNLWYDXvqeXTTft509LR0lyRp1NLeyX3r93Lrmp3877q9r3gk3oLyIs5dMpVzlkxlWeUEPXFHZBQofMeQFfMmsWFPPStfrlb4jkEdnV08tLGaW57dyd0v7H7FwwfmTi7kgmOmc8Ex05hfXpzGKkXGBoXvGHLKvElct3IzK1/Sfd+x5KW9Ddz85Db+8tQO9tW3du+fMWFcd+AumVaCmVq4Iqmi8B1DTpo7iewsY1N1I9tqmpg5cXy6S5JRUtfSzm3P7uLmJ7fx9NaD3fsnFeZxwTHTuXDZdI6dOUGBK5ImCt8xpHRcLsfPLmN1VQ33bdjLB1ccke6SJMme31HLHx7bwt+f2Ulze9CtnJ1lnLWonHcsr+SsReXk5ehReiLppvAdY84+spzVVTX8c73CNy5a2ju59dmd/GHVVp7ddrB7//zyIt65vJK3HjtDq0uJRIzCd4w5+8hyrrxjPStf3k9TWwfj8/RXIFPtONjMdY9U8ecntlPbHDwhKDfbeONrpvH+k2dzwhFl6lYWiSj9zzvGLCgvorJsHNsPNLPypf2cs2RqukuSIXp220F+/XAV/3huF51dwZzcyrJxvPekWbxz+UwmF+WnuUIRGYjCd4wxM84+spzfP7qFf27Yq/DNEJ1dzr3r9vDrhzbx+OYD3ftPnT+Jj5w6hzMXletRfCIZROE7BiXC9771e3F3dU1GWFNbB//95HaufbiKzfubgKBr+YJjpvOx0+ayZHpJmisUkeFQ+I5BJ8+dRFF+DrtqW3h620GOm1WW7pKkl/qWdn7/6BZ+/dAmDjQF93NLx+Xy/pNn8cEVRzC1RAOoRDKZwncMKsjN5pzF5fztmZ3cvmaXwjdCapvaufaRKn77SBV1LcFDDWZPGs/HTpvD24+v1AA5kZjQv+Qx6k1HT+Nvz+zkjud2cdmbFmv93jTb39DKrx+u4vpHt9AQPklofnkRnzlrPm9eOo2cbM3NFYkThe8YdfrCKRTl57Az7Ho+frZav+mwt76Fqx/YxA2rtnYvirF4WgmfPXs+5x1VoV+KRGJK4TtGFeRmc+6Sqfz16R3cvmaXwjfFapva+dWDL/PbRzZ3h+7SylI+e/YCzllcrkFwIjGn8B3D3nT0tCB8n9vJZecv1lSVFGhq6+C3j2zmVw+83H1Pd9nMCXz+nAWcsXCKQldkjFD4jmGnL5zMhPG57Klr5eGXqjlj4ZR0lxRbrR2d3LhqK1fd9zLVDcGThY6sKOZLr1/E69TSFRlzFL5jWH5ONm9dNoPrVm7mz09sU/iOgs4u5y9Pbecn925kx8FmIBi9/MVzF3LB0um6pysyRil8x7h3LK/kupWbueeFPRxobKOsMC/dJcXGypeq+fZta1m/ux6AqSX5fO51C3jn8pnkavSyyJim8B3jjppeylHTS3hhZx1/f2YHHzp1TrpLynhb9jfy3dvXcffaPUCwOManz5rHB1ccQUFudpqrE5Eo0K/fwjuXzwTgT09sx93TXE3mqm9p54p/rOPcHz3I3Wv3kJ1lfOiUI7j/S2fy8dPnKXhFpJtavsJblk3nijvWsW5XHaurajhp7qR0l5RROrucm5/Yxg/v3kB1QxsQzKP++vmLWTC1OM3ViUgUKXyFCePzeNtxlfxx1VaufaRK4TsEj23az7dvXcvaXXUAzJ1SyNfPX8KZizRtSET6p/AVAD58yhH8cdVW7l67h637m5g1aXy6S4q0bTVNfO8f67jj+d0AlBTk8G/nLOSDK2ZrMJWIDEjhKwAsmFrM6Qun8OCL+7hu5Wa+ccGSdJcUSQ2tHfz8vpf4zUNVtHV2kWXwvpNm84VzFzJRI8VFZJAUvtLtI6cewYMv7uOmx7fy6bPmMakoP90lRUZXl/PfT27n+3dt6F4k47T5k/n6m5ewqEL3dUVkaBS+0u2MhVN4zYwSnt9Rx9UPbeKSNy5Od0mRsLqqhm/f9gLP7wju686ZXMhlb1qslalEZNh0c0q6mRmff91CAH6/ckt3C2+s2lbTxKdveIp3/upRnt9RR3F+Dpe9aTF3ff50zlkyVcErIsMWq/A1s8vMbKWZNZnZwUGe8zYzu8vMqs3MzWzZ6FYZba9bXM7SylKa2zv51QMvp7uctGhs7eAHd63ndT96gNuf20WWwXtPmsV9Xz6Ti0+fS15OrP7ZiEgaxO1/kTzgZuCXQzinEHgE+NqoVJRhzIwvnBO0fn/36Ba27m9Kc0Wpk7ive9YP7+fn971MW0cXK+ZO4vbPvZbvXXQ0k3UPXESSJFb3fN39mwBm9qEhnHN9eM4Ro1NV5jlz0RROnT+JR17az3f/sZZffWB5uksadU9sruHbt61lzfZaIHj4waVvWszr1b0sIqMgVuGbKmaWD/RsBsVquKuZ8c0LjuKNP32Iu17Yw8MbqzltweR0lzUqdhxs5so71nPrszsBKMrP4TNnz+fDpx5Bfo6WgxSR0RG3budUuQSo7bFtT285ybdwajEfOHk2AN/4+/M0t3WmuaLkamzt4Ed3b+DsH97Prc/uxAzefcJM7vvSmXzyjHkKXhEZVZEPXzO7PBwIdbgt1f2iVwClPbbKFF8/Jb5w7kKmluSzqbqRH9y1Id3lJEVnl/Onx7dy5g/v52f/fInWji5OnDORWz9zGle+fSlTinVfV0RGXyZ0O18F3DTAMZtTUEc3d28FuufhxPWeYOm4XK58+1I+/NvHufaRKs5dMpUV8zJ33eeHNu7ju7ev636+7qyJ47nkjUdy3msqYvtnKCLRFPnwdfdqoDrddYxVZy0q5z0nzuTG1dv4wp+e4ZbPnkp5cUG6yxqSF/fU893b1/HAi/uAYB3mz71uAR9YMVvdyyKSFpEP36Ews1nARGAWkN1jzu5L7t4QHrMeuMTd/xp+nTh+enjsorAVtNvdd6ew/Mi67PwlrK6q4eV9jXz6hqe44WMnZ8Rc1331rfz43he5afVWuhxysowPrJjN585eQJnWYRaRNLI4PTzdzK4D/qWPl85y9/vDYxz4sLtfF379IeC3fZzzLXe/fJDXLQFqa2trKSkpGXLdmeDlfQ289apHqG/t4N0nzOSKtx0d2a7aA41tXP3QJn63cjNN4UCx846q4KtvPJI5kwvTXJ2IxFVdXR2lpaUApe5ed7hjYxW+6TIWwhfg3rV7uPj6J3CHj58+l0veeGSkAri2uZ3fPLSJax/ZTENrBwDHVJZy2flLOHHOxDRXJyJxN5TwjVW3s4yuc5ZM5cq3Hc1X/+c5rn5wEzlZxpffsCjtAVzf0s5vH9nMNQ9tor4lCN3F00r44rkLOUcPPxCRCFL4ypC864RZNLZ28u3b1vKL+19md20LV759aVruAe+ubeG3K6v446qt3aG7cGoRXzhnIW84qoKsLIWuiESTwleG7COnzaEwP5tL//o8f3l6B1X7G/npu45l1qTxKbn+8ztqufaRKm55ZicdXcFtk3lTCvm3cxby5qOnKXRFJPJ0zzcJxso9397u37CXz974NPUtHRTl5/CV8xbx3hNnkZOd/FZwXUs7f39mJ396fGv3c3UBTpwzkY+/di5nH1mu0BWRtNKAqxQbq+ELsP1AE1/40zM8vvkAAAvKi/i3cxZw3lEVIw7hupZ27lu/l7vX7uF/1+2hpb0LgLzsLN7wmgo+etocls2cMNJvQUQkKRS+KTaWwxeCJRtvWLWFH9/zIgea2gGYXlrAhctm8IajprK0cgLZg2iV1re089yOWp7dVsvKl6t5bNN+2jsP/f1cUF7Eu0+cxUXHzmCi5umKSMQofFNsrIdvQm1TO795pIobHtvC/sa27v3j87J5zfRSZk4cT0VpPuNys8nOyqK5vZO65nZ2HGymqrqRl/c10Puv4/zyIs5dMpU3HFXBMZWlGrksIpGl8E0xhe8rtbR3cs/aPdz5wm4e3LCP+nDO7WDMmDCOY2aWcuzMMl63uJy5U4pGsVIRkeRR+KaYwrd/nV3Opn0NvLCzjh0Hm9lb10JLexftXV2Mz8umuCCX6aUFVE4cz2uml+qpQiKSsbTIhkRGdpaxYGoxC6YWp7sUEZHIiP7q+CIiIjGj8BUREUkxha+IiEiKKXxFRERSTOErIiKSYgpfERGRFFP4ioiIpJjCV0REJMUUviIiIimm8BUREUkxLS+ZRHV1h13KU0REYmwoGaAHKySBmc0Atqe7DhERiYRKd99xuAMUvklgwUNmpwP16a5lFBUT/IJRSby/z2TTz2349LMbPv3shm+kP7tiYKcPEK7qdk6C8Id82N9yMl2Ph9jXD/SoLDlEP7fh089u+PSzG74k/OwGdY4GXImIiKSYwldERCTFFL4yWK3At8KPMnj6uQ2ffnbDp5/d8KXkZ6cBVyIiIimmlq+IiEiKKXxFRERSTOErIiKSYgpfERGRFFP4ioiIpJjCV/plZpeY2eNmVm9me83sb2a2KN11ZaLwZ+lm9pN015IJzGyGmf3BzPabWZOZPWNmx6e7rigzsxwz+//MrMrMms1sk5l9w8z0/3wvZna6md1qZjvDf5dv7fW6mdnl4evNZna/mR2VzBr0hyKHcwbwc+Bk4FyC5UjvNrPCtFaVYczsBODjwJp015IJzKwMeARoB94ILAH+HTiYxrIywVeBTwKfARYDXwG+DHw2nUVFVCHwLMHPqi9fAb4Yvn4CsBu4x8yKk1WA5vnKoJnZFGAvcIa7P5juejKBmRUBTwH/Cvxf4Bl3/3xai4o4M7sSONXdX5vuWjKJmd0G7HH3j/bY9z9Ak7t/IH2VRZuZOXCRu/8t/NqAncBP3P0/wn35wB7gq+7+q2RcVy1fGYrS8GNNWqvILD8Hbnf3e9NdSAa5EHjCzG4Ob3c8bWYXp7uoDPAw8DozWwhgZscApwH/SGtVmWcOUAHcndjh7q3AA8ApybqInmokgxL+Nvgj4GF3fz7d9WQCM3s3cBxBt5UM3lzgUwR/374HnAj8zMxa3f33aa0s2v6D4Bfk9WbWCWQDl7n7jektK+NUhB/39Nq/B5idrIsofGWwrgKWEvwmLQMws5nAT4HXu3tLuuvJMFnAE+5+afj10+Fgl08BCt/+vQt4P/Be4AVgGfATM9vp7r9LZ2EZqvc9Wetj37ApfGVAZvafBF2Bp7v79nTXkyGOB8qBJ3s8HzQbON3MPgPku3tnuoqLuF3A2l771gFvT0MtmeQHwJXuflP49XNmNhu4BFD4Dt7u8GMFwd/FhHJe3RoeNt3zlX6Fw+2vAt4GnO3uVemuKYP8L3A0QesjsT0B3AAsU/Ae1iNA7yltC4Etaaglk4wHunrt60T/zw9VFUEAn5vYYWZ5BLM/VibrImr5yuH8nKAL6y1AvZkl7oXUuntz+sqKPnevB15xb9zMGoH9umc+oB8DK83sUuDPBPd8Px5u0r9bgcvMbCtBt/OxBNNlrk1rVREUzkKY32PXHDNbBtS4+9ZwPv6lZrYR2AhcCjQBf0xaDZpqJP0Jh+D35cPufl0qa4kDM7sfTTUaFDN7M3AFsICgJfIjd78mvVVFWzgH9TvARQRdpDuBG4Fvu3tbOmuLGjM7E7ivj5d+5+4fCgeYfhP4BFAGrAI+ncxfnBW+IiIiKaZ7ASIiIimm8BUREUkxha+IiEiKKXxFRERSTOErIiKSYgpfERGRFFP4ioiIpJjCV0REJMUUviIiIimm8BWRPpnZg2bm4dZmZuvM7L19HHedmV2ZjhpFMpXCV0ReJVzbdhnwJWAawVOG7gR+b2ZzehyXBZwP/D0NZYpkLIWviPRlAVAM3Onuu8PHSf6G4JnEPR/3dyrBY+xWJXaY2TfM7DkzazSzPWb2SzPLTWXxIlGnRwqKSF+OBw4QPtTezCqB7wKtwHM9jrsQuNXdu8LjjCCgPwHsAJYAvwfWAL9MVfEiUafwFZG+HAeUEjzHOQsYBzQDn3T3HT2Ou5CgaxoADx6T9s0er28xs3uAI6H7UYH/P0Gv23+4+69H9bsQiSh1O4tIX44Hfk5w3/d04AHgpz2f42xmi4FK4N4e+2ab2VVm9ryZHTCzBuCdwHYzywF+BJxNEO5fNbOJKfp+RCJF4SsifTkWWOnuL7n7E8C/Al/pOdiKoNV7j7s3A5jZZGA1MBn4InAasALoBJ4BTgRecPcd7l4P/AN4Q4q+H5FIUfiKyCuY2VxgAvB8Yp+7rwVeAt7T49C3ALf0+PpNBLey3uPud7v7CwSt5jyC8J1OcB84YTswI/nfgUj0KXxFpLfjgQ7gxV777wEuAjCzcuAE4LYer9cAJcCFZrbAzL4IXA7scPd9gPVxLU9u6SKZQeErIr0dB7zo7m299t8DHB+OfL4AWOXue3u8fjvBdKTrgYcJWrV/Jmj1QtDq7dnSrQR2Jb16kQxgweBEEZHBM7NbgIfd/ftDOCcHWAecCdQBTwEnu/v+USlSJMI01UhEhuNh4MahnODuHWb278B9BL1u31fwylillq+IiEiK6Z6viIhIiil8RUREUkzhKyIikmIKXxERkRRT+IqIiKSYwldERCTFFL4iIiIppvAVERFJMYWviIhIiil8RUREUkzhKyIikmL/D+e0ppWB98vdAAAAAElFTkSuQmCC
 "
 class="
 jp-needs-light-background
@@ -16672,7 +16677,7 @@ jp-needs-light-background
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vemos assim que existe um estado ligado para o íon da molécula de hidrogênio. Funções de onda teste melhores nos fornecerão energias de ligação ainda menores. Note que aqui o parâmetro variacional é $R$, a distância entre os prótons. Na sequência obterremos o valor de $R$ que minimiza $\langle H_{t}\rangle_{\phi}$. Com a ajuda do código abaixo, vemos que
+<p>Vemos assim que existe um estado ligado para o íon da molécula de hidrogênio, pois a energia tem um mínimo menor que $-E_{1}^{(0)}$, que é a energia de um átomo de hidrogênio mais um próton livre. Funções de onda teste melhores nos fornecerão energias de ligação ainda menores. Note que aqui o parâmetro variacional é $R$, a distância entre os prótons. Na sequência obteremos o valor de $R$ que minimiza $\langle H_{t}\rangle_{\phi}$. Com a ajuda do código abaixo, vemos que
 $$R_{opt} \approx 2.49a_{0} \approx 1.32\ \overset{\circ}{A}.$$
 O valor experimental é
 $$R_{exp} = 1.06\ \overset{\circ}{A}.$$</p>
@@ -16757,8 +16762,7 @@ $$E_{lig}^{exp} \approx 2.8\text{ eV}.$$</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.05</span><span class="p">)</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">dHtm</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.05</span><span class="p">);</span> <span class="n">y</span> <span class="o">=</span> <span class="n">dHtm</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">y1</span> <span class="o">=</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\partial_{R/a_</span><span class="si">{0}</span><span class="s1">}\langle H_</span><span class="si">{t}</span><span class="s1">\rangle_{\phi}(-E_</span><span class="si">{1}</span><span class="s1">^{(0)})$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R/a_</span><span class="si">{0}</span><span class="s1">$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -16947,7 +16951,7 @@ $\displaystyle \left( -1.12966198474142, \  -15.3698363584248, \  1.764141410707
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Em torno do ponto de mínima energia, $R_{opt}$, a curva de energia pode ser aproximada por aquela de um oscilador harmônico:
+<h3 id="Estabilidade-da-mol%C3%A9cula">Estabilidade da mol&#233;cula<a class="anchor-link" href="#Estabilidade-da-mol%C3%A9cula">&#182;</a></h3><p>Em torno do ponto de mínima energia, $R_{opt}$, a curva de energia pode ser aproximada por aquela de um oscilador harmônico:
 \begin{align} 
 &amp; U=\frac{m\omega^{2}x^{2}}{2}\ \therefore\ \partial_{xx}U = m\omega^{2} \\
 &amp; \omega = \sqrt{\partial_{xx}U/m}.
@@ -16955,7 +16959,7 @@ $\displaystyle \left( -1.12966198474142, \  -15.3698363584248, \  1.764141410707
 Com a ajuda do código abaixo, obtemos
 $$\big(\partial_{xx}f(x)\big)_{R_{opt}} \approx 0.13.$$
 Notemos que como $x=R/a_{0}$, teremos
-$$\partial_{xx}=\partial_{x}\partial_{x} = \partial_{x}R\partial_{R} = a_{0}^{2}\partial_{RR}.$$
+$$\partial_{xx}=\partial_{x}\partial_{x} = \partial_{x}R\partial_{R}\partial_{x}R\partial_{R} = a_{0}^{2}\partial_{RR}.$$
 Então
 \begin{align}
 \omega &amp; = \sqrt{\frac{\partial_{RR}\langle H_{t}\rangle}{m}} = \sqrt{\frac{-(E_{1}^{(0)}/a_{0}^{2})\partial_{xx}f(x)}{m}} \\
@@ -17118,7 +17122,7 @@ que é menor que a energia de ligação do $H_{2}^{+}$, que é $1.76\text{ eV}$.
 \hbar\omega(n+1/2) \le 1.76\text{ eV}\ \therefore\ n\le \frac{1.76\text{ eV}}{\hbar\omega}-\frac{1}{2} \approx 7.32.
 \end{align}
 Temos então 8 estados ligados do oscilador para os quais a molécula é estável.</p>
-<p>Vale notar que a energia térmica a temperatura ambiente ($300\text{ K}$) é aproximandamente $0.026\text{ eV}$, e portanto não é suficiente para excitar os modos de oscilação do oscilador a ponto de quebrar a molécula (cuja menor energia e $0.11\text{ eV}$).</p>
+<p>Vale notar que a energia térmica a temperatura ambiente ($300\text{ K}$) é aproximandamente $0.04\text{ eV}$, e portanto não é suficiente para excitar os modos de oscilação do oscilador a ponto de quebrar a molécula (cuja menor energia e $0.11\text{ eV}$).</p>
 
 </div>
 </div>
@@ -17211,10 +17215,10 @@ $\displaystyle 7.31822318935179$
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span> <span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="n">e</span> <span class="c1"># energia termica para temperatura ambiente</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">300</span><span class="p">;</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">kB</span><span class="o">*</span><span class="n">T</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">e</span> <span class="c1"># energia termica para temperatura ambiente</span>
 </pre></div>
 
      </div>
@@ -17232,13 +17236,13 @@ $\displaystyle 7.31822318935179$
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 0.0258520187368606$
+$\displaystyle 0.0387780281052909$
 </div>
 
 </div>
@@ -17254,11 +17258,22 @@ $\displaystyle 0.0258520187368606$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="A-mol%C3%A9cula-de-hidrog%C3%AAnio-$(H_%7B2%7D)$">A mol&#233;cula de hidrog&#234;nio $(H_{2})$<a class="anchor-link" href="#A-mol%C3%A9cula-de-hidrog%C3%AAnio-$(H_%7B2%7D)$">&#182;</a></h2><p>Neste caso teremos um sistema constituído por 2 elétrons e 2 prótons. Consideraremos inicialmente que os prótons estão parados e separados por uma distância $R$. O Hamiltoniano deste sistema fica escrito como segue:
+<h2 id="A-mol%C3%A9cula-de-hidrog%C3%AAnio-$(H_%7B2%7D)$">A mol&#233;cula de hidrog&#234;nio $(H_{2})$<a class="anchor-link" href="#A-mol%C3%A9cula-de-hidrog%C3%AAnio-$(H_%7B2%7D)$">&#182;</a></h2><p>Neste caso teremos um sistema constituído por 2 elétrons e 2 prótons. Consideraremos inicialmente que os prótons estão parados e separados por uma distância $R$. Com isso, o hamiltoniano deste sistema fica escrito como segue:
 $$H = -\frac{\hbar^{2}}{2m_{e}}\big(\nabla_{1}^{2}+\nabla_{2}^{2}\big)-ke^{2}\Big(\frac{1}{r_{1}}+\frac{1}{r_{2}}+\frac{1}{r_{1}'}+\frac{1}{r_{2}'}-\frac{1}{r_{12}}-\frac{1}{R}\Big),$$
-em que $r_{j}(r_{j}')$ é a distância entre o elétron $j$ e o próton $1(2)$ e $r_{12}$ é a distância entre os elétrons.</p>
+em que $r_{j}(r_{j}')$ é a distância entre o elétron $j$ e o próton $p(p')$ e $r_{12}$ é a distância entre os elétrons.</p>
 <p><img src='fig_H2.png' width='250'></p>
-<p>Agora temos um sistema constituído por 2 elétrons, que são férmions. Pelo princípio de exclusão de Pauli, a função de onda destes elétrons deve ser antisimétrica pela troca deles. Então, se usamos a função de onda de átomo hidrogenóide para montar nossa função de onda teste, devemos ter uma das seguintes funções de onda teste completas:
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Como focamos na função de onda dos elétrons, e temos um sistema constituído por 2 elétrons, que são férmions, pelo princípio de exclusão de Pauli, a função de onda destes elétrons deve ser antisimétrica pela troca deles. Então, se usamos a função de onda de átomo hidrogenóide para montar nossa função de onda teste, devemos ter uma das seguintes funções de onda teste completas:
 \begin{align}
 &amp; \Phi_{+}(\vec{r}_{1},\vec{r}_{2}) = \phi_{+}(\vec{r}_{1},\vec{r}_{2})\chi_{s}, \\
 &amp; \Phi_{-}(\vec{r}_{1},\vec{r}_{2}) = \phi_{-}(\vec{r}_{1},\vec{r}_{2})\chi_{t},
@@ -17272,9 +17287,11 @@ com as funções de onda de spin singleto, $\chi_{s}$, e tripleto, $\chi_{t}$, d
 enquanto que as respectivas funções de onda espaciais são
 \begin{align}
 &amp; \phi_{+}(\vec{r}_{1},\vec{r}_{2}) = A_{+}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big), \\
-&amp; \phi_{-}(\vec{r}_{1},\vec{r}_{2}) = A_{-}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')-\psi_{0}(r_{2})\psi_{0}(r_{1}')\big).
+&amp; \phi_{-}(\vec{r}_{1},\vec{r}_{2}) = A_{-}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')-\psi_{0}(r_{2})\psi_{0}(r_{1}')\big),
 \end{align}
-Essas funções de onda teste variacionais constituem a chamada <strong>aproximação de Heitler-London</strong>.</p>
+com 
+$$\psi_{0}(r)=\sqrt{\frac{1}{\pi a_{0}^{3}}}e^{-r/a_{0}}$$ 
+sendo a função de onda do estado fundamental do átomo de hidrogênio. Essas funções de onda teste variacionais constituem a chamada <strong>aproximação de Heitler-London</strong>. Note que nesta aproximação estamos considerando que não há emaranhamento entre os graus de liberdade de posição e spin.</p>
 
 </div>
 </div>
@@ -17286,10 +17303,357 @@ Essas funções de onda teste variacionais constituem a chamada <strong>aproxima
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Aplicando a normalização, teremos
+<p>Trabalharei aqui com a função de onda $\Phi_{+}$, e deixarei como exercício a análise análoga da função de onda $\Phi_{-}$. Aplicando a normalização, teremos
 \begin{align}
-1 &amp; = \iint d^{3}r_{1}d^{3}r_{2}|\phi_{\pm}|^{2} \\
-&amp; = |A_{\pm}|^{2}\Big(\int d^{3}r_{1}|\psi_{0}(r_{1})|^{2}\int d^{3}r_{2}|\psi_{0}(r_{2})|^{2}
+1 &amp; = \iint d^{3}r_{1}d^{3}r_{2}|\phi_{+}|^{2} \\
+&amp; = |A_{+}|^{2}\int d^{3}r_{1}\int d^{3}r_{2}\big(\psi_{0}(r_{1})^{*}\psi_{0}(r_{2}')^{*}+\psi_{0}(r_{2})^{*}\psi_{0}(r_{1}')^{*}\big)\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big) \\
+&amp; = |A_{+}|^{2}\Big(\int d^{3}r_{1}|\psi_{0}(r_{1})|^{2}\int d^{3}r_{2}|\psi_{0}(r_{2}')|^{2} + \int d^{3}r_{1}|\psi_{0}(r_{1}')|^{2}\int d^{3}r_{2}|\psi_{0}(r_{2})|^{2} \\
+&amp; \hspace{2cm} + 2\int d^{3}r_{1}\psi_{0}(r_{1})\psi_{0}(r_{1}')\int d^{3}r_{2}\psi_{0}(r_{2})\psi_{0}(r_{2}')\Big) \\
+&amp; = |A_{+}|^{2}\Big((1)(1) + (1)(1) + 2(I)(I)\Big), \\
+&amp; \therefore\ A_{+} = \frac{1}{\sqrt{2(1+I^{2})}},
+\end{align}
+em que a integral de overlap foi calculada quando estudamos a molécula de $H_{2}^{+}$, e é dada por 
+$$I= \int d^{3}r_{1} \psi_{0}(r_{1})\psi_{0}(r_{1}')=\Big(\frac{R^{2}}{3a_{0}^{2}} + \frac{R}{a_{0}}+1\Big)e^{-R/a_{0}}.$$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Tendo a função de onda teste normalizada, passemos para o cálculo do valor médio do hamiltoniano
+\begin{align}
+\langle H\rangle_{\phi} &amp; = \Big\langle\frac{-\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\Big\rangle_{\phi} + \Big\langle\frac{-\hbar^{2}}{2m_{e}}\nabla_{2}^{2}\Big\rangle_{\phi} + \Big\langle\frac{-ke^{2}}{r_{1}}\Big\rangle_{\phi}  + \Big\langle\frac{-ke^{2}}{r_{2}}\Big\rangle_{\phi}  \\
+&amp; \hspace{0.5cm} + \Big\langle\frac{-ke^{2}}{r_{1}'}\Big\rangle_{\phi}  + \Big\langle\frac{-ke^{2}}{r_{2}'}\Big\rangle_{\phi}  + \Big\langle\frac{ke^{2}}{r_{12}}\Big\rangle_{\phi}  + \Big\langle\frac{ke^{2}}{R}\Big\rangle_{\phi} \\
+&amp; = \big\langle K_{1}\big\rangle_{\phi} + \big\langle K_{2}\big\rangle_{\phi} + \big\langle U_{e_{1}p}\big\rangle_{\phi}  + \big\langle U_{e_{1}p'}\big\rangle_{\phi} \\
+&amp;  \hspace{0.5cm} + \big\langle U_{e_{2}p}\big\rangle_{\phi} + \big\langle U_{e_{2}p'}\big\rangle_{\phi} + \big\langle U_{e_{1}e_{2}}\big\rangle_{\phi} + \big\langle U_{pp'}\big\rangle_{\phi}.
+\end{align}
+Pela complexidade do problema, faremos isso termo a termo. Começamos com a energia cinética do elétron 1:</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+\begin{align}
+\langle K_{1}\rangle_{\phi} &amp; = \Big\langle -\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\Big\rangle_{\phi} = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\Big)\phi \\
+&amp; = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\Big)A_{+}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big) \\
+&amp; = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}A_{+}\Big(\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\psi_{0}(r_{1})\Big)\psi_{0}(r_{2}')+\psi_{0}(r_{2})\Big(\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}\psi_{0}(r_{1}')\Big)\Big) \\
+&amp; = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}A_{+}\Big(\Big(\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}-\frac{ke^{2}}{r_{1}}+\frac{ke^{2}}{r_{1}}\Big)\psi_{0}(r_{1})\Big)\psi_{0}(r_{2}')\\
+&amp; \hspace{4cm} +\psi_{0}(r_{2})\Big(\Big(\Big(-\frac{\hbar^{2}}{2m_{e}}\nabla_{1}^{2}-\frac{ke^{2}}{r_{1}'}+\frac{ke^{2}}{r_{1}'}\Big)\psi_{0}(r_{1}')\Big)\Big) \\
+&amp; = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}A_{+}\Big(\Big(\Big(E_{1}^{(0)}+\frac{ke^{2}}{r_{1}}\Big)\psi_{0}(r_{1})\Big)\psi_{0}(r_{2}') + \psi_{0}(r_{2})\Big(\Big(E_{1}^{(0)}+\frac{ke^{2}}{r_{1}'}\Big)\psi_{0}(r_{1}')\Big)\Big) \\
+&amp; = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\Big(E_{1}^{(0)}\phi + A_{+}ke^{2}\Big(\frac{1}{r_{1}}\psi_{0}(r_{1})\psi_{0}(r_{2}') + \frac{1}{r_{1}'}\psi_{0}(r_{1}')\psi_{0}(r_{2})\Big)\Big) \\
+&amp; = E_{1}^{(0)} + A_{+}ke^{2}\iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\Big(\frac{1}{r_{1}}\psi_{0}(r_{1})\psi_{0}(r_{2}') + \frac{1}{r_{1}'}\psi_{0}(r_{1}')\psi_{0}(r_{2})\Big) \\
+&amp; = E_{1}^{(0)} + A_{+}^{2}ke^{2}\Big(\int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}}\psi_{0}(r_{1})\int d^{3}r_{2}|\psi_{0}(r_{2}')|^{2} + \int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}'}\psi_{0}(r_{1}')\int d^{3}r_{2}\psi_{0}(r_{2}')\psi_{0}(r_{2}) \\
+&amp; \hspace{3cm} +  \int d^{3}r_{1}\psi_{0}(r_{1}')\frac{1}{r_{1}}\psi_{0}(r_{1})\int d^{3}r_{2}\psi_{0}(r_{2})\psi_{0}(r_{2}') + \int d^{3}r_{1}\psi_{0}(r_{1}')\frac{1}{r_{1}'}\psi_{0}(r_{1}')\int d^{3}r_{2}|\psi_{0}(r_{2})|^{2}\Big) \\
+&amp; = E_{1}^{(0)} + 2A_{+}^{2}ke^{2}\Big(\int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}}\psi_{0}(r_{1})\int d^{3}r_{2}|\psi_{0}(r_{2}')|^{2} + \int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}'}\psi_{0}(r_{1}')\int d^{3}r_{2}\psi_{0}(r_{2}')\psi_{0}(r_{2})\Big) \\
+&amp; = E_{1}^{(0)} + 2A_{+}^{2}ke^{2}\Big(\Big\langle\frac{1}{r}\Big\rangle_{\psi_{0}}(1) + I_{T}I \Big) \\
+&amp; = E_{1}^{(0)} + \frac{2ke^{2}\big(a_{0}^{-1}+I_{T}I\big)}{2(1+I^{2})}  = E_{1}^{(0)} + \frac{ke^{2}\big(a_{0}^{-1}+I_{T}I\big)}{1+I^{2}} \\
+&amp; = E_{1}^{(0)} + \frac{-2a_{0}E_{1}^{(0)}\big(a_{0}^{-1}+I_{T}I\big)}{1+I^{2}} = E_{1}^{(0)}\Big(1-\frac{2\big(1+a_{0}I_{T}I\big)}{1+I^{2}}\Big),
+\end{align}
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>em que $\vec{\nabla}_{1}$ atua no espaço de estados do elétron 1 e já tínhamos calculado 
+a integral de troca 
+$$I_{T} = \int d^{3}r_{1} \psi_{0}(r_{1})\frac{1}{r_{1}}\psi_{0}(r_{1}') = \frac{1}{a_{0}}\Big(1+\frac{R}{a_{0}}\Big)e^{-R/a_{0}}$$
+e 
+$$\Big\langle\frac{1}{r}\Big\rangle_{\psi_{0}}=\frac{Z}{a_{0}}=\frac{1}{a_{0}}.$$ Acima e doravante usamos 
+$$ke^{2} = ke^{2}\frac{E_{1}^{(0)}}{E_{1}^{(0)}}=ke^{2}\frac{-2a_{0}}{ke^{2}}E_{1}^{(0)} = -2a_{0}E_{1}^{(0)}.$$</p>
+<p>Pela simetria do sistema, os 2 elétrons possuem a mesma energia cinética média:
+$$\langle K_{2}\rangle_{\phi} = \langle K_{1}\rangle_{\phi}.$$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>O valor médio da energia de interação elétron-próton é
+\begin{align}
+\langle U_{e_{1}p}\rangle_{\phi} &amp; = \Big\langle \frac{-ke^{2}}{r_{1}}\Big\rangle = -ke^{2}\iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\frac{1}{r_{1}}\phi \\
+&amp; = -ke^{2}A_{+}^{2}\iint d^{3}r_{1}d^{3}r_{2}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big)\frac{1}{r_{1}}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big) \\
+&amp; = -ke^{2}A_{+}^{2}\Big(\int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}}\psi_{0}(r_{1})\int d^{3}r_{2}\psi_{0}(r_{2}')^{2} + \int d^{3}r_{1}\psi_{0}(r_{1})\frac{1}{r_{1}}\psi_{0}(r_{1}')\int d^{3}r_{2}\psi_{0}(r_{2}')\psi_{0}(r_{2}) \\
+&amp; \hspace{2cm} + \int d^{3}r_{1}\psi_{0}(r_{1}')\frac{1}{r_{1}}\psi_{0}(r_{1})\int d^{3}r_{2}\psi_{0}(r_{2})\psi_{0}(r_{2}') + \int d^{3}r_{1}\psi_{0}(r_{1}')\frac{1}{r_{1}}\psi_{0}(r_{1}')\int d^{3}r_{2}\psi_{0}(r_{2})^{2} \Big) \\
+&amp; = -ke^{2}A_{+}^{2}\big(a_{0}^{-1}(1) + 2I_{T}I + I_{D}(1) \big) \\
+&amp; = -\frac{ke^{2}\big(a_{0}^{-1} + 2I_{T}I + I_{D} \big)}{2\big(1+I^{2}\big)} = -\frac{-2a_{0}E_{1}^{(0)}\big(a_{0}^{-1} + 2I_{T}I + I_{D} \big)}{2\big(1+I^{2}\big)} \\
+&amp; = E_{1}^{(0)}\frac{\big(1 + 2a_{0}I_{T}I + a_{0}I_{D} \big)}{\big(1+I^{2}\big)},
+\end{align}
+em que usamos a integral direta 
+$$I_{D} = \int d^{3}r_{1} \psi_{0}(r_{1})\frac{1}{r_{2}}\psi_{0}(r_{1}) = \frac{1}{a_{0}}\Big(\frac{a_{0}}{R} - \Big(\frac{a_{0}}{R} + 1\Big)e^{-2R/a_{0}}\Big),$$
+obtida anteriormente.</p>
+<p>Novamente, pela simetria do sistema, teremos que
+$$\Big\langle \frac{-ke^{2}}{r_{1}}\Big\rangle = \Big\langle \frac{-ke^{2}}{r_{2}}\Big\rangle = \Big\langle \frac{-ke^{2}}{r_{1}'}\Big\rangle = \Big\langle \frac{-ke^{2}}{r_{2}'}\Big\rangle.$$
+Portanto, o valor médio da energia total de interação elétron-próton é
+$$\langle U_{ep}\rangle_{\phi} = 4\langle U_{e_{1}p}\rangle_{\phi}.$$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seguindo, passamos para o cálculo do valor médio da interação elétron-elétron:
+\begin{align}
+\langle U_{ee}\rangle_{\phi} &amp; = \Big\langle\frac{ke^{2}}{r_{12}}\Big\rangle_{\phi} =  ke^{2}\iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\frac{1}{r_{12}}\phi \\
+&amp; =  ke^{2}A_{+}^{2}\iint d^{3}r_{1}d^{3}r_{2}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big)\frac{1}{r_{12}}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')+\psi_{0}(r_{2})\psi_{0}(r_{1}')\big) \\
+&amp; =  ke^{2}A_{+}^{2}\Big(\iint d^{3}r_{1}d^{3}r_{2}|\psi_{0}(r_{1})|^{2}|\psi_{0}(r_{2}')|^{2}\frac{1}{r_{12}} + \iint d^{3}r_{1}d^{3}r_{2}|\psi_{0}(r_{2})|^{2}|\psi_{0}(r_{1}')|^{2}\frac{1}{r_{12}} \\
+&amp; \hspace{2cm} + \iint d^{3}r_{1}d^{3}r_{2}\psi_{0}(r_{1})\psi_{0}(r_{2}')\frac{1}{r_{12}}\psi_{0}(r_{2})\psi_{0}(r_{1}') + \iint d^{3}r_{1}d^{3}r_{2}\psi_{0}(r_{2})\psi_{0}(r_{1}')\frac{1}{r_{12}}\psi_{0}(r_{1})\psi_{0}(r_{2}') \Big)\\
+&amp; =  2ke^{2}A_{+}^{2}\Big(\iint d^{3}r_{1}d^{3}r_{2}|\psi_{0}(r_{1})|^{2}|\psi_{0}(r_{2}')|^{2}\frac{1}{r_{12}} + \iint d^{3}r_{1}d^{3}r_{2}\psi_{0}(r_{1})\psi_{0}(r_{2}')\frac{1}{r_{12}}\psi_{0}(r_{2})\psi_{0}(r_{1}') \Big) \\
+&amp; =: \frac{2ke^{2}\big(I_{d}+I_{t}\big)}{2\big(1+I^{2}\big)} = \frac{ke^{2}\big(I_{d}+I_{t}\big)}{1+I^{2}} \\
+&amp; = \frac{-2a_{0}E_{1}^{(0)}\big(I_{d}+I_{t}\big)}{1+I^{2}} = -2E_{1}^{(0)}\frac{\big(a_{0}I_{d}+a_{0}I_{t}\big)}{1+I^{2}},
+\end{align}
+em que definimos
+\begin{align}
+&amp; I_{d} := \iint d^{3}r_{1}d^{3}r_{2}|\psi_{0}(r_{1})|^{2}|\psi_{0}(r_{2}')|^{2}\frac{1}{r_{12}}, \\
+&amp; I_{t} := \iint d^{3}r_{1}d^{3}r_{2}\psi_{0}(r_{1})\psi_{0}(r_{2}')\frac{1}{r_{12}}\psi_{0}(r_{2})\psi_{0}(r_{1}').
+\end{align}</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Passemos agora para o cálculo dessas integrais. A primeira integral pode ser identificada com a energia potencial eletrostática de duas distribuições de carga elétrica $\rho_{1} = |\psi_{0}(r_{1})|^{2}$ e $\rho_{2} = |\psi_{0}(r_{2})|^{2}$:
+\begin{align}
+I_{d} &amp; = \iint d^{3}r_{1}d^{3}r_{2}|\psi_{0}(r_{1})|^{2}|\psi_{0}(r_{2}')|^{2}\frac{1}{r_{12}} \\
+&amp; = \frac{1}{\pi a_{0}^{3}}\int d^{3}r_{2}|\psi_{0}(r_{2}')|^{2}\int_{0}^{\infty}r_{1}^{2}e^{-2r_{1}/a_{0}}dr_{1}\int_{0}^{\pi}\frac{\sin\theta_{1} d\theta_{1}}{\sqrt{r_{1}^{2}+r_{2}^{2}-2r_{1}r_{2}\cos\theta_{1}}}\int_{0}^{2\pi}d\phi_{1} \\
+&amp; = \frac{2\pi}{\pi a_{0}^{3}}\int d^{3}r_{2}|\psi_{0}(r_{2}')|^{2}\int_{0}^{\infty}r_{1}^{2}e^{-2r_{1}/a_{0}}dr_{1}\int_{(r_{1}-r_{2})^{2}}^{(r_{1}+r_{2})^{2}}y^{-1/2}\frac{dy}{2r_{1}r_{2}} \\
+&amp; = \frac{1}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\int_{0}^{\infty}r_{1}e^{-2r_{1}/a_{0}}dr_{1}\Big(\frac{\sqrt{y}}{1/2}\Big)_{(r_{1}-r_{2})^{2}}^{(r_{1}+r_{2})^{2}} \\
+&amp; = \frac{2}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\int_{0}^{\infty}r_{1}e^{-2r_{1}/a_{0}}dr_{1}\Big(\sqrt{(r_{1}+r_{2})^{2}}-\sqrt{(r_{1}-r_{2})^{2}}\Big) \\
+&amp; = \frac{2}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\int_{0}^{\infty}r_{1}e^{-2r_{1}/a_{0}}dr_{1}\big(r_{1}+r_{2}-|r_{1}-r_{2}|\big) \\
+&amp; = \frac{2}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\Big(\int_{0}^{r_{2}}r_{1}e^{-2r_{1}/a_{0}}dr_{1}\big(r_{1}+r_{2}-r_{2}+r_{1}|\big) + \int_{r_{2}}^{\infty}r_{1}e^{-2r_{1}/a_{0}}dr_{1}\big(r_{1}+r_{2}-r_{1}+r_{2}\big) \Big) \\
+&amp; = \frac{2}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\Big(2\int_{0}^{r_{2}}r_{1}^{2}e^{-2r_{1}/a_{0}}dr_{1} + 2r_{2}\int_{r_{2}}^{\infty}r_{1}e^{-2r_{1}/a_{0}}dr_{1} \Big) \\
+&amp; = \frac{4}{a_{0}^{3}}\int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\Big(\frac{a_{0}^{3}}{4}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\Big) \\
+&amp; = \int d^{3}r_{2}\frac{|\psi_{0}(r_{2}')|^{2}}{r_{2}}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big),
+\end{align}
+em que $\theta_{1}$ é o ângulo entre $\vec{r}_{1}$ e $\vec{r}_{2}$. Acima fizemos a mudança de variável $y = r_{1}^{2}+r_{2}^{2}-2r_{1}r_{2}\cos\theta_{1}\ \therefore\ dy = 2r_{1}r_{2}\sin\theta_{1}d\theta_{1}$. Assim $\theta_{1}=0\Rightarrow y = (r_{1}-r_{2})^{2}$ e $\theta_{1}=\pi\Rightarrow y = (r_{1}+r_{2})^{2}$.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">,</span><span class="n">A0</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;r_1 r_2 a_0&#39;</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">integrate</span><span class="p">(</span><span class="n">r1</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r1</span><span class="o">/</span><span class="n">A0</span><span class="p">),</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">r2</span><span class="p">))</span> <span class="o">+</span> <span class="n">r2</span><span class="o">*</span><span class="n">integrate</span><span class="p">(</span><span class="n">r1</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r1</span><span class="o">/</span><span class="n">A0</span><span class="p">),</span> <span class="p">(</span><span class="n">r1</span><span class="p">,</span><span class="n">r2</span><span class="p">,</span><span class="n">oo</span><span class="p">)))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \frac{a_{0}^{2} \left(a_{0} e^{\frac{2 r_{2}}{a_{0}}} - a_{0} - r_{2}\right) e^{- \frac{2 r_{2}}{a_{0}}}}{4}$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Continuando com o cálculo da integral acima, teremos
+\begin{align}
+I_{d} &amp; = \frac{1}{\pi a_{0}^{3}}\int_{0}^{\infty}\frac{1}{r_{2}}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)r_{2}^{2}dr_{2}\int_{0}^{\pi}e^{-2r_{2}'/a_{0}}\sin\theta_{2}d\theta_{2}\int_{0}^{2\pi}d\phi_{2} \\
+&amp; = \frac{2\pi}{\pi a_{0}^{3}}\int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)r_{2}dr_{2}\int_{0}^{\pi}e^{-2\sqrt{r_{2}^{2}+R^{2}-2r_{2}R\cos\theta_{2}}/a_{0}}\sin\theta_{2}d\theta_{2} \\
+&amp; = \frac{2}{a_{0}^{3}}\int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)r_{2}dr_{2}\int_{2|r_{2}-R|/a_{0}}^{2(r_{2}+R)/a_{0}}e^{-y}\frac{a_{0}^{2}ydy}{4r_{2}R} \\
+&amp; = \frac{1}{2a_{0}R}\int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)dr_{2}\Big(-\big(1+2(r_{2}+R)/a_{0}\big)e^{-2(r_{2}+R)/a_{0}} + \big(1+2|r_{2}-R|/a_{0}\big)e^{-2|r_{2}-R|/a_{0}} \Big) \\
+&amp; = -\frac{1}{2a_{0}R}\Big(\int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\big(1+2(r_{2}+R)/a_{0}\big)e^{-2(r_{2}+R)/a_{0}}dr_{2} \\
+&amp; \hspace{2cm} - \int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\big(1+2|r_{2}-R|/a_{0}\big)e^{-2|r_{2}-R|/a_{0}} \Big)  \\
+&amp; = -\frac{1}{2a_{0}R}\Big(\int_{0}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\big(1+2(r_{2}+R)/a_{0}\big)e^{-2(r_{2}+R)/a_{0}}dr_{2} \\
+&amp; \hspace{2cm} - \int_{0}^{R}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\big(1+2(R-r_{2})/a_{0}\big)e^{-2(R-r_{2})/a_{0}}dr_{2} \\
+&amp; \hspace{2cm} - \int_{R}^{\infty}\Big(1-\big(1+r_{2}/a_{0}\big)e^{-2r_{2}/a_{0}}\Big)\big(1+2(r_{2}-R)/a_{0}\big)e^{-2(r_{2}-R)/a_{0}}dr_{2} \Big) \\
+&amp; = -\frac{1}{2a_{0}R}\Big(-2a_{0} + \Big(\frac{1}{3}\frac{R^{3}}{a_{0}^{2}} + \frac{3}{2}\frac{R^{2}}{a_{0}} + \frac{11}{4}R + 2a_{0}\Big)e^{-2R/a_{0}} \Big) \\
+&amp; = \frac{1}{R} - \frac{1}{R}\Big(\frac{R^{3}}{6a_{0}^{3}} + \frac{3R^{2}}{4a_{0}^{2}} + \frac{11R}{8a_{0}} + 1 \Big)e^{-2R/a_{0}},
+\end{align}
+em que $\theta_{2}$ é o ângulo entre $\vec{r}_{2}$ e $\vec{R}$. Acima usamos a mudança de variável $y=2\sqrt{r_{2}^{2}+R^{2}-2r_{2}R\cos\theta_{2}}/a_{0}\ \therefore\ a_{0}^{2}d(y^{2})=a_{0}^{2}2ydy = 8r_{2}R\sin\theta_{2}d\theta_{2}$. Assim $\theta_{2}=0\Rightarrow y = 2|r_{2}-R|/a_{0}$ e $\theta_{2}=\pi\Rightarrow y = 2(r_{2}+R)/a_{0}$.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">y</span><span class="p">,</span><span class="n">th2</span><span class="p">,</span><span class="n">R</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;y theta_2 R&#39;</span><span class="p">)</span>
+<span class="n">integrate</span><span class="p">(</span><span class="n">y</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">y</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \left(- y - 1\right) e^{- y}$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">simplify</span><span class="p">(</span> <span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span><span class="o">+</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">),</span> <span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span> <span class="p">)</span> 
+        <span class="o">-</span> <span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="n">r2</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">R</span><span class="o">-</span><span class="n">r2</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">),</span> <span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">R</span><span class="p">)</span> <span class="p">)</span> 
+        <span class="o">-</span> <span class="n">integrate</span><span class="p">(</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">r2</span><span class="o">/</span><span class="n">A0</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span><span class="o">-</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">)</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">r2</span><span class="o">-</span><span class="n">R</span><span class="p">)</span><span class="o">/</span><span class="n">A0</span><span class="p">),</span> <span class="p">(</span><span class="n">r2</span><span class="p">,</span><span class="n">R</span><span class="p">,</span><span class="n">oo</span><span class="p">)</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
+
+
+
+
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
+$\displaystyle \frac{\left(4 R^{3} + 18 R^{2} a_{0} + 33 R a_{0}^{2} - 24 a_{0}^{3} e^{\frac{2 R}{a_{0}}} + 24 a_{0}^{3}\right) e^{- \frac{2 R}{a_{0}}}}{12 a_{0}^{2}}$
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seguindo, vamos para a outra integral:
+\begin{align}
+I_{t} &amp; = \iint d^{3}r_{1}d^{3}r_{2}\psi_{0}(r_{1})\psi_{0}(r_{2}')\frac{1}{r_{12}}\psi_{0}(r_{2})\psi_{0}(r_{1}') \\
+&amp; = \frac{1}{(\pi a_{0}^{3})^{2}}\int d^{3}r_{2}e^{-(r_{2}+r_{2}')/a_{0}}\int d^{3}r_{1}\frac{e^{-(r_{1}+r_{1}')/a_{0}}}{r_{12}} \\
+&amp; \vdots \text{ (Y. SUGIURA, Über die Eigenschaften des Wasserstoffmoleküls im Grundzustande, Z. Phys. 46, 484 (1927).)} \\
+&amp; = \frac{e^{-2R/a_{0}}}{a_{0}}\Big(\frac{5}{8}-\frac{23R}{20 a_{0}} - \frac{3}{5}\Big(\frac{R}{a_{0}}\Big)^{2}-\frac{1}{15}\Big(\frac{R}{a_{0}}\Big)^{3}\Big) \\
+&amp; \hspace{0.5cm} + \frac{6I^{2}}{5R}\Big(\gamma \log(R/a_{0}) + (\tilde{I}/I)^{2}Ei(-4R/a_{0}) - 2(\tilde{I}/I)Ei(-2R/a_{0})\Big),
+\end{align}
+com $\gamma \approx 0.5772$ sendo a constante de Euler, a integral exponencial é
+$$Ei(x)=\int_{-x}^{\infty}dt e^{-t}/t$$ 
+e $\tilde{I}$ é obtida de $I$ trocando-se o sinal de $R$: 
+$$\tilde{I} = e^{R/a_{0}}\big(1+R/a_{0}+(R/a_{0})^{2}\big)/3.$$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Por fim, como por hora estamos considerando $R$ constante, a energia potencial de interação Coulombiana próton-próton é dada por
+\begin{align}
+\big\langle U_{pp'}\big\rangle_{\phi} &amp; = \Big\langle\frac{ke^{2}}{R}\Big\rangle = \iint d^{3}r_{1}d^{3}r_{2}\phi^{*}\frac{ke^{2}}{R}\phi = \frac{ke^{2}}{R}\iint d^{3}r_{1}d^{3}r_{2}|\phi|^{2} \\
+&amp; = \frac{ke^{2}}{R}\frac{E_{1}^{(0)}}{E_{1}^{(0)}} = \frac{ke^{2}}{R}\frac{-2a_{0}}{ke^{2}}E_{1}^{(0)} = \frac{-2a_{0}E_{1}^{(0)}}{R}.
+\end{align}</p>
+<p>Com isso, teremos
+\begin{align}
+\langle H\rangle_{\phi} &amp; = 2\langle K_{1}\rangle_{\phi} + 4\langle U_{e_{1}p}\rangle_{\phi} + \langle U_{e_{1}e_{2}}\rangle_{\phi} + \langle U_{pp'}\rangle_{\phi} \\
+&amp; = 2E_{1}^{(0)}\Big(1-\frac{2\big(1+a_{0}I_{T}I\big)}{1+I^{2}}\Big) + 4E_{1}^{(0)}\frac{\big(1 + 2a_{0}I_{T}I + a_{0}I_{D} \big)}{\big(1+I^{2}\big)} -2E_{1}^{(0)}\frac{\big(a_{0}I_{d}+a_{0}I_{t}\big)}{1+I^{2}} -2E_{1}^{(0)}\frac{a_{0}}{R} \\
+&amp; = -2E_{1}^{(0)}\Big(-1+\frac{a_{0}}{R} - \frac{2a_{0}I_{T}I+2a_{0}I_{D}-a_{0}I_{d}-a_{0}I_{t}}{1+I^{2}}\Big).
 \end{align}</p>
 
 </div>
@@ -17300,10 +17664,19 @@ Essas funções de onda teste variacionais constituem a chamada <strong>aproxima
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Hm_H2</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># x = R/a0</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">IT</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="c1">#*(1/a0)</span>
+    <span class="n">ID</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="c1">#*(1/a0)</span>
+    <span class="n">Id</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">6</span> <span class="o">+</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span> <span class="o">+</span> <span class="mi">11</span><span class="o">/</span><span class="mi">8</span> <span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">ga</span> <span class="o">=</span> <span class="mf">0.5772</span>
+    <span class="n">Itil</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">It</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="o">/</span><span class="mi">8</span> <span class="o">-</span> <span class="p">(</span><span class="mi">23</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">20</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">15</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> 
+    <span class="o">+</span> <span class="p">((</span><span class="mi">6</span><span class="o">*</span><span class="n">I</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">ga</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">Itil</span><span class="o">/</span><span class="n">I</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">Ei</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">Itil</span><span class="o">/</span><span class="n">I</span><span class="p">)</span><span class="o">*</span><span class="n">Ei</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">)</span> <span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="o">-</span> <span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">IT</span><span class="o">*</span><span class="n">I</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">ID</span><span class="o">-</span><span class="n">Id</span><span class="o">-</span><span class="n">It</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">I</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="c1">#*(-2*E10)</span>
 </pre></div>
 
      </div>
@@ -17311,15 +17684,22 @@ Essas funções de onda teste variacionais constituem a chamada <strong>aproxima
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">10</span><span class="p">});</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mf">0.05</span><span class="p">);</span> <span class="n">d</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">);</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">);</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">y</span><span class="o">-</span><span class="mi">2</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Hm_H2</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\langle H_</span><span class="si">{t}</span><span class="s1">\rangle_{\phi}(-E_</span><span class="si">{1}</span><span class="s1">^{(0)})$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$R/a_</span><span class="si">{0}</span><span class="s1">$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -17327,20 +17707,34 @@ Essas funções de onda teste variacionais constituem a chamada <strong>aproxima
 </div>
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 
-     </div>
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,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
+"
+class="
+jp-needs-light-background
+"
+>
 </div>
+
 </div>
+
+</div>
+
 </div>
 
 </div>
@@ -17365,6 +17759,12 @@ $$\langle\phi|P^{2}X^{2}|\phi\rangle = \int dx\phi(x)^{*}\big(-i\hbar\partial_{x
 </li>
 <li><p>Considerando o íon da molécula de hidrogênio, faça os cálculos para verificar que a função de onda teste 
 $$\phi_{-} = A\big(\psi_{0}(r_{1})-\psi_{0}(r_{2})\big)$$
+indica um estado não ligado para esta molécula.</p>
+</li>
+<li><p>Qual seria a temperatura para a qual a energia térmica seria a mesma que a energia de oscilação necessária para quebrar a molécula $H_{2}^{+}$?</p>
+</li>
+<li><p>Considerando a molécula de hidrogênio, faça os cálculos para verificar que a função de onda teste 
+$$\phi_{-}(\vec{r}_{1},\vec{r}_{2}) = A_{-}\big(\psi_{0}(r_{1})\psi_{0}(r_{2}')-\psi_{0}(r_{2})\psi_{0}(r_{1}')\big)$$
 indica um estado não ligado para esta molécula.</p>
 </li>
 </ol>
