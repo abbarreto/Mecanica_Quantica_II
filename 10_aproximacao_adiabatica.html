@@ -14261,8 +14261,8 @@ em que usamos $\vec{R}_{t'}=\big(X_{1}(t'),X_{2}(t'),X_{3}(t')\big)$. Note que o
 &amp; = i\int_{\vec{R}_{0}}^{\vec{R}_{t}}\langle E_{n}(\vec{R}_{t'})|\vec{\nabla}_{\vec{R}}|E_{n}(\vec{R}_{t'})\rangle\cdot d\vec{R}_{t'}.
 \end{align}
 Se o intervalo de tempo $t$ é tal que o parâmetro volta ao seu valor inicial, i.e., se
-$$\vec{R}_{t}=\vec{R}_{0},$$
-e definimos um potencial vetor generalizado
+$$\vec{R}_{t}:=\vec{R}_{0},$$
+e definimos um <strong>potencial vetor generalizado</strong>
 $$\vec{\mathcal{A}}_{n}(\vec{R}_{t'}) := i\langle E_{n}(\vec{R}_{t'})|\vec{\nabla}_{\vec{R}}|E_{n}(\vec{R}_{t'})\rangle,$$</p>
 
 </div>
@@ -14276,7 +14276,7 @@ $$\vec{\mathcal{A}}_{n}(\vec{R}_{t'}) := i\langle E_{n}(\vec{R}_{t'})|\vec{\nabl
 &amp; = \int_{S}\vec{\nabla}_{\vec{R}}\times \vec{\mathcal{A}}_{n}(\vec{R}_{t'})\cdot d\vec{a} \\
 &amp; =: \int_{S}\vec{\mathcal{B}}_{n}(\vec{R}_{t'})\cdot d\vec{a},
 \end{align}
-que pode ser identificada como o fluxo através da superfície $S$, delimitada pelo caminho $C$, no espaço de parâmetros $\vec{R}$, de um campo vetorial generalizado
+que pode ser identificada como o fluxo através da superfície $S$, delimitada pelo caminho $C$, no espaço de parâmetros $\vec{R}$, de um <strong>campo vetorial generalizado</strong>
 $$\vec{\mathcal{B}}_{n}(\vec{R}) := \vec{\nabla}_{\vec{R}}\times \vec{\mathcal{A}}_{n}(\vec{R}).$$
 Acima, na passagem da 2ª para a 3ª igualdade, usamos o teorema de Stokes. Vale observar que, assim como fizemos para $\gamma_{n}(t)$, podemos verificar que $\vec{\mathcal{A}}_{n}(\vec{R})$ e $\vec{\mathcal{B}}_{n}(\vec{R})$ são vetores com componentes reais.</p>
 
@@ -14431,7 +14431,7 @@ Com isso, o estado evoluído da eq. $(\triangle)$ pode ser escrito como
  = &amp; \big(\cos(\lambda t/2)-i((\omega_{1}-\omega\cos\alpha)/\lambda)\sin(\lambda t/2)\big)e^{-i\omega t/2}|\chi_{+}(t)\rangle \\
  &amp; + \big(0-i((0-\omega\sin\alpha)/\lambda)\sin(\lambda t/2)\big)e^{i\omega t/2}|\chi_{-}(t)\rangle \\
  \approx &amp; e^{-i(\omega_{1} - \omega\cos\alpha)t/2}e^{-i\omega t/2}|\chi_{+}(t)\rangle + i\frac{\omega}{\omega_{1}}\sin\alpha\sin(\omega_{1} t/2)\big)e^{i\omega t/2}|\chi_{-}(t)\rangle \\
- \approx &amp; e^{-i(\omega_{1} - \omega\cos\alpha)t/2}e^{-i\omega t/2}|\chi_{+}(t)\rangle \\
+ \approx &amp; e^{-i(\omega_{1} - \omega\cos\alpha)t/2}e^{-i\omega t/2}|\chi_{+}(t)\rangle + 0\\
  =&amp; e^{i\gamma_{+}(t)}e^{i\theta_{+}(t)}|\chi_{+}(t)\rangle.
 \end{align}</p>
 
@@ -14448,7 +14448,7 @@ $$\gamma_{+}(t=2\pi/\omega) = \gamma(C) = (\cos\alpha-1)\pi.$$</p>
 <p>Vamos considerar o mesmo exemplo, mas agora com um campo magnético que percorre uma <strong>curva arbitrária</strong>. O estado para qualquer tempo pode ser escrito na forma geral
 $$|\chi_{+}\rangle = \cos(\theta/2)|z_{+}\rangle + e^{i\phi}\sin(\theta/2)|z_{-}\rangle.$$
 Usando o operador nabla em coordenadas esféricas, 
-$$\vec{\nabla} = \hat{r}\partial_{r}+\hat{\theta}r^{-1}\partial_{\theta} + \hat{\phi}r^{-1}\sin^{-1}\theta\partial\phi,$$
+$$\vec{\nabla} = \hat{r}\partial_{r}+\hat{\theta}r^{-1}\partial_{\theta} + \hat{\phi}r^{-1}\sin^{-1}\theta\partial_{\phi},$$
 teremos que
 \begin{align}
 \vec{\nabla}|\chi_{+}\rangle &amp; = \vec{\nabla}\big(\cos(\theta/2)\big)|z_{+}\rangle + \vec{\nabla}\big(e^{i\phi}\sin(\theta/2)\big)|z_{-}\rangle \\
@@ -14493,7 +14493,7 @@ em que $\Omega$ é o ângulo sólido subentendido pelo vetor campo magnético em
 <p>Deste resultado geral, podemos obter o resultado particular acima, pois
 \begin{align}
 \int d\Omega &amp; = \int_{0}^{2\pi}\int_{0}^{\alpha}\sin\theta d\theta d\phi = 2\pi\big(-\cos\theta\big)_{0}^{\alpha} \\
-&amp; = 2\pi(-cos\alpha+1).
+&amp; = 2\pi(-\cos\alpha+1).
 \end{align}
 Assim
 $$\gamma_{+}(C) = -\frac{2\pi(-\cos\alpha+1)}{2} = \pi(\cos\alpha-1).$$</p>
@@ -14508,22 +14508,25 @@ não mudam por transformações de calibre (TC),
 $$\Phi\rightarrow\Phi'=\Phi-\partial_{t}\chi \text{ e } \vec{A}\rightarrow\vec{A}'=\vec{A}+\vec{\nabla}\chi,$$
 com $\chi=\chi(\vec{r},t)$ sendo uma função escalar qualquer. Isso implica na invariância das leis físicas (equações de Maxwell mais força de Lorentz) sob TC, o que indica que trabalhar com os potenciais $\Phi$ e $\vec{A}$ pode ser matematicamente conveniente, mas não tem importância do ponto de vista Físico.</p>
 <p>No caso quântico, vimos, ao estudar o Efeito Stark, que a equação de Schrödinger para um quanton de carga elétrica $q$ e massa $m$ é invariante por TC, i.e., 
-$$\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}'\big)^{2} + q\Phi'\Big)\Psi' = i\hbar\partial_{t}\Psi',$$
+$$\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}\big)^{2} + q\Phi\Big)\Psi = i\hbar\partial_{t}\Psi \rightarrow \Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}'\big)^{2} + q\Phi'\Big)\Psi' = i\hbar\partial_{t}\Psi',$$
 com a função de onda ganhando apenas uma fase global 
 $$\Psi \rightarrow \Psi' = e^{iq\chi/\hbar}\Psi.$$
-Embora essa mudança não mude probabilidades, Yakir Aharonov e David Bohm mostraram que TC podem afetar o comportamento quântico de um sistema mesmo em regiões do espaço com campos elétrico e magnético nulos.</p>
+Embora a equação de Schrödinger (EqS) seja invariante por TC e essa mudança não mude probabilidades, Yakir Aharonov e David Bohm mostraram que TC podem afetar o comportamento quântico de um sistema mesmo em regiões do espaço com campos elétrico e magnético nulos.</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Primeiramente, vamos considerar um exemplo para o qual as energias podem depender dos potenciais em uma região de campo nulo. Consideremos um quanton de massa $m$ e carga elétrica $q$ restrito a se mover em um círculo de raio $b$. Concêntrico a este círculo está um solenóide de raio $a&lt;b$. Por este solenóide passa uma corrente elétrica $I$. O solenóide é muito longo, assim o campo magnético interno é uniforme, $B$, e o campo magnético externo é nulo. Como o solenóide é neutro, e $I$ é constante, o campo elétrico é nulo tanto no interior quanto fora do solenóide. Se adotamos a condição de calibre $\vec{\nabla}\cdot\vec{A}=0$, o potencial vetor magnético fora do solenóide pode ser escrito como
+<h4 id="Energia-dependente-de-potencias-onde-os-campos-s%C3%A3o-nulos">Energia dependente de potencias onde os campos s&#227;o nulos<a class="anchor-link" href="#Energia-dependente-de-potencias-onde-os-campos-s%C3%A3o-nulos">&#182;</a></h4><p>Primeiramente, vamos considerar um exemplo para o qual as energias podem depender dos potenciais em uma região de campo nulo. Consideremos um quanton de massa $m$ e carga elétrica $q$ restrito a se mover em um círculo de raio $b$. Concêntrico a este círculo está um solenóide de raio $a&lt;b$. Por este solenóide passa uma corrente elétrica $I$. O solenóide é muito longo, assim o campo magnético interno é uniforme, $B$, e o campo magnético externo é nulo. Como o solenóide é neutro, e $I$ é constante, o campo elétrico é nulo tanto no interior quanto fora do solenóide. Se adotamos a condição de calibre 
+$$\vec{\nabla}\cdot\vec{A}=0,$$
+o potencial vetor magnético fora do solenóide pode ser escrito como
 $$\vec{A}(r&gt;a) = \frac{\varphi}{2\pi r}\hat{\phi},$$
 em que 
 $$\varphi=\pi a^{2}B$$
 é o fluxo magnético no interior do solenóide. Pela restrição no movimeto do quanton, 
-$$r=b \text{ e} \theta=\pi/2,$$ a função de onda depende somente da variável $\phi$. Neste caso 
-$$\vec{\nabla} \rightarrow \hat{\phi}r^{-1}\sin^{-1}\theta\partial\phi.$$</p>
+$$r=b \text{ e } \theta=\pi/2,$$ 
+a função de onda depende somente da variável $\phi$. Neste caso 
+$$\vec{\nabla} \rightarrow \hat{\phi}r^{-1}\sin^{-1}\theta\partial_\phi.$$</p>
 
 </div>
 </div>
@@ -14531,12 +14534,12 @@ $$\vec{\nabla} \rightarrow \hat{\phi}r^{-1}\sin^{-1}\theta\partial\phi.$$</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Com isso, a equação de Schrödinger independente do tempo fica escrita como
 \begin{align}
-&amp; \frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}\big)^{2}\Psi = E\Psi, \\
-&amp; \therefore\ \frac{1}{2m}\big(-\hbar^{2}\nabla^{2} + 2i\hbar q\vec{A}\cdot\vec{\nabla}+q^{2}A^{2}\big)\Psi = E\Psi, \\
-&amp; \therefore\ \frac{1}{2m}\Big(-\frac{\hbar^{2}}{r^{2}\sin^{2}\theta}\partial_{\phi\phi} + 2i\hbar q\frac{\varphi}{2\pi r^{2}\sin\theta}\partial_{\phi} + q^{2}\frac{\varphi^{2}}{4\pi^{2}r^{2}}\Big)\Psi = E\Psi, \\
-&amp; \therefore\ \Big(-\frac{\hbar^{2}}{b^{2}}\partial_{\phi\phi} + \frac{i\hbar q\varphi}{\pi b^{2}}\partial_{\phi} + \frac{q^{2}\varphi^{2}}{4\pi^{2}b^{2}}\Big)\Psi = 2mE\Psi, \\
-&amp; \therefore\ \Big(\partial_{\phi\phi} - \frac{iq\varphi}{\hbar\pi}\partial_{\phi} + \frac{2mEb^{2}}{\hbar^{2}} - \frac{q^{2}\varphi^{2}}{4\pi^{2}\hbar^{2}} \Big)\Psi=0 \\
-&amp;\therefore\ \big(\partial_{\phi\phi} - 2i\beta\partial_{\phi} + \varepsilon \Big)\Psi=0,
+&amp; \frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}\big)^{2}\psi = E\psi, \\
+&amp; \therefore\ \frac{1}{2m}\big(-\hbar^{2}\nabla^{2} + 2i\hbar q\vec{A}\cdot\vec{\nabla}+q^{2}A^{2}\big)\psi = E\psi, \\
+&amp; \therefore\ \frac{1}{2m}\Big(-\frac{\hbar^{2}}{r^{2}\sin^{2}\theta}\partial_{\phi\phi} + 2i\hbar q\frac{\varphi}{2\pi r^{2}\sin\theta}\partial_{\phi} + q^{2}\frac{\varphi^{2}}{4\pi^{2}r^{2}}\Big)\psi = E\psi, \\
+&amp; \therefore\ \Big(-\frac{\hbar^{2}}{b^{2}}\partial_{\phi\phi} + \frac{i\hbar q\varphi}{\pi b^{2}}\partial_{\phi} + \frac{q^{2}\varphi^{2}}{4\pi^{2}b^{2}}\Big)\psi = 2mE\psi, \\
+&amp; \therefore\ \Big(\partial_{\phi\phi} - \frac{iq\varphi}{\hbar\pi}\partial_{\phi} + \frac{2mEb^{2}}{\hbar^{2}} - \frac{q^{2}\varphi^{2}}{4\pi^{2}\hbar^{2}} \Big)\psi=0 \\
+&amp;\therefore\ \big(\partial_{\phi\phi} - 2i\beta\partial_{\phi} + \varepsilon \Big)\psi=0,
 \end{align}
 em que definimos
 $$\beta = \frac{q\varphi}{2\hbar\pi} \text{ e } \varepsilon=\frac{2mEb^{2}}{\hbar^{2}}-\beta^{2}.$$</p>
@@ -14545,11 +14548,11 @@ $$\beta = \frac{q\varphi}{2\hbar\pi} \text{ e } \varepsilon=\frac{2mEb^{2}}{\hba
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">be</span><span class="p">,</span> <span class="n">ep</span><span class="p">,</span> <span class="n">ph</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;beta varepsilon phi&#39;</span><span class="p">)</span>
-<span class="n">ps</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;Psi&#39;</span><span class="p">)</span>
+<span class="n">ps</span> <span class="o">=</span> <span class="n">Function</span><span class="p">(</span><span class="s1">&#39;psi&#39;</span><span class="p">)</span>
 <span class="n">dsolve</span><span class="p">(</span><span class="n">Derivative</span><span class="p">(</span><span class="n">ps</span><span class="p">(</span><span class="n">ph</span><span class="p">),</span><span class="n">ph</span><span class="p">,</span><span class="n">ph</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">be</span><span class="o">*</span><span class="n">Derivative</span><span class="p">(</span><span class="n">ps</span><span class="p">(</span><span class="n">ph</span><span class="p">),</span><span class="n">ph</span><span class="p">)</span> <span class="o">+</span> <span class="n">ep</span><span class="o">*</span><span class="n">ps</span><span class="p">(</span><span class="n">ph</span><span class="p">),</span> <span class="n">ps</span><span class="p">(</span><span class="n">ph</span><span class="p">))</span>
 </pre></div>
 
@@ -14566,13 +14569,13 @@ $$\beta = \frac{q\varphi}{2\hbar\pi} \text{ e } \varepsilon=\frac{2mEb^{2}}{\hba
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle \Psi{\left(\phi \right)} = C_{1} e^{\phi \left(1.0 i \beta - 1.0 \sqrt{- \beta^{2} - \varepsilon}\right)} + C_{2} e^{\phi \left(1.0 i \beta + 1.0 \sqrt{- \beta^{2} - \varepsilon}\right)}$
+$\displaystyle \psi{\left(\phi \right)} = C_{1} e^{\phi \left(1.0 i \beta - 1.0 \sqrt{- \beta^{2} - \varepsilon}\right)} + C_{2} e^{\phi \left(1.0 i \beta + 1.0 \sqrt{- \beta^{2} - \varepsilon}\right)}$
 </div>
 
 </div>
@@ -14584,34 +14587,150 @@ $\displaystyle \Psi{\left(\phi \right)} = C_{1} e^{\phi \left(1.0 i \beta - 1.0 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Então, as soluções da eq. de Schrödinger tem a forma
-$$\Psi(\phi) = c_{+}e^{i\lambda_{+}\phi} + c_{-}e^{-i\lambda_{-}\phi}$$
+<p>Então, as soluções da eq. de Schrödinger tem a forma geral
+$$\psi(\phi) = c_{+}e^{i\lambda_{+}\phi} + c_{-}e^{i\lambda_{-}\phi}$$
 com
 $$\lambda_{\pm} = \beta \pm\sqrt{\beta^{2}+\varepsilon}.$$
-Se impomos que $$\Psi(\phi)=\Psi(\phi+2\pi),$$
-vemos que $\lambda_{\pm}$ deve ser um número inteiro, que chamaremos de $n=\cdots,-2,-1,0,1,2,\cdots$. Assim
+Usaremos a forma particular
+$$\psi(\phi) = c_{\pm}e^{i\lambda_{\pm}\phi}.$$
+Se impomos a condição de contorno
+$$\psi(\phi)=\psi(\phi+2\pi),$$
+vemos que $\lambda_{\pm}$ deve ser um número inteiro, que chamaremos de 
+$$n=\cdots,-2,-1,0,1,2,\cdots.$$
+Assim
 \begin{align}
-&amp; \lambda_{\pm} = \beta \pm\sqrt{\beta^{2}+\varepsilon}\big) = n\ \therefore\ \beta^{2}+\varepsilon = \big(n-\beta\big)^{2} \\
-&amp; \varepsilon = \frac{2mEb^{2}}{\hbar^{2}}-\beta^{2} = \big(n-\beta\big)^{2} -\beta^{2} \\
-&amp; \therefore\ E = E_{n} = \frac{\hbar^{2}}{2m}\big(n-\beta\big)^{2} =  \frac{\hbar^{2}}{2m}\Big(n-\frac{q\varphi}{2\hbar\pi}\Big)^{2}.
+&amp; \lambda_{\pm} = \beta \pm\sqrt{\beta^{2}+\varepsilon} = n\ \therefore\ \beta^{2}+\varepsilon = \big(n-\beta\big)^{2} \\
+&amp; \therefore\ \varepsilon = \frac{2mEb^{2}}{\hbar^{2}}-\beta^{2} = \big(n-\beta\big)^{2} -\beta^{2} \\
+&amp; \therefore\ E = E_{n} = \frac{\hbar^{2}}{2mb^{2}}\big(n-\beta\big)^{2} =  \frac{\hbar^{2}}{2mb^{2}}\Big(n-\frac{q\varphi}{2\hbar\pi}\Big)^{2}.
 \end{align}
-Ou seja, a energia do quanton fora do solenóide, onde o campo magnético é nulo, depende do fluxo de campo magnético dentro do solenóide.</p>
+Ou seja, a energia do quanton fora do solenóide, onde o campo magnético é nulo, depende do fluxo de campo magnético dentro do solenóide. Esse fato pode ser chamado de <strong>efeito Aharonov-Bohm</strong>.</p>
 
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>O operador momento linear em coordenadas esféricas fica escrito como
+\begin{align}
+\vec{P} = &amp; -i\hbar\vec{\nabla} \\
+&amp; = -i\hbar\hat{r}\partial_{r} -i\hbar\hat{\theta}r^{-1}\partial_{\theta} -i\hbar\hat{\phi}r^{-1}\sin^{-1}\theta\partial_{\phi} \\
+&amp; = \hat{r}P_{r} + \hat{\theta}P_{\theta} + \hat{\phi}P_{\phi}.
+\end{align}
+Como o quanton está restrito a se movimentar no círculo, $P_{r}=P_{\theta}=0$. Vemos assim que
+\begin{align}
+P_{\phi}\psi(\phi) = &amp; -i\hbar r^{-1}\sin^{-1}\theta i\lambda_{\pm}\psi(\phi) \\
+&amp; = \hbar b^{-1} n\psi(\phi) = p_\phi\psi(\phi).
+\end{align}
+Portanto, estados com $n$ positivo correspondem ao movimento do quanton no mesmo sentido da corrente elétrica, que por sua vez estão associados a um menor valor de energia. Estados com $n$ negativo correspondem a movimento do quanton no sentido contrário ao da corrente elétrica e tem maior energia.</p>
 
-     </div>
 </div>
 </div>
-</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Experimento-de-Aharonov-e-Bohm">Experimento de Aharonov e Bohm<a class="anchor-link" href="#Experimento-de-Aharonov-e-Bohm">&#182;</a></h4><p>Vamos supor que o quanton se move em uma região de campo magnético nulo,
+$$\vec{B}=\vec{\nabla}\times\vec{A}=\vec{0},$$
+mas com potencial vetor diferente de zero, $$\vec{A}\ne\vec{0}.$$
+A equação de Schrödinger (EqS),
+$$\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla} -q\vec{A}\big)^{2} + q\Phi\Big)\Psi = i\hbar\partial_{t}\Psi,$$
+pode ser simplificada se definimos
+$$\Psi:=e^{ig}\Xi$$
+com 
+$$g=\frac{q}{\hbar}\int_{\vec{\mathcal{O}}}^{\vec{r}}\vec{A}(\vec{r}')\cdot d\vec{r}',$$
+que é independente do caminho, uma vez que $\vec{\nabla}\times\vec{A}=\vec{0}$. O ponto $\vec{\mathcal{O}}$ é um ponto de referência qualquer.</p>
 
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Pode-se verificar que 
+$$\vec{\nabla}g=q\vec{A}(\vec{r})/\hbar.$$
+Com isso, usando
+\begin{align}
+\vec{\nabla}\Psi &amp; = \vec{\nabla}\big(e^{ig}\Xi\big) = i(\vec{\nabla}g)e^{ig}\Xi + e^{ig}\vec{\nabla}\Xi \\
+&amp; = iq\hbar^{-1}\vec{A}e^{ig}\Xi + e^{ig}\vec{\nabla}\Xi,
+\end{align}
+podemos escrever
+\begin{align}
+\big(-i\hbar\vec{\nabla}-q\vec{A}\big)\Psi =&amp; -i\hbar iq\hbar^{-1}\vec{A}e^{ig}\Xi -i\hbar e^{ig}\vec{\nabla}\Xi -q\vec{A}e^{ig}\Xi \\
+&amp; = -i\hbar e^{ig}\vec{\nabla}\Xi.
+\end{align}
+Ou seja, usando $\vec{\nabla}\cdot(f\vec{\nabla}g) = (\vec{\nabla}f)\cdot(\vec{\nabla}g)+f\nabla^{2}g$, teremos que
+\begin{align}
+&amp; \big(-i\hbar\vec{\nabla}-q\vec{A}\big)^{2}\Psi = \big(-i\hbar\vec{\nabla}-q\vec{A}\big)\cdot\big(-i\hbar\vec{\nabla}-q\vec{A}\big)\Psi \\
+&amp; = \big(-i\hbar\vec{\nabla}-q\vec{A}\big)\cdot\big(-i\hbar e^{ig}\vec{\nabla}\Xi\big) \\
+&amp; = -\hbar^{2}\vec{\nabla}\cdot\big(e^{ig}\vec{\nabla}\Xi\big) + iq\hbar e^{ig}\vec{A}\cdot\vec{\nabla}\Xi \\
+&amp; = -\hbar^{2}\big(\vec{\nabla}e^{ig}\big)\cdot\big(\vec{\nabla}\Xi\big) -\hbar^{2}e^{ig}\nabla^{2}\Xi + iq\hbar e^{ig}\vec{A}\cdot\vec{\nabla}\Xi \\
+&amp; = -\hbar^{2}i(\vec{\nabla}g)e^{ig}\cdot\vec{\nabla}\Xi -\hbar^{2}e^{ig}\nabla^{2}\Xi + iq\hbar e^{ig}\vec{A}\cdot\vec{\nabla}\Xi \\
+&amp; = -\hbar^{2}iq\hbar^{-1}\vec{A}e^{ig}\cdot\vec{\nabla}\Xi -\hbar^{2}e^{ig}\nabla^{2}\Xi + iq\hbar e^{ig}\vec{A}\cdot\vec{\nabla}\Xi \\
+&amp; =-\hbar^{2}e^{ig}\nabla^{2}\Xi.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Com isso, a eq. de Schrödinger fica escrita como segue
+\begin{align}
+&amp; -\frac{\hbar^{2}}{2m}e^{ig}\nabla^{2}\Xi + q\Phi e^{ig}\Xi = i\hbar\partial_{t}(e^{ig}\Xi)  = e^{ig}i\hbar\partial_{t}\Xi \\
+&amp; \therefore\ -\frac{\hbar^{2}}{2m}\nabla^{2}\Xi + q\Phi \Xi = i\hbar\partial_{t}\Xi.
+\end{align}
+Vemos assim que $\Xi$ satisfaz a EqS sem $\vec{A}$. Se resolvemos essa equação, podemos obter a função de onda na presença de $A$: $\Psi=e^{ig}\Xi$.</p>
+<p>Feitas essas considerações, passamos para o experimento de pensamento de Aharonov-Bohm (AB). Eles consideraram um elétron que é preparado em um estado de superposição de caminhos:
+$$\Psi = 2^{-1/2}(\Psi_{+}+\Psi_{-}).$$
+Esses dois caminhos são aqueles em que o elétron passa em "lados" opostos na parte exterior de um solenóide, como aquele que vimos no último exemplo. O potencial vetor é um campo vetorial com sentido acompanhando aquele da corrente elétrica no solenóide. Com isso teremos 
+\begin{align}
+g_{\pm} &amp; = \frac{q}{\hbar}\int_{\mathcal{O}}^{r}\vec{A}(\vec{r}')\cdot d\vec{r}' \\
+&amp; = \frac{q}{\hbar}\int_{\mathcal{O}}^{r}\frac{\varphi}{2\pi r'}\hat{\phi}'\cdot r'd\phi'(\pm\hat{\phi}') \\
+&amp; = \pm\frac{q\varphi}{\hbar 2\pi}\int_{\mathcal{O}}^{r}d\phi' = \pm\frac{q\varphi}{\hbar 2\pi}\pi \\
+&amp; = \pm\frac{q\varphi}{2\hbar},
+\end{align}
+em que usamos $\vec{A}(r&gt;a) = \frac{\varphi}{2\pi r}\hat{\phi}$.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Então, fazendo os caminhos se cruzarem depois de passar pelo solenóide, o estado do elétron será
+$$\Psi = 2^{-1/2}(e^{ig_{+}}\Psi_{+}+e^{ig_{-}}\Psi_{-}),$$
+com os estados dos diferentes caminhos ganhando uma diferença de fase
+$$\delta g=g_{+}-g_{-}=\frac{q\varphi}{\hbar},$$
+que pode ser controlada variando-se a corrente elétrica no solenóide. Essa diferença de fase pode causar interferência destrutiva, mudando as probabilidades de detecção do elétron. Esse efeito foi medido experimentalmente em (<a href="https://doi.org/10.1103/PhysRevLett.5.3">https://doi.org/10.1103/PhysRevLett.5.3</a>) e em (<a href="https://doi.org/10.1103/PhysRevA.34.815">https://doi.org/10.1103/PhysRevA.34.815</a>).</p>
+<p><em>OBS. pra mim</em> Considerar o EAB com Mach-Zehnder. Ver os detalhes do cálculo.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Efeito-Aharonov-Bohm-como-exemplo-de-fase-de-Berry">Efeito Aharonov-Bohm como exemplo de fase de Berry<a class="anchor-link" href="#Efeito-Aharonov-Bohm-como-exemplo-de-fase-de-Berry">&#182;</a></h4><p>Consideremos que uma partícula de carga elétrica $q$ e massa $m$ está confinada a se mover em uma pequena caixa com posição $\vec{R}$ em relação a um ponto $O$ no mesmo solenóide considerado acima. A posição da partícula em relação a $O$ é $\vec{r}$. A equação de Schrödinger independente do tempo fica escrita, neste caso, como segue
+$$\Big(\frac{1}{2m}\big(-i\hbar\vec{\nabla}-q\vec{A}(\vec{r})\big)^{2}+q\Phi(\vec{r}-\vec{R})\Big)\psi=E\psi.$$
+Como acima, fazemos
+$$\psi = e^{ig}\xi$$
+com $\psi=\psi(\vec{r}-\vec{R})$, $\xi=\xi(\vec{r}-\vec{R})$ e
+$$g=\frac{q}{\hbar}\int_{\vec{R}}^{\vec{r}}\vec{A}(\vec{r}')\cdot d\vec{r}'$$
+com $\xi$ satisfazendo a EqS:
+$$\Big(-\frac{\hbar^{2}}{2m}\nabla^{2}+q\Phi(\vec{r}-\vec{R})\Big)\xi=E\xi.$$</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seguindo, consideramos que a caixa é carregada em torno do solenóide de forma a satisfazer a aproximação adiabática. Teremos que
+\begin{align}
+\vec{\mathcal{A}} &amp; = i\langle\psi|\vec{\nabla}_{\vec{R}}|\psi\rangle = i\int \psi^{*}\vec{\nabla}_{\vec{R}}\psi d^{3}r\\
+&amp; = i\int e^{-ig}\xi^{*}\vec{\nabla}_{\vec{R}}(e^{ig}\xi) d^{3}r = -i\int e^{-ig}\xi^{*}\vec{\nabla}_{\vec{r}}(e^{ig}\xi) d^{3}r \\
+&amp; = -i\int e^{-ig}\xi^{*}\big(e^{ig}i(\vec{\nabla}_{\vec{r}}g)\xi + e^{ig}\vec{\nabla}_{\vec{r}}\xi\big) d^{3}r \\
+&amp; = -i\int e^{-ig}\xi^{*}\big(e^{ig}iq\vec{A}(\vec{R})\hbar^{-1}\xi + e^{ig}(i\hbar^{-1})(-i\hbar\vec{\nabla}_{\vec{r}})\xi\big) d^{3}r \\
+&amp; = q\hbar^{-1}\vec{A}\int \xi^{*}\xi d^{3}r +\hbar^{-1}\int\xi^{*}\vec{P}\xi d^{3}r \\
+&amp; = q\hbar^{-1}\vec{A} + \vec{0},
+\end{align}
+em usamos $\vec{\nabla}_{\vec{R}}=-\vec{\nabla}_{\vec{r}}$ ao atuar em $\xi(\vec{r}-\vec{R})$ que o valor médio do momento linear para um estado estacionário é nulo. Assim a fase de Berry fica escrita como
+\begin{align}
+\gamma &amp; = \oint \vec{\mathcal{A}}(\vec{R})\cdot d\vec{R} = \frac{q}{\hbar}\oint \vec{A}(\vec{R})\cdot d\vec{R} \\
+&amp; = \frac{q}{\hbar}\int_{S}\vec{\nabla}\times\vec{A}\cdot d\vec{a}  = \frac{q}{\hbar}\int_{S}\vec{B}\cdot d\vec{a} \\
+&amp; = \frac{q\varphi}{\hbar}.
+\end{align}
+Ou seja, o efeito Aharonov-Bohm é um caso particular da fase de Berry.</p>
+
+</div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
@@ -14627,6 +14746,10 @@ $$\vec{\nabla}\times(f\vec{\nabla}g) = (\vec{\nabla}f)\times(\vec{\nabla}g).$$</
 </li>
 <li><p>Impondo a condição de calibre $\vec{\nabla}\cdot\vec{A}=0$, verifique que
 $$\big(-i\hbar\vec{\nabla} -q\vec{A}\big)^{2} = -\hbar^{2}\nabla^{2} + 2i\hbar q\vec{A}\cdot\vec{\nabla}+q^{2}A^{2}.$$</p>
+</li>
+<li><p>Para $g=\frac{q}{\hbar}\int_{\mathcal{O}}^{r}\vec{A}(\vec{r}')\cdot d\vec{r}'$, verifique que $\vec{\nabla}g=q\hbar^{-1}\vec{A}$.</p>
+</li>
+<li><p>Para funções $f$ e $g$ quaisquer, verifique que $\vec{\nabla}\cdot(f\vec{\nabla}g) = (\vec{\nabla}f)\cdot(\vec{\nabla}g)+f\nabla^{2}g$.</p>
 </li>
 </ol>
 
