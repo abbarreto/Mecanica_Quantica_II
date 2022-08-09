@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>11_cinematica_relativistica</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>13_klein_Gordon-Dirac</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14577,7 +14577,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
@@ -14595,13 +14595,26 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Cinem%C3%A1tica-Relativ%C3%ADstica">Cinem&#225;tica Relativ&#237;stica<a class="anchor-link" href="#Cinem%C3%A1tica-Relativ%C3%ADstica">&#182;</a></h1><h2 id="Bases-natural-e-dual-e-tensor-m%C3%A9trico">Bases natural e dual e tensor m&#233;trico<a class="anchor-link" href="#Bases-natural-e-dual-e-tensor-m%C3%A9trico">&#182;</a></h2><p>Consideremos coordenadas cartesianas $(x,y,z)$ de $\mathbb{R}^{3}$ associada a um conjunto de versores $(\hat{i},\hat{j},\hat{k})$ ortogonais. Consideremos também coordenadas não cartesianas $(u,v,w)$ de $\mathbb{R}^{3}$. Podemos escrever
-$$x=x(u,v,w),y=y(u,v,w),z=z(u,v,w).$$
-A princípio, podemos inverter essas relações para obter
-$$u=u(x,y,z),v=v(x,y,z),w=w(x,y,z).$$
-Em cada ponto $P$ deste espaço com coordenadas $(u_{0},v_{0},w_{0})$ passam três <strong>superfíficies coordenadas</strong> definidas por
-$$u=u_{0},\ v=v_{0},\ w=w_{0}.$$
-As linhas onde essas superfícies se cruzam são chamadas de <strong>curvas coordenadas</strong>.</p>
+<h1 id="Mec%C3%A2nica-Qu%C3%A2ntica-Relativ%C3%ADstica">Mec&#226;nica Qu&#226;ntica Relativ&#237;stica<a class="anchor-link" href="#Mec%C3%A2nica-Qu%C3%A2ntica-Relativ%C3%ADstica">&#182;</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Transforma%C3%A7%C3%B5es-de-Lorentz">Transforma&#231;&#245;es de Lorentz<a class="anchor-link" href="#Transforma%C3%A7%C3%B5es-de-Lorentz">&#182;</a></h2><p>As coordenadas espaço-temporais de um quanton em relação aos referenciais inerciais $O$ e $O'$ são relacionadas, a partir dos postulados da Relatividade Restrita, por uma transformação de Lorentz (TL):
+\begin{equation}
+x'^{\mu}=\sum_{\nu=0}^{3}\Lambda_{\nu}^{\mu}x^{\nu} \equiv \Lambda_{\nu}^{\mu}x^{\nu},
+\end{equation}
+em que $x^{\mu}=(x^{0},x^{1},x^{2},x^{3})=(ct,x,y,z)$ e o boost de Lorentz $\Lambda^{\mu}_{\nu}$ é
+\begin{equation}
+\Lambda = \begin{bmatrix} \gamma &amp; -\gamma\vec{\beta}^{T} \\ -\gamma\vec{\beta} &amp; \left(\mathbb{I}_{3}+(\gamma-1)\vec{\beta}\vec{\beta}^{T}/\beta^{2} \right) \end{bmatrix}
+\end{equation}
+com $$\gamma=\frac{1}{\sqrt{1-\beta^{2}}}$$ e $\vec{\beta}=\vec{V}/c$ é a velocidade relativa entre $O$ e $O'$. Vale observar que, em relação aos elementos de matriz, $\Lambda^{\mu}_{\nu}\equiv\Lambda_{\mu,\nu}$.</p>
 
 </div>
 </div>
@@ -14613,22 +14626,12 @@ As linhas onde essas superfícies se cruzam são chamadas de <strong>curvas coor
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-1">Exemplo 1<a class="anchor-link" href="#Exemplo-1">&#182;</a></h5><p>Coordenadas esféricas
-$$x=r\sin\theta\cos\phi,\ y=r\sin\theta\sin\phi,\ z=r\cos\theta,$$
-com $r\ge 0$, $0\le\theta\le\pi$ e $0\le\phi&lt;2\pi$.</p>
-<p>As superfícies coordenadas são:</p>
-<ul>
-<li>$r=r_{0}\rightarrow$ esfera de raio $r_{0}$, </li>
-<li>$\theta=\theta_{0}\rightarrow$ cone de abertura $\theta_{0}$ com eixo em $z$, </li>
-<li>$\phi=\phi_{0}\rightarrow$ plano semi-infinito.  </li>
-</ul>
-<p>As superfícies coordenadas são:</p>
-<ul>
-<li>$r=r_{0},\phi=\phi_{0}\rightarrow$ linha reta que vai de $\mathcal{O}$ (ponto de encontro dos eixos cartesianos $x$, $y$ e $z$) a $P$,</li>
-<li>$r=r_{0},\phi=\phi_{0}\rightarrow$ semi-círculo que passa por $P$ e tem extremidades no eixo $z$,</li>
-<li>$\theta=\theta_{0},\phi=\phi_{0}\rightarrow$ círculo no plano $xy$ passando por $P$ e com centro no eixo $z$.
-<br> $\diamond$</li>
-</ul>
+<h2 id="N%C3%A3o-invari%C3%A2ncia-relativ%C3%ADstica-da-equa%C3%A7%C3%A3o-de-Schr%C3%B6dinger">N&#227;o invari&#226;ncia relativ&#237;stica da equa&#231;&#227;o de Schr&#246;dinger<a class="anchor-link" href="#N%C3%A3o-invari%C3%A2ncia-relativ%C3%ADstica-da-equa%C3%A7%C3%A3o-de-Schr%C3%B6dinger">&#182;</a></h2><p>A equação de Schrödinger (EqS) é $i\hbar\partial_{t}|\psi_{t}\rangle=H_{t}|\psi_{t}\rangle$. Indo para a base de posição, usando $H_{t}=H=P^{2}/2m+U(\vec{r})$ com $\langle\vec{r}|P|\psi\rangle=-i\hbar\vec{\nabla}_{\vec{r}}\langle \vec{r}|\psi\rangle$, teremos
+\begin{align}
+i\hbar\partial_{t}\psi(\vec{r},t) &amp;= \left(-\frac{\hbar^{2}}{2m}\nabla_{\vec{r}}^{2}+U(\vec{r})\right)\psi(\vec{r},t) \\
+&amp; = \left(-\frac{\hbar^{2}}{2m}(\partial_{xx}+\partial_{yy}+\partial_{zz})+U(\vec{r})\right)\psi(\vec{r},t)\hspace{2cm} (\star)
+\end{align} 
+não é invariante por TL, pois envolve a derivada 1ª no tempo e derivadas 2ª nas coordenadas espaciais.</p>
 
 </div>
 </div>
@@ -14640,372 +14643,16 @@ com $r\ge 0$, $0\le\theta\le\pi$ e $0\le\phi&lt;2\pi$.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vamos considerar um vetor posição neste espaço:
-$$\vec{r} = x(u,v,w)\hat{i} + y(u,v,w)\hat{j} + z(u,v,w)\hat{k}.$$</p>
-<p>A <strong>equação paramétrica</strong> para um superfície coordenada $w=w_{0}$ pode ser escrita como
-$$\vec{r}(u,v) = x(u,v,w_{0})\hat{i} + y(u,v,w_{0})\hat{j} + z(u,v,w_{0})\hat{k}.$$
-De forma análoga, pode-se escrever as equações paramétricas $\vec{r}(u,w)$ e $\vec{r}(v,w)$ para as superfícies coordenadas $r=r_{0}$ e $v=v_{0}$, respectivamente.</p>
-<p>A equação paramétrica para a curva coordenada $v=v_{0}$ e $w=w_{0}$ é
-$$\vec{r}(u) = x(u,v_{0},w_{0})\hat{i} + y(u,v_{0},w_{0})\hat{j} + z(u,v_{0},w_{0})\hat{k}.$$
-Equações paramétricas para as outras duas curvas coordenadas são definidas de forma análoga, $\vec{r}(v)$ e $\vec{r}(w)$.</p>
-<p>Consideremos os vetores tangente às curvas coordenadas
-$$e_{u} = \frac{\partial\vec{r}}{\partial u},\ e_{v} = \frac{\partial\vec{r}}{\partial v},\ e_{w} = \frac{\partial\vec{r}}{\partial w}.$$
-Quando calculados em $(u_{0},v_{0},w_{0})$, esses vetores nos fornecem as tangentes às curvas coordenadas no ponto $P$.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Comumente se considera coordenadas ortogonais e se normaliza esses vetores,
-$$h_{u}=|e_{u}|,\ h_{v}=|e_{v}|,\ h_{w}=|e_{w}|,$$
-para obter uma base ortonormal
-$$\hat{e}_{u}=\frac{1}{h_{u}}e_{u},\ \hat{e}_{v}=\frac{1}{h_{v}}e_{v},\ \hat{e}_{w}=\frac{1}{h_{w}}e_{w}.$$
-Com isso, qualquer vetor pode ser escrito, no ponto $P$, em termos desta base. Por exemplo
-$$\vec{\lambda} = \alpha\hat{e}_{u} + \beta\hat{e}_{v} + \gamma\hat{e}_{w}.$$
-$(\alpha,\beta,\gamma)$ são as componentes do vetor $\vec{\lambda}$, no ponto $P$, em relação à base $\{\hat{e}_{u},\hat{e}_{v},\hat{e}_{w}\}$.</p>
-<p>OBS. Na sequência usaremos a <strong>base natural</strong> 
-$$\{e_{u},e_{v},e_{w}\} = \Big\{\frac{\partial\vec{r}}{\partial u},\frac{\partial\vec{r}}{\partial v},\frac{\partial\vec{r}}{\partial w}\Big\}$$
-e não assumiremos ortogonalidade.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-2">Exemplo 2<a class="anchor-link" href="#Exemplo-2">&#182;</a></h5><p>Para as coordenadas esféricas do Exemplo 1, os vetores da base natural são 
+<h2 id="Equa%C3%A7%C3%A3o-relativ%C3%ADstica?">Equa&#231;&#227;o relativ&#237;stica?<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-relativ%C3%ADstica?">&#182;</a></h2><p>Focando nos autovalores de $H$, para a energia relativística
+\begin{equation}
+E^{2} = m_{0}^{2}c^{4}+p^{2}c^{2},
+\end{equation}
+para $p\ll m_{0}c$, consideramos a raiz positiva
 \begin{align}
-e_{r} =&amp; \frac{\partial \vec{r}}{\partial r} = \sin\theta\cos\phi\hat{i} + \sin\theta\sin\phi\hat{j} + \cos\theta\hat{z}, \\
-e_{\theta} =&amp; \frac{\partial \vec{r}}{\partial \theta} = r\cos\theta\cos\phi\hat{i} + r\cos\theta\sin\phi\hat{j} - r\sin\theta\hat{z}, \\
-e_{\phi} =&amp; \frac{\partial \vec{r}}{\partial \phi} = -r\sin\theta\sin\phi\hat{i} + r\sin\theta\cos\phi\hat{j}.
+E &amp; = \sqrt{m_{0}^{2}c^{4}+p^{2}c^{2}} = m_{0}c^{2}\sqrt{1+p^{2}/m_{0}^{2}c^{2}} \\
+&amp; = m_{0}c^{2}\left(1+\frac{p^{2}}{2m_{0}^{2}c^{2}}-\frac{p^{4}}{8m_{0}^{4}c^{4}}+\frac{p^{6}}{16m_{0}^{6}c^{6}}+\cdots\right).
 \end{align}
-Esses vetores podem ser normalizados usando
-\begin{align}
-h_{1} = |e_{r}| = \sqrt{e_{r}\cdot e_{e}} = \sqrt{\sin^{2}\theta\cos^{2}\phi + \sin^{2}\theta\sin^{2}\phi + \cos^{2}\theta} = 1, \\
-h_{2} = |e_{\theta}| = \sqrt{e_{\theta}\cdot e_{\theta}} = \sqrt{r^{2}\cos^{2}\theta\cos^{2}\phi + r^{2}\cos^{2}\theta\sin^{2}\phi + r^{2}\sin^{2}\theta} = r, \\
-h_{3} = |e_{\phi}| = \sqrt{e_{\phi}\cdot e_{\phi}} = \sqrt{r^{2}\sin^{2}\theta\sin^{2}\phi + r^{2}\sin^{2}\theta\cos^{2}\phi} = r\sin\theta.
-\end{align}
-Obtemos assim
-\begin{align}
-\hat{e}_{r} =&amp; \sin\theta\cos\phi\hat{i} + \sin\theta\sin\phi\hat{j} + \cos\theta\hat{z} = \frac{\vec{r}}{r}=\hat{r}, \\
-\hat{e}_{\theta} =&amp; \cos\theta\cos\phi\hat{i} + \cos\theta\sin\phi\hat{j} - \sin\theta\hat{z}, \\
-\hat{e}_{\phi} =&amp; = -\sin\phi\hat{i} + \cos\phi\hat{j}.
-\end{align}
-Pode-se verificar que esses vetores são normalizados e mutuamente ortogonais.
-<br> $\diamond$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Além da base natural, podemos usar outras bases para representar um vetor em um certo espaço. Consideremos os campos escalares $u=u(x,y,z),v=v(x,y,z),w=w(x,y,z)$. Podemos escrever os vetores gradiente
-$$ \nabla u = \frac{\partial u}{\partial x}\hat{i} + \frac{\partial u}{\partial y}\hat{j} + \frac{\partial u}{\partial k}\hat{k}.$$
-Expressões análogas segue para $\nabla v$ e $\nabla w$. Para cada ponto $P$, o gradiente é ortogonal à superfície coordenada neste ponto. Então $(\nabla u,\nabla v,\nabla w)$ pode ser usada como uma base alternativa em $P$. Essa base é chamada de <strong>base dual</strong>:
-$$\{e^{u}=\nabla u, e^{v}=\nabla v, e^{w}=\nabla w\}.$$
-OBS. Se o sistema de coordenadas é ortogonal, então $\hat{e}_{i}=\hat{e}^{i}$ para $i=u,v,w$. Ou seja, para coordenadas ortogonais a base natural é igual à base dual, quando normalizadas.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-2.1">Exemplo 2.1<a class="anchor-link" href="#Exemplo-2.1">&#182;</a></h5><p>Para coordenadas esféricas, podemos inverter as relações entre coordenadas do Exemplo 1 para obter
-$$r=\sqrt{x^{2}+y^{2}+z^{2}},\ \theta = \arctan\sqrt{\frac{x^{2}+y^{2}}{z^{2}}}, \phi=\arctan\frac{x}{y}.$$
-Teremos assim que
-\begin{align}
-e^{r} &amp; = \nabla r = \frac{\partial r}{\partial x}\hat{i} + \frac{\partial r}{\partial y}\hat{j} + \frac{\partial r}{\partial z}\hat{k} = \hat{r}, \\
-e^{\theta} &amp; = \nabla\theta = \frac{x}{x^{2}+y^{2}+z^{2}}\sqrt{\frac{z^{2}}{x^{2}+y^{2}}}\hat{i} + \frac{y}{x^{2}+y^{2}+z^{2}}\sqrt{\frac{z^{2}}{x^{2}+y^{2}}}\hat{j}  - \frac{z}{x^{2}+y^{2}+z^{2}}\sqrt{\frac{x^{2}+y^{2}}{z^{2}}}\hat{k} \\
-&amp; = \frac{\cos\theta\cos\phi}{r}\hat{i} + \frac{\cos\theta\sin\phi}{r}\hat{j} -\frac{\sin\theta}{r}\hat{k}, \\
-e^{\phi} &amp; = \nabla\phi = \frac{-y\hat{i}+x\hat{j}}{x^{2}+y^{2}} = \frac{-\sin\phi\hat{i}+\cos\phi\hat{j}}{r\sin\theta}.
-\end{align}
-Portanto
-\begin{align}
-\hat{e}^{r} &amp; = \hat{r} = \hat{e}_{r}, \\
-\hat{e}^{\theta} &amp; = \cos\theta\cos\phi\hat{i} + \cos\theta\sin\phi\hat{j} -\sin\theta\hat{k} = \hat{e}_{\theta}, \\
-\hat{e}^{\theta} &amp; = -\sin\phi\hat{i}+\cos\phi\hat{j} = \hat{e}_{\phi}.
-\end{align}
-Neste exemplo, usamos $\frac{\partial\arctan x}{\partial x}=\frac{1}{1+x^{2}}$.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-3">Exemplo 3<a class="anchor-link" href="#Exemplo-3">&#182;</a></h5><p>Consideremos 
-$$x=u+v,\ y=u-v,\ z=2uv+w$$
-com $-\infty&lt;u,v,w&lt;\infty$. Invertendo, teremos 
-$$u=(x+y)/2,\ v = (x-y)/2,\ w = z-(x^{2}-y^{2})/2.$$
-As superífices coordenadas são planos para $u=u_{0}$ e $v=v_{0}$ e parabolóide hiperbólico para $w=w_{0}$.
-o vetor posição é
-$$\vec{r} = (u+v)\hat{i}+(u-v)\hat{j}+(2uv+w)\hat{k}.$$
-A base natural é
-\begin{align}
-&amp; e_{u} = \frac{\partial\vec{r}}{\partial u} = \hat{i}+\hat{j}+2v\hat{k}, \\
-&amp; e_{v} = \frac{\partial\vec{r}}{\partial v} = \hat{i}-\hat{j}+2u\hat{k}, \\
-&amp; e_{w} = \frac{\partial\vec{r}}{\partial w} = \hat{k}.
-\end{align}
-Note que $e_{u}$ e $e_{v}$ não são normalizados e que em geral esses vetores não são ortogonais: $e_{u}\cdot e_{v}=4uv$, $e_{u}\cdot e_{w}=2v$ e $e_{v}\cdot e_{w}=2u$.
-A base dual é
-\begin{align}
-&amp; e^{u} = \nabla u = (\hat{i}+\hat{j})/2, \\
-&amp; e^{v} = \nabla v = (\hat{i}-\hat{j})/2, \\
-&amp; e^{w} = \nabla w = -x\hat{i}+y\hat{j}+\hat{k} = -(u+v)\hat{i}+(u-v)\hat{j}+\hat{k}.
-\end{align}
-Vemos assim que em geral $e_{i}$ não é paralelo a $e^{i}$. 
-<br> $\diamond$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Podemos escrever um vetor qualquer $\vec{\lambda}$ no ponto $P$ tanto em termos da base natural como em termos da base dual. Isso será feito usando a seguinte notação
-\begin{align}
-\vec{\lambda} = \lambda^{u}e_{u} + \lambda^{v}e_{v} + \lambda^{w}e_{w}, \\
-\vec{\lambda} = \lambda_{u}e^{u} + \lambda_{v}e^{v} + \lambda_{w}e^{w}.
-\end{align}
-Na <strong>notação sufixo</strong> usamos $i=1,2,3$ no lugar de $u,v,w$:
-\begin{align}
-\vec{\lambda} = \lambda^{1}e_{1} + \lambda^{2}e_{2} + \lambda^{3}e_{3} = \sum_{i=1}^{3}\lambda^{i}e_{i} \equiv \lambda^{i}e_{i}, \\
-\vec{\lambda} = \lambda_{1}e^{1} + \lambda_{2}e^{2} + \lambda_{3}e^{3} = \sum_{i=1}^{3}\lambda_{i}e^{i} \equiv \lambda_{i}e^{i},
-\end{align}
-Acima a posição dos índices é associada à seguinte nomenclatura:
-\begin{align}
-&amp; \lambda^{i}\rightarrow \text{ componentes contravariantes } \rightarrow \text{ base natural}, \\
-&amp; \lambda_{i}\rightarrow \text{ componentes covariantes } \rightarrow \text{ base dual}.
-\end{align}
-Também usamos a <strong>notação de Einstein</strong>
-\begin{align}
-&amp; \lambda^{i}e_{i} = \sum_{i=1}^{3}\lambda^{i}e_{i}, \\
-&amp; \lambda_{i}e^{i} = \sum_{i=1}^{3}\lambda_{i}e^{i}.
-\end{align}
-Ou seja, sempre que aparecer em uma expressão dois índices iguais, um covariante e o outro contravariante, independente da ordem, a soma naquele índice está implícita.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Consideremos o <strong>produto interno entre vetores das bases natural e dual</strong>
-\begin{align}
-e^{i}\cdot e_{j} &amp; = \nabla u^{i}\cdot \frac{\partial\vec{r}}{\partial u^{j}} \\
-&amp; = \Big(\frac{\partial u^{i}}{\partial x}\hat{i} + \frac{\partial u^{i}}{\partial y}\hat{j} + \frac{\partial u^{i}}{\partial z}\hat{k}\Big)\cdot\Big(\frac{\partial x}{\partial u^{j}}\hat{i} + \frac{\partial y}{\partial u^{j}}\hat{j} + \frac{\partial z}{\partial u^{j}}\hat{k}\Big) \\
-&amp;  = \frac{\partial u^{i}}{\partial u^{j}} = \delta^{i}_{\ j} = \begin{cases}1 \text{ se } i=j\\ 0 \text{ se }i\ne j\end{cases}.
-\end{align}
-Do mesmo modo $e_{i}\cdot e^{j}=\delta_{i}^{\ j} = \begin{cases}1 \text{ se } i=j\\ 0 \text{ se }i\ne j\end{cases}$. 
-<br> 
-OBS. Por que esse resultado não dá $3\delta_{i}^{j}$, mas sim $\delta_{i}^{j}$? Por exemplo
-\begin{align}
-e^{\phi}\cdot e_{\phi} &amp; = \Big(\frac{-\sin\phi\hat{i}+\cos\phi\hat{j}}{r\sin\theta}\Big)\cdot\big(-r\sin\theta\sin\phi\hat{i} + r\sin\theta\cos\phi\hat{j}\big) \\
-&amp; = \sin^{2}\theta + \cos^{2}\theta = 1.
-\end{align}
-Verifica-se facilemente que o mesmo segue para os outros exemplos que consideramos aqui, mesmo para coordenadas não ortogonais.</p>
-<p>Assim, podemos verificar que as componentes de um vetor $\vec{\lambda}$ na base dual podem ser obtidas tomando-se o produto interno desses vetores com os vetores da base natural e vice-versa:
-\begin{align}
-&amp; \vec{\lambda}\cdot e^{j} = \lambda^{i}e_{i}\cdot e^{j} = \lambda^{i}\delta_{i}^{\ j} = \lambda^{j}, \\
-&amp; \vec{\lambda}\cdot e_{j} = \lambda_{i}e^{i}\cdot e_{j} = \lambda_{i}\delta^{i}_{\ j} = \lambda_{j}.
-\end{align}</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Seguindo, podemos considerar diferentes formas de escrever o produto interno de dois vetores quaisquer
-\begin{align}
-\vec{\lambda}\cdot\vec{\mu} &amp; = \lambda_{i}e^{i}\cdot\mu_{j}e^{j} =: g^{ij}\lambda_{i}\mu_{j} \text{ com } g^{ij}:= e^{i}\cdot e^{j}, \\
-\vec{\lambda}\cdot\vec{\mu} &amp; = \lambda^{i}e_{i}\cdot\mu^{j}e_{j} =: g_{ij}\lambda^{i}\mu^{j} \text{ com } g_{ij}:= e_{i}\cdot e_{j}, \\
-\vec{\lambda}\cdot\vec{\mu} &amp; = \lambda_{i}e^{i}\cdot\mu^{j}e_{j} = \delta^{i}_{\ j}\lambda_{i}\mu^{j} = \lambda_{i}\mu^{i}, \\
-\vec{\lambda}\cdot\vec{\mu} &amp; = \lambda^{i}e_{i}\cdot\mu_{j}e^{j} = \delta_{i}^{\ j}\lambda^{i}\mu_{j} = \lambda^{i}\mu_{i}.
-\end{align}
-A quantidade com dois índices que aparece nestas equações e que está relacionada com o produto interno dos vetores da base natural ou da base dual,
-$$g_{ij}=e_{i}\cdot e_{j} \text{ e } g^{ij}=e^{i}\cdot e^{j},$$
-é chamado de <strong>tensor métrico</strong>. O nome vem do fato dele aparecer na expressão para o produto interno, que está relacinado com norma e com medidas de distância.</p>
-<p>Além da simetria
-\begin{align}
-&amp; g_{ij}=e_{i}\cdot e_{j} = e_{j}\cdot e_{i} = g_{ji}, \\
-&amp; g^{ij}=e^{i}\cdot e^{j} = e^{j}\cdot e^{i} = g^{ji},
-\end{align}
-podemos usar as equações acima para obter outras propriedades deste tensor
-\begin{align}
-g^{ij}\lambda_{i}\mu_{j} = \mu^{i}\lambda_{i}\ \therefore\ g^{ij}\mu_{j} = \mu^{i}, \\
-g_{ij}\lambda^{i}\mu^{j} = \mu_{i}\lambda^{i}\ \therefore\ g_{ij}\mu^{j} = \mu_{i}.
-\end{align}
-Dizemos por isso que $g^{ij}$ <strong>levanta o índice</strong> do vetor, ou seja, leva componentes covariantes em componentes contravariantes (muda a representação da base $e^{i}$ para a base $e_{i}$), e que $g_{ij}$ <strong>abaixa o índice</strong>, levando a representação da base natural para a dual. Ademais, vemos que
-\begin{align}
-&amp; \mu_{i}=g_{ij}\mu^{j} = g_{ij}g^{jk}\mu_{k}\ \therefore\ g_{ij}g^{jk} = \delta_{i}^{\ k}, \\
-&amp; \mu^{i}=g^{ij}\mu_{j} = g^{ij}g_{jk}\mu_{k}\ \therefore\ g^{ij}g_{jk} = \delta^{i}_{\ k}.
-\end{align}</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Podemos representar vetores e tensores de dois índices através de <strong>matrizes</strong>. A convenção usada é a seguinte
-$[\lambda^{i}]$ denota um vetor coluna com $\lambda^{i}$ sendo o elemento na $i$-ésima linha da matriz. O vetor coluna $[\lambda_{i}]$ é representado de forma análoga. Para matrizes, usamos $[A_{ij}]$ com $i$ sendo o índice linha e $j$ o índice coluna da matriz. Também podemos representar matricialmente objetos do tipo $A^{i}_{\ j}$. Neste caso a notação é a mesma, $[A^{i}_{\ j}]$, mas convencionamos que o índice contravariante, o superescrito, identifica a linha e o índice covariante, o subescrito, identifica a coluna.</p>
-<p>Com isso, se definimos 
-$$G:=[g_{ij}] \text{ e } \hat{G}:=[g^{ij}],$$
-temos que
-$$g_{ij}=g_{ji}\therefore G = G^{T} \text{ e } g^{ij}=g^{ji}\therefore\hat{G}=\hat{G}^{T},$$
-nos dizendo que $G$ e $\hat{G}$ são matrizes simétricas. Como usual, acima $T$ denota a transposta da matriz.</p>
-<p>Temos também que
-$$g_{ij}g^{jk} = \delta_{i}^{\ k}\therefore G\hat{G}=\mathbb{I} \text{ e } g^{ij}g_{jk} = \delta^{i}_{\ k}\therefore \hat{G}G=\mathbb{I}.$$
-Por conseguinte
-$$G^{-1}=\hat{G} \text{ e } \hat{G}^{-1}=G.$$</p>
-<p>Se usamos 
-$$L=[\lambda^{i}],\ M=[\mu^{i}],\ L^{*}=[\lambda_{i}],\ M^{*}=[\mu_{i}]$$
-temos que
-$$GM=M^{*},\ \hat{G}M^{*}=M$$
-e as quatro formas de escrever o produto interno entre os vetores $\vec{\lambda}$ e $\vec{\mu}$ ficam escritas como 
-$$\vec{\lambda}\cdot\vec{\mu} = (L^{*})^{T}\hat{G}M^{*} = L^{T}GM = (L^{*})^{T}M = L^{T}M^{*}.$$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Na sequência veremos exemplos nos quais a base natural ou a base dual é mais conveniente para o cálculo de uma certa quantidade matemática. Começamos com um exemplo onde a <strong>base natural é mais conveniente</strong>. Consideramos que as coordenadas são funções diferenciáveis de uma parâmetro $t$ em um intervalo $I$:
-$$u=u(t),\ v=v(t), w=w(t).$$
-O vetor
-$$\vec{r}(t) = x(u(t),v(t),w(t))\hat{i} + y(u(t),v(t),w(t))\hat{j} + z(u(t),v(t),w(t))\hat{k}$$
-nos fornece a posição dos pontos defininos pelas coordenadas acima em uma curva $\gamma$ parametrizada por $t$. O <strong>vetor tangente</strong> a esta curva em cada ponto é
-\begin{align}
-\dot{\vec{r}}(t) &amp; = \frac{d\vec{r}}{dt} \\
-&amp; = \frac{\partial \vec{r}}{\partial u}\frac{d u}{d t} + \frac{\partial \vec{r}}{\partial v}\frac{d v}{d t} + \frac{\partial \vec{r}}{\partial w}\frac{d w}{d t} \\
-&amp; =\frac{d u^{1}}{d t} \frac{\partial \vec{r}}{\partial u^{1}} + \frac{d u^{2}}{d t}\frac{\partial \vec{r}}{\partial u^{2}} + \frac{d u^{3}}{d t}\frac{\partial \vec{r}}{\partial u^{3}} \\
-&amp; = \dot{u}^{1}(t)e_{1} + \dot{u}^{2}(t)e_{2} + \dot{u}^{3}(t)e_{3} \\
-&amp; = \dot{u}^{i}(t)e_{i}.
-\end{align}
-Vemos assim que para trabalhar com curva tangente, <strong>é conveniente usar a base natural</strong>.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>O comprimento da curva $\gamma$ é obtido intengrando-se $|\dot{\vec{r}}|$ sobre o intervalo $I$ da variável $t$. Observamos que
-\begin{align}
-|\dot{\vec{r}}|^{2} &amp; = \dot{\vec{r}}\cdot\dot{\vec{r}} = \dot{u}^{i}e_{i}\cdot\dot{u}^{j}e_{j} = g_{ij}\dot{u}^{i}\dot{u}^{j}.
-\end{align}
-O comprimento da curva em um intervalo $a\le t\le b$ em $I$ é então dado por
-$$L = \int_{a}^{b}\sqrt{g_{ij}\dot{u}^{i}\dot{u}^{j}}dt.$$</p>
-<p>Como fizemos para $\dot{\vec{r}}$, podemos identificar o quadrado de um elemento infinetisimal de comprimento ao longo da curva $\gamma$ como
-$$ds^{2} = d\vec{r}\cdot d\vec{r} = du^{i}e_{i}\cdot du^{j}e_{j} = g_{ij}du^{i}du^{j}.$$
-Essa equação é uma generalização para coordenadas curvilíneas do teorema de Pitágoras para coordenadas cartesianas 
-$$ds^{2}=dx^{2}+dy^{2}+dz^{2}.$$
-A quantidade $ds^{2}$ é chamada de <strong>elemento de linha</strong> e $\int ds$ nos fornece o comprimento do caminho $\gamma$.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-4">Exemplo 4<a class="anchor-link" href="#Exemplo-4">&#182;</a></h5><p>Para coordenadas esféricas, vimos que
-\begin{align}
-e_{1} =&amp; \sin\theta\cos\phi\hat{i} + \sin\theta\sin\phi\hat{j} + \cos\theta\hat{z}, \\
-e_{2} =&amp; r\cos\theta\cos\phi\hat{i} + r\cos\theta\sin\phi\hat{j} - r\sin\theta\hat{z}, \\
-e_{3} =&amp; -r\sin\theta\sin\phi\hat{i} + r\sin\theta\cos\phi\hat{j}.
-\end{align}
-Assim, vem que
-\begin{align}
-g_{11} = &amp; e_{1}\cdot e_{1} = 1, \\
-g_{12} = &amp; e_{1}\cdot e_{2} = 0 = g_{21}, \\
-g_{13} = &amp; e_{1}\cdot e_{3} = 0 = g_{31}, \\
-g_{22} = &amp; e_{2}\cdot e_{2} = r^{2}, \\
-g_{23} = &amp; e_{2}\cdot e_{3} = 0 = g_{32}, \\
-g_{33} = &amp; e_{3}\cdot e_{3} = r^{2}\sin^{2}\theta.
-\end{align}
-Para estas coordenadas, o elemento de linha é dado por
-\begin{align}
-ds^{2} &amp; = g_{ij}du^{i}du^{j} = du^{1}du^{1} + r^{2}du^{2}du^{2} + r^{2}\sin^{2}\theta du^{3}du^{3} \\
-&amp; = dr^{2} + r^{2}d\theta^{2} + r^{2}\sin^{2}\theta d\phi^{2}.
-\end{align}</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Consideremos uma <strong>curva</strong> $\gamma$ definida por
-$$u^{1}=r=a,\ u^{2}=\theta=t,\ u^{3}=\phi=2t-\pi$$
-com $0\le t\le \pi$. As componentes do vetor tangente a essa curva são
-$$\dot{u}^{i} = \dot{r}\delta_{1}^{i} + \dot{\theta}\delta_{2}^{i} + \dot{\phi}\delta_{3}^{i} = (0)\delta_{1}^{i} + (1)\delta_{2}^{i} + (2)\delta_{3}^{i} = \delta_{2}^{i} + 2\delta_{3}^{i}.$$
-Assim
-\begin{align}
-g_{ij}\dot{u}^{i}\dot{u}^{j} &amp; = g_{11}\dot{u}^{1}\dot{u}^{1} + g_{22}\dot{u}^{2}\dot{u}^{2} + g_{33}\dot{u}^{3}\dot{u}^{3} \\
-&amp; = (1)(\delta_{2}^{1} + 2\delta_{3}^{1}) + r^{2}(\delta_{2}^{2} + 2\delta_{3}^{2}) + r^{2}\sin^{2}\theta(\delta_{2}^{3} + 2\delta_{3}^{3}) \\
-&amp; = r^{2} + 2r^{2}\sin^{2}\theta = a^{2}\big(1+\sin^{2}\theta\big).
-\end{align}
-Com isso, o comprimento da curva $\gamma$ é dado por
-$$L(\gamma) = \int_{\gamma}\sqrt{g_{ij}\dot{u}^{i}\dot{u}^{j}}dt = \int_{0}^{\pi}a\sqrt{1+\sin^{2}t}dt.$$
-<br> $\diamond$</p>
+Podemos quantizar essa expressão e obter a equação correspondente na base de posição, como na Eq. ($\star$). Essa equação vai envolver a derivada 1ª no tempo e derivadas de várias ordens pares na posição, sendo portanto não invariante por transformações de Lorentz.</p>
 
 </div>
 </div>
@@ -15015,10 +14662,10 @@ $$L(\gamma) = \int_{\gamma}\sqrt{g_{ij}\dot{u}^{i}\dot{u}^{j}}dt = \int_{0}^{\pi
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span><span class="p">,</span><span class="n">t</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;a t&#39;</span><span class="p">);</span> <span class="n">integrate</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">),(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">pi</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">series</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">8</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15036,13 +14683,13 @@ $$L(\gamma) = \int_{\gamma}\sqrt{g_{ij}\dot{u}^{i}\dot{u}^{j}}dt = \int_{0}^{\pi
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 
 
 
 
 <div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 2 a E\left(-1\right)$
+$\displaystyle 1 + \frac{x^{2}}{2} - \frac{x^{4}}{8} + \frac{x^{6}}{16} + O\left(x^{8}\right)$
 </div>
 
 </div>
@@ -15058,120 +14705,32 @@ $\displaystyle 2 a E\left(-1\right)$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Seguindo, vamos olhar para um caso onde o uso da <strong>base dual é mais conveniente</strong>. Consideremos uma função diferenciável
-$$\phi = \phi(u(x,y,z),v(x,y,z),w(x,y,z)).$$
-Usando a derivada parcial e a regra da cadeia obtemos
-$$\frac{\partial \phi}{\partial x} = \frac{\partial \phi}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial \phi}{\partial v}\frac{\partial v}{\partial x} + \frac{\partial \phi}{\partial w}\frac{\partial w}{\partial x},$$
-e similarmente para $\frac{\partial \phi}{\partial y}$ e $\frac{\partial \phi}{\partial z}$, podemos escrever o gradiente
+<h2 id="Equa%C3%A7%C3%A3o-de-Klein-Gordon">Equa&#231;&#227;o de Klein-Gordon<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Klein-Gordon">&#182;</a></h2><p>Para $H_{t}=H$, derivando a EqS em relação ao tempo, vem que
 \begin{align}
-\nabla\phi = &amp; \frac{\partial\phi}{\partial x}\hat{i} + \frac{\partial\phi}{\partial y}\hat{j} + \frac{\partial\phi}{\partial z}\hat{k} \\
-= &amp; \Big(\frac{\partial \phi}{\partial u}\frac{\partial u}{\partial x} + \frac{\partial \phi}{\partial v}\frac{\partial v}{\partial x} + \frac{\partial \phi}{\partial w}\frac{\partial w}{\partial x}\Big)\hat{i} + \Big(\frac{\partial \phi}{\partial u}\frac{\partial u}{\partial y} + \frac{\partial \phi}{\partial v}\frac{\partial v}{\partial y} + \frac{\partial \phi}{\partial w}\frac{\partial w}{\partial y}\Big)\hat{j} \\
-&amp; + \Big(\frac{\partial \phi}{\partial u}\frac{\partial u}{\partial z} + \frac{\partial \phi}{\partial v}\frac{\partial v}{\partial z} + \frac{\partial \phi}{\partial w}\frac{\partial w}{\partial z}\Big)\hat{k} \\
-= &amp; \frac{\partial \phi}{\partial u}\Big(\frac{\partial u}{\partial x}\hat{i} + \frac{\partial u}{\partial y}\hat{j} + \frac{\partial u}{\partial z}\hat{k}\Big) + \frac{\partial \phi}{\partial v}\Big(\frac{\partial v}{\partial x}\hat{i} + \frac{\partial v}{\partial y}\hat{j} + \frac{\partial v}{\partial z}\hat{k}\Big) \\
-&amp; + \frac{\partial \phi}{\partial w}\Big(\frac{\partial w}{\partial x}\hat{i} + \frac{\partial w}{\partial y}\hat{j} + \frac{\partial w}{\partial z}\hat{k}\Big) \\
-&amp; = \frac{\partial \phi}{\partial u}\nabla u + \frac{\partial \phi}{\partial v}\nabla v + \frac{\partial \phi}{\partial w}\nabla w \\
-&amp; = \frac{\partial \phi}{\partial u}e^{u} + \frac{\partial \phi}{\partial v}e^{v} + \frac{\partial \phi}{\partial w}e^{w} \\
-&amp; = \frac{\partial \phi}{\partial u^{i}}e^{i} =: \partial_{i}\phi e^{i},
+&amp; i\hbar\partial_{tt}|\psi_{t}\rangle = \partial_{t}(H|\psi_{t}\rangle) = H\partial_{t}|\psi_{t}\rangle = H\frac{H}{i\hbar}|\psi_{t}\rangle \\
+&amp; \therefore\ -\hbar^{2}\partial_{tt}|\psi_{t}\rangle = H^{2}|\psi_{t}\rangle.
 \end{align}
-em que usamos a seguinte notação para a componente covariante da derivada: 
-$$\partial_{i} := \frac{\partial}{\partial u^{i}}.$$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Transforma%C3%A7%C3%B5es-de-coordenadas">Transforma&#231;&#245;es de coordenadas<a class="anchor-link" href="#Transforma%C3%A7%C3%B5es-de-coordenadas">&#182;</a></h2><p>Consideremos dois sistemas de coordenadas curvilíneas $(u,v,w)$ e $(u',v',w')$. Na região coberta pelos dois sistemas de coordenadas, podemos escrever
-$$u^{i'}=u^{i'}(u^{j}) \text{ e } u^{i}=u^{i}(u^{j'}).$$
-Por conveniência, colocamos o linha no índice em vez de na letra que representa a coordenada. Usando a regra da cadeia para derivadas, temos que
-$$e_{j} = \frac{\partial \vec{r}}{\partial u^{j}} = \frac{\partial \vec{r}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial u^{j}} =: \frac{\partial \vec{r}}{\partial u^{i'}}U^{i'}_{j} = U^{i'}_{j}e_{i'},$$
-em que definimos o <strong>Jacobiano</strong> como
-$$U^{i'}_{j} := \frac{\partial u^{i'}}{\partial u^{j}}.$$
-Podemos escrever assim
-$$\vec{\lambda} = \lambda^{j}e_{j} = \lambda^{j}U^{i'}_{j}e_{i'} = \lambda^{i'}e_{i'}.$$
-Por conseguinte, as componentes contravariantes de um vetor qualquer $\vec{\lambda}$ nos dois sistemas de coordenadas são relacionadas por
-$$\lambda^{i'} =  U^{i'}_{j}\lambda^{j}.$$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Analogamente, podemos usar a regra da cadeia para escrever
+Assim, usando $H^{2}=m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2}$ e $\langle\vec{r}|P^{2}|\psi_{t}\rangle=-\hbar^{2}\vec{\nabla}_{\vec{r}}\langle\vec{r}|\psi_{t}\rangle$ teremos 
 \begin{align}
-e^{j} &amp; = \nabla u^{j} = \frac{\partial u^{j}}{\partial x}\hat{i} + \frac{\partial u^{j}}{\partial y}\hat{j} + \frac{\partial u^{j}}{\partial z}\hat{k} \\
-&amp; = \frac{\partial u^{j}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial x}\hat{i} + \frac{\partial u^{j}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial y}\hat{j} + \frac{\partial u^{j}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial z}\hat{k} \\
-&amp; = \frac{\partial u^{j}}{\partial u^{i'}}\nabla u^{i'} \\
-&amp; =: U^{j}_{i'}e^{i'}, 
+&amp; -\hbar^{2}\partial_{tt}|\psi_{t}\rangle = (m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2})|\psi_{t}\rangle \ \therefore\ -\hbar^{2}\partial_{tt}\psi_{t}(\vec{r}) = m_{0}^{2}c^{4}\psi_{t}(\vec{r})-\hbar^{2}\nabla^{2}c^{2}\psi_{t}(\vec{r}) \\
+&amp; \therefore\ \left(-\frac{1}{c^{2}}\partial_{tt} + \nabla^{2} - \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0 \ \therefore \left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0,
 \end{align}
-em que definimos
-$$U^{j}_{i'} := \frac{\partial u^{j}}{\partial u^{i'}}.$$
-Com isso, podemos escrever
-$$\vec{\lambda} = \lambda_{j}e^{j} = \lambda_{j}U_{i'}^{j}e^{i'} = \lambda_{i'}e^{i'}.$$
-Por conseguinte, as componentes covariantes de um vetor qualquer $\vec{\lambda}$ nos dois sistemas de coordenadas são relacionadas por
-$$\lambda_{i'} =  U_{i'}^{j}\lambda_{j}.$$</p>
-<p>Pode-se mostrar de forma análoga que 
-$$e_{j'}=U_{j'}^{i}e_{i},\ \lambda^{i}=U^{i}_{j'}\lambda^{j'},\ e^{j'} = U^{j'}_{i}e^{i},\ \lambda_{i}=U_{i}^{j'}\lambda_{j}.$$</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Vale notar também que
+em que usamos 
+\begin{equation}
+\eta^{\mu\nu}=\eta_{\mu\nu}=diag(1,-1,-1,-1)
+\end{equation}
+para escrever
 \begin{align}
-U^{j}_{i'}U^{i'}_{k} &amp; = \frac{\partial u^{j}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial u^{k}} = \frac{\partial u^{j}}{\partial u^{k}} = \delta^{j}_{k}.
-\end{align}</p>
-<p>Como visto anteriormente, podemos representar vetores e tensores de dois índices como matrizes e descrever as transformações acima através do produto de matrizes. As matrizes jacobianas são
-$$U=[U^{i'}_{j}] \text{ e } \hat{U} = [U^{i}_{j'}].$$
-Com
-$$L=[\lambda^{i}],\ L'=[\lambda^{i'}],\ L^{*}=[\lambda_{i}],\ L'^{*}=[\lambda_{i'}]$$
-temos
-$$L'=UL,\ L = \hat{U}L',\ L'^{*} = UL^{*},\ L^{*}=\hat{U}L'^{*} \ \therefore\ U^{-1}=\hat{U}.$$</p>
-<p>De modo análogo, podemos obter a relação entre o tensor métrico em diferentes sistemas de coordenadas. Teremos que
-\begin{align}
-g_{i'j'} &amp; = e_{i'}\cdot e_{j'} = U^{k}_{i'}e_{k}\cdot U^{l}_{j'}e_{l} = U^{k}_{i'}U^{l}_{j'}g_{kl}, \\
-g^{i'j'} &amp; = e^{i'}\cdot e^{j'} = U_{k}^{i'}e^{k}\cdot U_{l}^{j'}e^{l} = U_{k}^{i'}U_{l}^{j'}g^{kl}.
-\end{align}</p>
-<p>Vetores e tensores podem ser definidos através da forma como se transformam por mudanças de sistemas de coordenadas nos quais os representamos. As transformações acima nos indicam como será isso de forma geral para vetores e tensores.</p>
-
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h5 id="Exemplo-5">Exemplo 5<a class="anchor-link" href="#Exemplo-5">&#182;</a></h5><p>Para coordenadas esféricas e cilíndricas temos que
-\begin{align}
-&amp; x = r\sin\theta\cos\phi = \rho\cos\phi, \\
-&amp; y = r\sin\theta\sin\phi = \rho\sin\phi, \\
-&amp; z = r\cos\theta.
+\partial_{\mu}\partial^{\mu} &amp; = \partial_{\mu}\eta^{\mu\nu}\partial_{\nu} = \frac{\partial}{\partial x^{\mu}}\eta^{\mu\nu}\frac{\partial}{\partial x^{\nu}} \\
+&amp; = \frac{\partial}{\partial x^{0}}g^{00}\frac{\partial}{\partial x^{0}} + \frac{\partial}{\partial x^{1}}g^{11}\frac{\partial}{\partial x^{1}} + \frac{\partial}{\partial x^{2}}g^{22}\frac{\partial}{\partial x^{2}} + \frac{\partial}{\partial x^{3}}g^{33}\frac{\partial}{\partial x^{3}} + 0 \\
+&amp; = \frac{\partial}{\partial (ct)}(1)\frac{\partial}{\partial (ct)} + \frac{\partial}{\partial x}(-1)\frac{\partial}{\partial x} + \frac{\partial}{\partial y}(-1)\frac{\partial}{\partial y} + \frac{\partial}{\partial z}(-1)\frac{\partial}{\partial z} \\
+&amp; = \frac{1}{c^{2}}\frac{\partial^{2}}{\partial t^{2}} - \frac{\partial^{2}}{\partial x^{2}} - \frac{\partial^{2}}{\partial y^{2}} - \frac{\partial^{2}}{\partial z^{2}} = \frac{1}{c^{2}}\frac{\partial^{2}}{\partial t^{2}} - \nabla^{2}.
 \end{align}
-Tomando as coordenadas cilíndricas com as com linha, $(u^{1'},u^{2'},u^{3'})=(\rho,\phi,z)$, e as esféricas sem linha, $(u^{1},u^{2},u^{3})=(r,\theta,\phi)$, podemos escrever
-\begin{align}
-&amp; u^{1'} = \rho = r\sin\theta = u^{1}\sin(u^{2}), \\
-&amp; u^{2'} = \phi = u^{3}, \\
-&amp; u^{3'} = z = u^{1}\cos(u^{2}).
-\end{align}</p>
+Quantidades como esta última equação são invariantes de Lorentz. Por conseguinte, a equação de Klein-Gordon (EqKG),
+\begin{equation}
+\left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0,
+\end{equation}
+é invariante por TL.</p>
 
 </div>
 </div>
@@ -15183,24 +14742,328 @@ Tomando as coordenadas cilíndricas com as com linha, $(u^{1'},u^{2'},u^{3'})=(\
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>A jacobianas que relacionam os sistemas de coordenadas são
+<h3 id="Part%C3%ADcula-livre">Part&#237;cula livre<a class="anchor-link" href="#Part%C3%ADcula-livre">&#182;</a></h3><p>Pode-se verificar que a onda harmônica 
+\begin{equation}
+\phi_{t}(\vec{r}) = Ne^{-i(\vec{k}\cdot\vec{r}-\omega t)} = Ne^{-i(\vec{p}\cdot\vec{r}-Et)/\hbar} = Ne^{-ip^{\mu}p_{\mu}/\hbar},
+\end{equation}
+em que definimos o quadrivetor momento 
+\begin{equation}
+p^{\mu}=(E/c,\vec{p}),
+\end{equation}
+satisfaz a EqKG. Para isso, notemos que
 \begin{align}
-U &amp; = [U^{i'}_{j}] = \Big[\frac{\partial u^{i'}}{\partial u^{j}}\Big] = \begin{bmatrix} \frac{\partial u^{1'}}{\partial u^{1}} &amp; \frac{\partial u^{1'}}{\partial u^{2}} &amp; \frac{\partial u^{1'}}{\partial u^{3}} \\  \frac{\partial u^{2'}}{\partial u^{1}} &amp; \frac{\partial u^{2'}}{\partial u^{2}} &amp; \frac{\partial u^{2'}}{\partial u^{3}} \\  \frac{\partial u^{3'}}{\partial u^{1}} &amp; \frac{\partial u^{3'}}{\partial u^{2}} &amp; \frac{\partial u^{3'}}{\partial u^{3}}\end{bmatrix} = \begin{bmatrix} \sin(u^{2}) &amp; u^{1}\cos(u^{2}) &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos(u^{2}) &amp; -u^{1}\sin(u^{2}) &amp; 0  \end{bmatrix} \\
-&amp; = \begin{bmatrix} \sin\theta &amp; r\cos\theta &amp; 0 \\ 0 &amp; 0 &amp; 1 \\ \cos\theta &amp; -r\sin\theta &amp; 0  \end{bmatrix}.
-\end{align}</p>
-<p>Invertendo as relações acima, obtemos
-\begin{align}
-&amp; u^{1} = \sqrt{(u^{1'})^{2} + (u^{3'})^{2}}, \\
-&amp; u^{2} = \arctan\big(u^{1'}/u^{3'}\big), \\
-&amp; u^{3} = u^{2'}.
+\partial_{0}\partial^{0}\phi_{t}(\vec{r}) &amp; = \frac{1}{c^{2}}\frac{\partial^{2}\phi_{t}(\vec{r})}{\partial t^{2}} = \frac{1}{c^{2}}\left(\frac{iE}{\hbar}\right)^{2}\phi_{t}(\vec{r}) = -\frac{E^{2}}{\hbar^{2}c^{2}}\phi_{t}(\vec{r}), \\
+\partial_{1}\partial^{1}\phi_{t}(\vec{r}) &amp; = -\frac{\partial^{2}}{\partial x^{2}}Ne^{-i(p_{x}x+p_{y}y+p_{z}z-Et)/\hbar} = -\left(\frac{-ip_{x}}{\hbar}\right)^{2}\phi_{t}(\vec{r}) = \frac{p_{x}^{2}}{\hbar^{2}}\phi_{t}(\vec{r}), \\
+\partial_{2}\partial^{2}\phi_{t}(\vec{r}) &amp; = \frac{p_{y}^{2}}{\hbar^{2}}\phi_{t}(\vec{r}) \text{, } \partial_{3}\partial^{3}\phi_{t}(\vec{r}) = \frac{p_{z}^{2}}{\hbar^{2}}\phi_{t}(\vec{r}).
 \end{align}
+Assim, vem que
+\begin{align}
+&amp; \left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = \left(-\frac{E^{2}}{\hbar^{2}c^{2}} + \frac{p_{x}^{2}}{\hbar^{2}} + \frac{p_{y}^{2}}{\hbar^{2}} + \frac{p_{z}^{2}}{\hbar^{2}} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}} \right)\psi_{t}(\vec{r}) \\
+&amp; = \left(-\frac{E^{2}}{\hbar^{2}c^{2}} + \frac{p^{2}}{\hbar^{2}} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}} \right)\psi_{t}(\vec{r}),
+\end{align}
+que é satisfeita pois
+\begin{equation}
+-\frac{E^{2}}{\hbar^{2}c^{2}} + \frac{p^{2}}{\hbar^{2}} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}=0\ \therefore\ E^{2}=p^{2}c^{2}+m_{0}^{2}c^{4}.
+\end{equation}</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Complica%C3%A7%C3%B5es-com-a-equa%C3%A7%C3%A3o-de-Klein-Gordon">Complica&#231;&#245;es com a equa&#231;&#227;o de Klein-Gordon<a class="anchor-link" href="#Complica%C3%A7%C3%B5es-com-a-equa%C3%A7%C3%A3o-de-Klein-Gordon">&#182;</a></h3><p>Existem algumas questões a serem tratadas sobre a EqKG. Primeiramente, notamos que partir da EqKG é possível definir a densidade de corrente de probabilidade e densidade de probabilidade como
+\begin{equation}
+j^{\mu} = \frac{i\hbar}{2m_{0}c}\left(\psi^{*}\partial^{\mu}\psi-\psi\partial^{\mu}\psi^{*}\right),
+\end{equation}
+que satisfaz a equação da continuidade 
+\begin{equation}
+\partial_{\mu}j^{\mu}=0.
+\end{equation}
+No entanto, a densidade de probabilidade associada
+$
+j^{0} = \frac{i\hbar}{2m_{0}c}\left(\psi^{*}\frac{\partial\psi}{\partial t}-\psi\frac{\partial\psi^{*}}{\partial t}\right)
+$
+pode ser negativa, o que impede sua interpretação probabilística. Por exemplo, para a função de onda $\phi_{t}(\vec{r})$ teremos 
+$$\partial^{0}\phi_{t}(\vec{r})=iE\phi_{t}(\vec{r})/\hbar c \text{ e } \partial^{0}\phi_{t}(\vec{r})^{*}=-iE\phi_{t}(\vec{r})^{*}/\hbar c,$$ 
+que nos fornece
+\begin{align}
+j^{0} &amp; = \frac{i\hbar}{2m_{0}c}\left(\frac{iE|\phi_{t}(\vec{r})|^{2}}{c\hbar}+ \frac{iE|\phi_{t}(\vec{r})|^{2}}{c\hbar}\right) = -\frac{E}{m_{0}c^{2}}|\phi_{t}(\vec{r})|^{2},
+\end{align}
+que é negativa para $E&gt;0$.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A segunda questão que surge da EqKG é que a igualdade $E^{2}=p^{2}c^{2}+m_{0}^{2}c^{4}$, satisfeita para a função de onda de uma partícula livre, também comporta energia negativa pois
+\begin{equation}
+E=\pm\sqrt{p^{2}c^{2}+m_{0}^{2}c^{4}}.
+\end{equation}
+Qual é a interpretação para a energia negativa de uma partícula livre?</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Equa%C3%A7%C3%A3o-de-Dirac">Equa&#231;&#227;o de Dirac<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Dirac">&#182;</a></h2><p>Acreditando que os problemas que aparecem na EqKG se devem à presença de uma derivada segunda no tempo, Dirac buscou uma equação de primeira ordem no tempo, ou seja, propondo a equação de Dirac (EqD)
+\begin{equation}
+\left(i\gamma^{\mu}\partial_{\mu}-\frac{m_{0}c}{\hbar}\right)\psi_{t}(\vec{r})=0
+\end{equation}
+e buscando os $\gamma^{\mu}$ que satisfazem condições adequadas. Como a EqD deve ser compatível com a expressão relativística $E^{2}=p^{2}c^{2}+m_{0}^{2}c^{4}$, esperamos obter a EqKG a partir da EqD. Para isso, vamos multiplicar a EqD por $\left(-i\gamma^{\nu}\partial_{\nu}-\frac{m_{0}c}{\hbar}\right)$:
+\begin{align}
+&amp; \left(-i\gamma^{\nu}\partial_{\nu}-\frac{m_{0}c}{\hbar}\right)\left(i\gamma^{\mu}\partial_{\mu}-\frac{m_{0}c}{\hbar}\right)\psi_{t}(\vec{r})=0 \\
+&amp; \therefore\ \left(\gamma^{\nu}\partial_{\nu}\gamma^{\mu}\partial_{\mu} + i\left(\gamma^{\nu}\partial_{\nu}-\gamma^{\mu}\partial_{\mu}\right)\frac{m_{0}c}{\hbar} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0 \\
+&amp; \therefore\ \left(\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0.
+\end{align}
+Como $\partial_{\mu}\partial^{\mu}=\partial_{\mu}\eta^{\mu\nu}\partial_{\nu}=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}=\eta^{\nu\mu}\partial_{\mu}\partial_{\nu}$, simetrizamos os índices para obter
+\begin{equation}
+\frac{1}{2}(\gamma^{\nu}\gamma^{\mu}+\gamma^{\mu}\gamma^{\nu}) = \frac{1}{2}\{\gamma^{\mu},\gamma^{\nu}\} = \eta^{\mu\nu},
+\end{equation}
+que define a chamada <em>álgebra de Clifford</em>.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Dessa relação, teremos que
+\begin{align}
+&amp; (\gamma^{0})^{2}=1, \\
+&amp; (\gamma^{j})^{2}=-1 \text{ para } j=1,2,3, \\
+&amp; \gamma^{\mu}\gamma^{\nu}=-\gamma^{\nu}\gamma^{\mu} \text{ para } \mu\ne\nu.
+\end{align}
+Assim, para $\mu\ne k$ e $\mu=0,1,2,3$ e $j=1,2,3$ teremos
+\begin{align}
+&amp; \gamma^{\mu}\gamma^{j}=-\gamma^{j}\gamma^{\mu} \ \therefore\ \gamma^{\mu}\gamma^{j}\gamma^{j}=-\gamma^{j}\gamma^{\mu}\gamma^{j}  \ \therefore\ \gamma^{\mu}(-1)=-\gamma^{j}\gamma^{\mu}\gamma^{j} \\
+&amp; \therefore\ Tr(\gamma^{\mu}) = Tr(\gamma^{j}\gamma^{\mu}\gamma^{j}) = Tr(\gamma^{\mu}\gamma^{j}\gamma^{j}) = Tr(\gamma^{\mu}(-1)) = -Tr(\gamma^{\mu}) \\
+&amp; \therefore\ Tr(\gamma^{\mu}) = 0.
+\end{align}
+Seguindo, vamos olhar para as dimensões possíveis das matrizes de Dirac. Usamos novamente que $\gamma^{\mu}\gamma^{\nu}=-\gamma^{\nu}\gamma^{\mu}$. Se essas matrizes tem dimensão $d$, teremos que 
+$$\det(-\gamma^{\mu})=(-1)^{d}\det(\gamma^{\mu}).$$
 Assim
 \begin{align}
-\hat{U} &amp; = [U^{i}_{j'}] = \Big[\frac{\partial u^{i}}{\partial u^{j'}}\Big] = \begin{bmatrix} \frac{\partial u^{1}}{\partial u^{1'}} &amp; \frac{\partial u^{1}}{\partial u^{2'}} &amp; \frac{\partial u^{1}}{\partial u^{3'}} \\  \frac{\partial u^{2}}{\partial u^{1'}} &amp; \frac{\partial u^{2}}{\partial u^{2'}} &amp; \frac{\partial u^{2}}{\partial u^{3'}} \\  \frac{\partial u^{3}}{\partial u^{1'}} &amp; \frac{\partial u^{3}}{\partial u^{2'}} &amp; \frac{\partial u^{3}}{\partial u^{3'}}\end{bmatrix} = \begin{bmatrix} u^{1'}/\sqrt{(u^{1'})^{2} + (u^{3'})^{2}} &amp; 0 &amp; u^{3'}/\sqrt{(u^{1'})^{2} + (u^{3'})^{2}} \\ u^{3'}/\big((u^{3'})^{2}+(u^{1'})^{2}\big) &amp; 0 &amp; -u^{1'}/\big((u^{3'})^{2}+(u^{1'})^{2} \\ 0 &amp; 1 &amp; 0  \end{bmatrix} \\
-&amp;  = \begin{bmatrix} \sin\theta &amp; 0 &amp; \cos\theta \\ r^{-1}\cos\theta &amp; 0 &amp; -r^{-1}\sin\theta \\ 0 &amp; 1 &amp; 0  \end{bmatrix}.
+&amp; \det(\gamma^{\mu}\gamma^{\nu}) = \det(-\gamma^{\nu}\gamma^{\mu}) \\
+&amp; \det(\gamma^{\mu})\det(\gamma^{\nu}) = \det(-\gamma^{\nu})\det(\gamma^{\mu}) = (-1)^{d}\det(\gamma^{\nu})\det(\gamma^{\mu}).
+\end{align}
+Para que esta última igualdade seja satisfeita, i.e., para que 
+$$(-1)^{d}=1,$$
+a dimensão $d$ deve ser um número par.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Part%C3%ADcula-livre">Part&#237;cula livre<a class="anchor-link" href="#Part%C3%ADcula-livre">&#182;</a></h3><p>Seguindo, vamos aplicar a EqD ao caso da partícula livre. Usando
+\begin{align}
+\partial_{0}\phi_{t}(\vec{r}) &amp; = \frac{1}{c}\frac{\partial}{\partial t}Ne^{-i(\vec{p}\cdot\vec{r}-Et)/\hbar} = \frac{iE}{c\hbar}\phi_{t}(\vec{r}), \\
+\partial_{j}\phi_{t}(\vec{r}) &amp; = \frac{\partial}{\partial x^{j}}\phi_{t}(\vec{r}) = -\frac{ip_{j}}{\hbar}\phi_{t}(\vec{r}) \text{ para } j=1,2,3,
+\end{align}
+obteremos
+\begin{align}
+&amp; \left(i\gamma^{\mu}\partial_{\mu}-\frac{m_{0}c}{\hbar}\right)\phi_{t}(\vec{r}) = \left(i\gamma^{0}\partial_{0}+i\gamma^{1}\partial_{1}+i\gamma^{2}\partial_{2}+i\gamma^{3}\partial_{3}-\frac{m_{0}c}{\hbar}\right)\phi_{t}(\vec{r}) \\
+&amp; = \left(-\gamma^{0}\frac{E}{c\hbar}+\gamma^{1}\frac{p_{1}}{\hbar}+\gamma^{2}\frac{p_{2}}{\hbar}+\gamma^{3}\frac{p_{3}}{\hbar}-\frac{m_{0}c}{\hbar}\right)\phi_{t}(\vec{r}) = -\frac{1}{\hbar}\left(\gamma^{0}\frac{E}{c}-\gamma^{1}p_{1}-\gamma^{2}p_{2}-\gamma^{3}p_{3}+m_{0}c\right)\phi_{t}(\vec{r}) \\
+&amp; = -\frac{1}{\hbar}\left(\gamma^{\mu}p_{\mu}+m_{0}c\right)\phi_{t}(\vec{r}) = 0
+\end{align}
+se 
+\begin{equation}
+\gamma^{\mu}p_{\mu}+m_{0}c=0, \hspace{2cm} (\star\star)
+\end{equation}
+em que usamos 
+$$p_{\mu}=g_{\mu\nu}p^{\nu}=(g_{00}p^{0},g_{11}p^{1},g_{22}p^{2},g_{33}p^{3})=(p^{0},-p^{1},-p^{2},-p^{3})=(E/c,-\vec{p}).$$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Hamiltoniano-de-Dirac">Hamiltoniano de Dirac<a class="anchor-link" href="#Hamiltoniano-de-Dirac">&#182;</a></h3><p>Seguindo, assumimos que a Eq. ($\star\star$) é válida em geral. Mais especificamente, assumimos que 
+\begin{equation}
+(\gamma^{\mu}p_{\mu}+m_{0}c)\psi_{t}(\vec{r})=0.
+\end{equation}
+Multiplicando essa equação por $\gamma^{0}$, teremos
+\begin{align}
+&amp; \gamma^{0}(\gamma^{\mu}p_{\mu}+m_{0}c)\psi_{t}(\vec{r})= (\gamma^{0}\gamma^{\mu}p_{\mu} + \gamma^{0}m_{0}c)\psi_{t}(\vec{r}) \\
+&amp; = (\gamma^{0}\gamma^{0}p_{0} + \gamma^{0}\gamma^{j}p_{j} + \gamma^{0}m_{0}c)\psi_{t}(\vec{r}) = ((1)(E/c) - \gamma^{0}\vec{\gamma}\cdot\vec{p} + \gamma^{0}m_{0}c)\psi_{t}(\vec{r}) \\
+&amp; = (E/c - \gamma^{0}\vec{\gamma}\cdot\vec{p} + \gamma^{0}m_{0}c)\psi_{t}(\vec{r}) = 0.
+\end{align}
+Se definirmos as matrizes de Dirac
+\begin{equation}
+\beta = -\gamma^{0} \text{ e } \alpha_{j}=\gamma^{0}\gamma^{j}
+\end{equation}
+obteremos o Hamiltoniano de Dirac
+\begin{align}
+H\psi_{t}(\vec{r}) = (\vec{\alpha}\cdot\vec{p}c + \beta m_{0}c^{2})\psi_{t}(\vec{r}) = E\psi_{t}(\vec{r}).
 \end{align}</p>
-<p>Usando estas matrizes, podemos relacionar vetores e tensores nos entre os sistemas de coordenadas esféricas e cilíndricas.
-<br> $\diamond$</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Impondo que o Hamiltoniano deve ser um operador hermitiano, $H^{\dagger}=H$, teremos que
+\begin{equation}
+\beta^{\dagger}=\beta\ \therefore\ (\gamma^{0})^{\dagger}=\gamma^{0}
+\end{equation}
+e
+\begin{align}
+&amp;(\alpha_{j}p_{j})^{\dagger} =\alpha_{j}p_{j} \ \therefore\ p_{j}^{\dagger}\alpha_{j}^{\dagger} = p_{j}\alpha_{j}^{\dagger} = \alpha_{j}p_{j} =: p_{j}\alpha_{j} \ \therefore\ \alpha_{j}^{\dagger}=\alpha_{j} \\
+&amp; \therefore\ (\gamma^{0}\gamma^{j})^{\dagger} = \gamma^{0}\gamma^{j} \ \therefore\ (\gamma^{j})^{\dagger}(\gamma^{0})^{\dagger} = (\gamma^{j})^{\dagger}\gamma^{0} = \gamma^{0}\gamma^{j} = -\gamma^{j}\gamma^{0} \\
+&amp; \therefore\ (\gamma^{j})^{\dagger}=-\gamma^{j}.
+\end{align}
+Acima consideramos $p_{j}$ sendo os autovalores de $P_{j}$, i.e., $p_{j}\in\mathbb{R}$.</p>
+<p>Construídas essas propriedades que as matrizes gama devem satisfazer, podemos olhar para possibilidades de matrizes. Para $d=2$ as matrizes de Pauli
+\begin{equation}
+\sigma_{1}=\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix} \text{, } \sigma_{2}=\begin{bmatrix} 0 &amp; -i \\ i &amp; 0 \end{bmatrix} \text{, } \sigma_{3}=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
+\end{equation}
+e a matriz identidade $\sigma_{0} =\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$ formam uma base para o espaço vetorial de matrizes $2\text{x}2$. No entanto, $\{\sigma_{0},\sigma_{j}\}=2\sigma_{j}$ para $j=1,2,3$. Por conseguinte, a princípio a menor dimensão para a qual as matrizes $\gamma^{\mu}$ podem ser definidas é $d=4$. De fato, nesse caso, uma possibilidade para as <em>matrizes de Dirac</em> é
+\begin{align}
+\gamma^{0} = \begin{bmatrix} \sigma_{0} &amp; \mathbb{O}_{2} \\ \mathbb{O}_{2} &amp; -\sigma_{0} \end{bmatrix} \text{ e } \gamma^{j} = \begin{bmatrix} \mathbb{O}_{2} &amp; \sigma_{j} \\ -\sigma_{j} &amp; \mathbb{O}_{2} \end{bmatrix} \hspace{2cm} (*)
+\end{align}
+para $j=1,2,3$. A verificação de que $\{\gamma^{\mu},\gamma^{\nu}\}=2\eta_{\mu\nu}$ é feita com o código abaixo e é também deixada como exercício.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">dirac</span><span class="p">(</span><span class="n">j</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+    <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="k">elif</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">z4</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">acomm</span><span class="p">(</span><span class="n">dirac</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dirac</span><span class="p">(</span><span class="n">k</span><span class="p">))</span> <span class="o">!=</span> <span class="n">z4</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;j=&#39;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="s1">&#39;,k=&#39;</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="s1">&#39;,&#39;</span><span class="p">,</span><span class="n">acomm</span><span class="p">(</span><span class="n">dirac</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="n">dirac</span><span class="p">(</span><span class="n">k</span><span class="p">)))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>j= 0 ,k= 0 , Matrix([[2, 0, 0, 0], [0, 2, 0, 0], [0, 0, 2, 0], [0, 0, 0, 2]])
+j= 1 ,k= 1 , Matrix([[-2, 0, 0, 0], [0, -2, 0, 0], [0, 0, -2, 0], [0, 0, 0, -2]])
+j= 2 ,k= 2 , Matrix([[-2.00000000000000, 0, 0, 0], [0, -2.00000000000000, 0, 0], [0, 0, -2.00000000000000, 0], [0, 0, 0, -2.00000000000000]])
+j= 3 ,k= 3 , Matrix([[-2, 0, 0, 0], [0, -2, 0, 0], [0, 0, -2, 0], [0, 0, 0, -2]])
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Densidade-de-probabilidade-positiva">Densidade de probabilidade positiva<a class="anchor-link" href="#Densidade-de-probabilidade-positiva">&#182;</a></h4><p>Note que como o Hamiltoniano é, neste caso, uma matriz $4\text{x}4$, a função de onda não é uma função escalar como caso não relativístico da equação de Schrödinger. No caso relativístico da equação de Dirac a função de onda $\psi_{t}(\vec{r})$ é um vetor com $4$ componentes. Nesse caso a densidade de probabilidade pode ser definida como
+\begin{equation}
+\rho = \psi^{\dagger}\psi,
+\end{equation}
+que é não negativa, i.e., $\rho\ge 0$. Acima usamos a notação $\rho=\rho_{t}(\vec{r})$ e $\psi=\psi_{t}(\vec{r})$.</p>
+<p>Usando a equação de Dirac na forma $H\psi=(\vec{\alpha}\cdot\vec{p}c+\beta m_{0}c^{2})\psi=E\psi$ e fazendo as trocas $p_{j}\rightarrow-i\hbar\frac{\partial}{\partial x^{j}}$ e $E\rightarrow i\hbar\frac{\partial}{\partial t}$ teremos
+\begin{equation}
+\left(\sum_{j=1}^{3}\alpha_{j}p_{j}c+\beta m_{0}c^{2}\right)\psi = \left(-i\hbar\sum_{j=1}^{3}\alpha_{j}\frac{\partial}{\partial x^{j}}c+\beta m_{0}c^{2}\right)\psi = i\hbar\frac{\partial}{\partial t}\psi.
+\end{equation}
+Tomando a adjunta desta equação, obtemos
+\begin{equation}
+\left(i\hbar\sum_{j=1}^{3}\frac{\partial}{\partial x^{j}}\psi^{\dagger}\alpha_{j}^{\dagger}c+\psi^{\dagger}\beta^{\dagger} m_{0}c^{2}\right) = -i\hbar\frac{\partial}{\partial t}\psi^{\dagger}.
+\end{equation}
+Assim 
+\begin{align}
+\partial_{t}\rho &amp; = (\partial_{t}\psi^{\dagger})\psi + \psi^{\dagger}(\partial_{t}\psi) \\
+&amp; = \frac{i}{\hbar}\left(i\hbar\sum_{j=1}^{3}\frac{\partial\psi^{\dagger}}{\partial x^{j}}\alpha_{j}c+\psi^{\dagger}\beta m_{0}c^{2}\right)\psi -\psi^{\dagger}\frac{i}{\hbar}\left(-i\hbar\sum_{j=1}^{3}\alpha_{j}\frac{\partial}{\partial x^{j}}c+\beta m_{0}c^{2}\right)\psi \\
+&amp; = -\sum_{j=1}^{3}\frac{\partial\psi^{\dagger}}{\partial x^{j}}\alpha_{j}c\psi + \frac{i}{\hbar}\psi^{\dagger}\beta m_{0}c^{2}\psi - \sum_{j=1}^{3}\psi^{\dagger}\alpha_{j}\frac{\partial\psi}{\partial x^{j}}c - \frac{i}{\hbar}\psi^{\dagger}\beta m_{0}c^{2}\psi \\
+&amp; = -\sum_{j=1}^{3}\frac{\partial(\psi^{\dagger}\alpha_{j}c\psi)}{\partial x^{j}} = -\vec{\nabla}\cdot\vec{j},
+\end{align}
+onde definimos a densidade de corrente de probabilidade
+\begin{equation}
+\vec{j} = \psi^{\dagger}\vec{\alpha}c\psi.
+\end{equation}
+Com isso, vemos que a EqD resolve o problema da não positividade da densidade de probabilidade presente na EqKG.</p>
 
 </div>
 </div>
@@ -15214,13 +15077,9 @@ Assim
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h1 id="Exerc%C3%ADcios">Exerc&#237;cios<a class="anchor-link" href="#Exerc%C3%ADcios">&#182;</a></h1><ol>
-<li><p>Para coordenadas cartesianas, escreva $(u,v,w)$ em termos de $(x,y,z)$.</p>
+<li><p>Usando a equação de Klein-Gordon, verifique que $j^{\mu} = \frac{i\hbar}{2m_{0}c}\left(\psi^{*}\partial^{\mu}\psi-\psi\partial^{\mu}\psi^{*}\right)$ satisfaz a equação da continuidade $\partial_{\mu}j^{\mu}=0$.</p>
 </li>
-<li><p>Calcule a base natural e a base dual para coordenadas cilíndricas e verifique que neste caso $\hat{e}_{i}=\hat{e}^{i}$ para $i=r,\theta,\phi$.</p>
-</li>
-<li><p>Calcule o elemento de linha para coordenadas cilíndricas.</p>
-</li>
-<li><p>Concernindo à relação entre sistemas de coordenadas, verifique que $e_{j'}=U_{j'}^{i}e_{i},\ \lambda^{i}=U^{i}_{j'}\lambda^{j'},\ e^{j'} = U^{j'}_{i}e^{i},\ \lambda_{i}=U_{i}^{j'}\lambda_{j}.$</p>
+<li><p>Para as matrizes de Dirac na Eq. ($*$), com $j=1,2,3$, verifique que $\{\gamma^{\mu},\gamma^{\nu}\}=\mathbb{O}_{4}$ para $\mu\ne\nu$ e que $(\gamma^{0})^{2}=\mathbb{I}_{4}$ e $(\gamma^{j})^{2}=-\mathbb{I}_{4}$. Verifique também que $\gamma^{0}$ é uma matriz hermitiana e que $\gamma^{j}$ são matrizes anti-hermitianas.</p>
 </li>
 </ol>
 
