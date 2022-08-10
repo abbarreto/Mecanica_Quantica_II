@@ -14710,10 +14710,14 @@ $\displaystyle 1 + \frac{x^{2}}{2} - \frac{x^{4}}{8} + \frac{x^{6}}{16} + O\left
 &amp; i\hbar\partial_{tt}|\psi_{t}\rangle = \partial_{t}(H|\psi_{t}\rangle) = H\partial_{t}|\psi_{t}\rangle = H\frac{H}{i\hbar}|\psi_{t}\rangle \\
 &amp; \therefore\ -\hbar^{2}\partial_{tt}|\psi_{t}\rangle = H^{2}|\psi_{t}\rangle.
 \end{align}
-Assim, usando $H^{2}=m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2}$ e $\langle\vec{r}|P^{2}|\psi_{t}\rangle=-\hbar^{2}\vec{\nabla}_{\vec{r}}\langle\vec{r}|\psi_{t}\rangle$ teremos 
+Assim, usando 
+$$H^{2}=m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2}$$
+e $\langle\vec{r}|P^{2}|\psi_{t}\rangle=-\hbar^{2}\vec{\nabla}_{\vec{r}}^{2}\langle\vec{r}|\psi_{t}\rangle$ teremos 
 \begin{align}
-&amp; -\hbar^{2}\partial_{tt}|\psi_{t}\rangle = (m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2})|\psi_{t}\rangle \ \therefore\ -\hbar^{2}\partial_{tt}\psi_{t}(\vec{r}) = m_{0}^{2}c^{4}\psi_{t}(\vec{r})-\hbar^{2}\nabla^{2}c^{2}\psi_{t}(\vec{r}) \\
-&amp; \therefore\ \left(-\frac{1}{c^{2}}\partial_{tt} + \nabla^{2} - \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0 \ \therefore \left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0,
+&amp; -\hbar^{2}\partial_{tt}|\psi_{t}\rangle = (m_{0}^{2}c^{4}\mathbb{I}+P^{2}c^{2})|\psi_{t}\rangle \\
+&amp; \therefore\ -\hbar^{2}\partial_{tt}\psi_{t}(\vec{r}) = m_{0}^{2}c^{4}\psi_{t}(\vec{r})-\hbar^{2}\nabla^{2}c^{2}\psi_{t}(\vec{r}) \\
+&amp; \therefore\ \left(-\frac{1}{c^{2}}\partial_{tt} + \nabla^{2} - \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0 \\
+&amp; \therefore \left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0,
 \end{align}
 em que usamos 
 \begin{equation}
@@ -14730,7 +14734,7 @@ Quantidades como esta última equação são invariantes de Lorentz. Por consegu
 \begin{equation}
 \left(\partial_{\mu}\partial^{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r}) = 0,
 \end{equation}
-é invariante por TL.</p>
+é invariante por TL, ou seja, tem a mesma forma em todos os referenciais inerciais.</p>
 
 </div>
 </div>
@@ -14744,11 +14748,11 @@ Quantidades como esta última equação são invariantes de Lorentz. Por consegu
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Part%C3%ADcula-livre">Part&#237;cula livre<a class="anchor-link" href="#Part%C3%ADcula-livre">&#182;</a></h3><p>Pode-se verificar que a onda harmônica 
 \begin{equation}
-\phi_{t}(\vec{r}) = Ne^{-i(\vec{k}\cdot\vec{r}-\omega t)} = Ne^{-i(\vec{p}\cdot\vec{r}-Et)/\hbar} = Ne^{-ip^{\mu}p_{\mu}/\hbar},
+\phi_{t}(\vec{r}) = Ne^{-i(\vec{k}\cdot\vec{r}-\omega t)} = Ne^{-i(\vec{p}\cdot\vec{r}-Et)/\hbar} = Ne^{ip^{\mu}x_{\mu}/\hbar},
 \end{equation}
 em que definimos o quadrivetor momento 
 \begin{equation}
-p^{\mu}=(E/c,\vec{p}),
+p^{\mu}=(E/c,\vec{p}) \text{ e } x_{\mu}=(ct,-\vec{x}),
 \end{equation}
 satisfaz a EqKG. Para isso, notemos que
 \begin{align}
@@ -14784,11 +14788,9 @@ que satisfaz a equação da continuidade
 \begin{equation}
 \partial_{\mu}j^{\mu}=0.
 \end{equation}
-No entanto, a densidade de probabilidade associada
-$
-j^{0} = \frac{i\hbar}{2m_{0}c}\left(\psi^{*}\frac{\partial\psi}{\partial t}-\psi\frac{\partial\psi^{*}}{\partial t}\right)
-$
-pode ser negativa, o que impede sua interpretação probabilística. Por exemplo, para a função de onda $\phi_{t}(\vec{r})$ teremos 
+No entanto, a <strong>densidade de probabilidade</strong> associada
+$$j^{0} = \frac{i\hbar}{2m_{0}c}\left(\psi^{*}\frac{\partial\psi}{\partial t}-\psi\frac{\partial\psi^{*}}{\partial t}\right)$$
+pode ser <strong>negativa</strong>, o que impede sua interpretação probabilística. Por exemplo, para a função de onda $\phi_{t}(\vec{r})$ teremos 
 $$\partial^{0}\phi_{t}(\vec{r})=iE\phi_{t}(\vec{r})/\hbar c \text{ e } \partial^{0}\phi_{t}(\vec{r})^{*}=-iE\phi_{t}(\vec{r})^{*}/\hbar c,$$ 
 que nos fornece
 \begin{align}
@@ -14810,7 +14812,7 @@ que é negativa para $E&gt;0$.</p>
 \begin{equation}
 E=\pm\sqrt{p^{2}c^{2}+m_{0}^{2}c^{4}}.
 \end{equation}
-Qual é a interpretação para a energia negativa de uma partícula livre?</p>
+Qual é a interpretação para a <strong>energia negativa</strong> de uma partícula livre?</p>
 
 </div>
 </div>
@@ -14830,7 +14832,8 @@ e buscando os $\gamma^{\mu}$ que satisfazem condições adequadas. Como a EqD de
 \begin{align}
 &amp; \left(-i\gamma^{\nu}\partial_{\nu}-\frac{m_{0}c}{\hbar}\right)\left(i\gamma^{\mu}\partial_{\mu}-\frac{m_{0}c}{\hbar}\right)\psi_{t}(\vec{r})=0 \\
 &amp; \therefore\ \left(\gamma^{\nu}\partial_{\nu}\gamma^{\mu}\partial_{\mu} + i\left(\gamma^{\nu}\partial_{\nu}-\gamma^{\mu}\partial_{\mu}\right)\frac{m_{0}c}{\hbar} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0 \\
-&amp; \therefore\ \left(\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0.
+&amp; \therefore\ \left(\gamma^{\nu}\gamma^{\mu}\partial_{\nu}\partial_{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0 \\
+&amp; \therefore\ \left(\frac{1}{2}\big(\gamma^{\nu}\gamma^{\mu}+\gamma^{\mu}\gamma^{\nu}\big)\partial_{\nu}\partial_{\mu} + \frac{m_{0}^{2}c^{2}}{\hbar^{2}}\right)\psi_{t}(\vec{r})=0.
 \end{align}
 Como $\partial_{\mu}\partial^{\mu}=\partial_{\mu}\eta^{\mu\nu}\partial_{\nu}=\eta^{\mu\nu}\partial_{\mu}\partial_{\nu}=\eta^{\nu\mu}\partial_{\mu}\partial_{\nu}$, simetrizamos os índices para obter
 \begin{equation}
@@ -14869,7 +14872,7 @@ Assim
 \end{align}
 Para que esta última igualdade seja satisfeita, i.e., para que 
 $$(-1)^{d}=1,$$
-a dimensão $d$ deve ser um número par.</p>
+a dimensão $d$ deve ser um número <strong>par</strong>.</p>
 
 </div>
 </div>
@@ -14953,7 +14956,7 @@ Acima consideramos $p_{j}$ sendo os autovalores de $P_{j}$, i.e., $p_{j}\in\math
 \begin{equation}
 \sigma_{1}=\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix} \text{, } \sigma_{2}=\begin{bmatrix} 0 &amp; -i \\ i &amp; 0 \end{bmatrix} \text{, } \sigma_{3}=\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}
 \end{equation}
-e a matriz identidade $\sigma_{0} =\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$ formam uma base para o espaço vetorial de matrizes $2\text{x}2$. No entanto, $\{\sigma_{0},\sigma_{j}\}=2\sigma_{j}$ para $j=1,2,3$. Por conseguinte, a princípio a menor dimensão para a qual as matrizes $\gamma^{\mu}$ podem ser definidas é $d=4$. De fato, nesse caso, uma possibilidade para as <em>matrizes de Dirac</em> é
+e a matriz identidade $\sigma_{0} =\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}$ formam uma base para o espaço vetorial de matrizes $2\text{x}2$. No entanto, $\{\sigma_{0},\sigma_{j}\}=2\sigma_{j}$ para $j=1,2,3$. Por conseguinte, a princípio a <strong>menor dimensão</strong> para a qual as matrizes $\gamma^{\mu}$ podem ser definidas é $d=4$. De fato, nesse caso, uma possibilidade para as <em>matrizes de Dirac</em> é
 \begin{align}
 \gamma^{0} = \begin{bmatrix} \sigma_{0} &amp; \mathbb{O}_{2} \\ \mathbb{O}_{2} &amp; -\sigma_{0} \end{bmatrix} \text{ e } \gamma^{j} = \begin{bmatrix} \mathbb{O}_{2} &amp; \sigma_{j} \\ -\sigma_{j} &amp; \mathbb{O}_{2} \end{bmatrix} \hspace{2cm} (*)
 \end{align}
@@ -15044,7 +15047,9 @@ j= 3 ,k= 3 , Matrix([[-2, 0, 0, 0], [0, -2, 0, 0], [0, 0, -2, 0], [0, 0, 0, -2]]
 \rho = \psi^{\dagger}\psi,
 \end{equation}
 que é não negativa, i.e., $\rho\ge 0$. Acima usamos a notação $\rho=\rho_{t}(\vec{r})$ e $\psi=\psi_{t}(\vec{r})$.</p>
-<p>Usando a equação de Dirac na forma $H\psi=(\vec{\alpha}\cdot\vec{p}c+\beta m_{0}c^{2})\psi=E\psi$ e fazendo as trocas $p_{j}\rightarrow-i\hbar\frac{\partial}{\partial x^{j}}$ e $E\rightarrow i\hbar\frac{\partial}{\partial t}$ teremos
+<p>Usando a equação de Dirac na forma 
+$$H\psi=(\vec{\alpha}\cdot\vec{p}c+\beta m_{0}c^{2})\psi=E\psi$$
+e fazendo as trocas $p_{j}\rightarrow-i\hbar\frac{\partial}{\partial x^{j}}$ e $E\rightarrow i\hbar\frac{\partial}{\partial t}$ teremos
 \begin{equation}
 \left(\sum_{j=1}^{3}\alpha_{j}p_{j}c+\beta m_{0}c^{2}\right)\psi = \left(-i\hbar\sum_{j=1}^{3}\alpha_{j}\frac{\partial}{\partial x^{j}}c+\beta m_{0}c^{2}\right)\psi = i\hbar\frac{\partial}{\partial t}\psi.
 \end{equation}

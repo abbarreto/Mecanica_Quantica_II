@@ -14836,10 +14836,11 @@ e^{\phi}\cdot e_{\phi} &amp; = \Big(\frac{-\sin\phi\hat{i}+\cos\phi\hat{j}}{r\si
 &amp; = \sin^{2}\theta + \cos^{2}\theta = 1.
 \end{align}
 Verifica-se facilemente que o mesmo segue para os outros exemplos que consideramos aqui, mesmo para coordenadas não ortogonais.</p>
-<p>Assim, podemos verificar que as componentes de um vetor $\vec{\lambda}$ na base dual podem ser obtidas tomando-se o produto interno desses vetores com os vetores da base natural e vice-versa:
+<p>Uma outra forma de provar esse resultado seria usando
 \begin{align}
-&amp; \vec{\lambda}\cdot e^{j} = \lambda^{i}e_{i}\cdot e^{j} = \lambda^{i}\delta_{i}^{\ j} = \lambda^{j}, \\
-&amp; \vec{\lambda}\cdot e_{j} = \lambda_{i}e^{i}\cdot e_{j} = \lambda_{i}\delta^{i}_{\ j} = \lambda_{j}.
+&amp; \vec{\lambda}\cdot\vec{\mu} = \lambda_{i}\mu^{i} \\
+&amp; = \lambda_{i}e^{i}\cdot \mu^{j}e_{j} = \lambda_{i}\mu^{j}e^{i}\cdot e_{j} \\
+&amp; \therefore\ e^{i}\cdot e_{j} = \delta^{i}_{j}.
 \end{align}</p>
 
 </div>
@@ -14852,6 +14853,11 @@ Verifica-se facilemente que o mesmo segue para os outros exemplos que consideram
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Assim, podemos verificar que as componentes de um vetor $\vec{\lambda}$ na base dual podem ser obtidas tomando-se o produto interno desses vetores com os vetores da base natural e vice-versa:
+\begin{align}
+&amp; \vec{\lambda}\cdot e^{j} = \lambda^{i}e_{i}\cdot e^{j} = \lambda^{i}\delta_{i}^{\ j} = \lambda^{j}, \\
+&amp; \vec{\lambda}\cdot e_{j} = \lambda_{i}e^{i}\cdot e_{j} = \lambda_{i}\delta^{i}_{\ j} = \lambda_{j}.
+\end{align}</p>
 <p>Seguindo, podemos considerar diferentes formas de escrever o produto interno de dois vetores quaisquer
 \begin{align}
 \vec{\lambda}\cdot\vec{\mu} &amp; = \lambda_{i}e^{i}\cdot\mu_{j}e^{j} =: g^{ij}\lambda_{i}\mu_{j} \text{ com } g^{ij}:= e^{i}\cdot e^{j}, \\
@@ -15133,6 +15139,27 @@ $$e_{j'}=U_{j'}^{i}e_{i},\ \lambda^{i}=U^{i}_{j'}\lambda^{j'},\ e^{j'} = U^{j'}_
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Podemos ver que $\partial_{i}$ se comporta como um vetor covariante:
+\begin{align}
+&amp; \partial_{i} = \frac{\partial}{\partial u^{i}} = \frac{\partial}{\partial u^{j'}}\frac{\partial u^{j'}}{\partial u^{i}} = U^{j'}_{i}\partial_{j'}, \\
+&amp; \partial_{i'} = \frac{\partial}{\partial u^{i'}} = \frac{\partial}{\partial u^{j}}\frac{\partial u^{j}}{\partial u^{i'}} = U^{j}_{i'}\partial_{j}.
+\end{align}</p>
+<p>Podemos verificar também que o produto interno é invariante por mudança de sistema de coordenadas:
+\begin{align}
+\mu^{i'}\lambda_{i'} &amp; = U^{i'}_{j}\mu^{j}U_{i'}^{k}\lambda_{k} = U_{i'}^{k}U^{i'}_{j}\mu^{j}\lambda_{k} = \delta^{k}_{j}\mu^{j}\lambda_{k} \\
+&amp; = \mu^{j}\lambda_{j}.
+\end{align}</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Vale notar também que
 \begin{align}
 U^{j}_{i'}U^{i'}_{k} &amp; = \frac{\partial u^{j}}{\partial u^{i'}}\frac{\partial u^{i'}}{\partial u^{k}} = \frac{\partial u^{j}}{\partial u^{k}} = \delta^{j}_{k}.
@@ -15221,6 +15248,8 @@ Assim
 <li><p>Calcule o elemento de linha para coordenadas cilíndricas.</p>
 </li>
 <li><p>Concernindo à relação entre sistemas de coordenadas, verifique que $e_{j'}=U_{j'}^{i}e_{i},\ \lambda^{i}=U^{i}_{j'}\lambda^{j'},\ e^{j'} = U^{j'}_{i}e^{i},\ \lambda_{i}=U_{i}^{j'}\lambda_{j}.$</p>
+</li>
+<li><p>Para dois vetores quaisquer, verifique a invariância do produto interno frente a mudanças de sistemas de coordenadas na forma: $\mu_{i'}\lambda^{i'}=\mu_{j}\lambda^{j}$.</p>
 </li>
 </ol>
 
